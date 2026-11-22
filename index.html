@@ -166,8 +166,6 @@ footer a:hover{color:var(--ink)}
   <div class="wrap nav">
     <a class="brand" href="#top">egypt<span>guide</span></a>
     <nav class="nav-links" aria-label="Main">
-      <a href="#day" data-i18n="nav_day" class="hide-s">Day tours</a>
-      <a href="#packages" data-i18n="nav_pk" class="hide-s">Packages</a>
       <a href="#experiences" data-i18n="nav_ex" class="hide-s">Experiences</a>
       <a href="#faq" data-i18n="nav_faq" class="hide-s">FAQ</a>
       <a href="#request" data-i18n="nav_req" class="tailor">Tailor-made trip</a>
@@ -192,28 +190,6 @@ footer a:hover{color:var(--ink)}
     <path d="M0 115 C220 70 420 140 640 105 C860 70 1020 135 1200 100 L1200 150 L0 150Z" style="fill:var(--bg)"/>
   </svg>
 </div>
-
-<section>
-  <div class="wrap">
-    <div class="sec-head"><h2 data-i18n="must_h">Must-sees</h2><p data-i18n="must_p">The places most visitors come for. I can combine any of them into one day or one trip.</p></div>
-    <div class="strip" id="strip"></div>
-  </div>
-</section>
-
-<section id="day" style="padding-top:20px">
-  <div class="wrap">
-    <div class="sec-head"><h2 data-i18n="day_h">Day tours</h2><p data-i18n="day_p">Half-day and full-day tours. Open the details to see the plan, then add the ones you like to your request.</p></div>
-    <div class="grid" id="dayGrid"></div>
-    <p class="note" data-i18n="price_note"></p>
-  </div>
-</section>
-
-<section id="packages" style="padding-top:20px">
-  <div class="wrap">
-    <div class="sec-head"><h2 data-i18n="pk_h">Packages</h2><p data-i18n="pk_p">Longer trips with the route, transport and stops planned together.</p></div>
-    <div class="grid" id="pkGrid"></div>
-  </div>
-</section>
 
 <section id="experiences" style="padding-top:20px">
   <div class="wrap">
@@ -297,7 +273,7 @@ footer a:hover{color:var(--ink)}
   <div class="wrap">
     <div class="cols">
       <div><h3>egypt<span style="color:var(--sun)">guide</span></h3><p data-i18n="fb">Local guide and tour coordinator based in Cairo, Egypt.</p></div>
-      <div><h3 data-i18n="fl">Tours</h3><a href="#day" data-i18n="nav_day">Day tours</a><a href="#packages" data-i18n="nav_pk">Packages</a><a href="#request" data-i18n="nav_req">Tailor-made trip</a></div>
+      <div><h3 data-i18n="fl">Tours</h3><a href="#experiences" data-i18n="nav_ex">Experiences</a><a href="#request" data-i18n="nav_req">Tailor-made trip</a></div>
       <div><h3 data-i18n="fc">Contact</h3><a href="https://wa.me/201068635116" target="_blank" rel="noopener" dir="ltr">WhatsApp +20 106 863 5116</a></div>
     </div>
     <span data-i18n="foot2">Prices are quoted per group after you send your plan.</span>
@@ -384,7 +360,7 @@ var FAQ = {
 var I18N = {
  en:{u_wa:"WhatsApp",nav_day:"Day tours",nav_pk:"Packages",nav_faq:"FAQ",nav_req:"Tailor-made trip",
   eyebrow:"Local guide · Cairo, Egypt",h1:"See Egypt the way locals do.",
-  lead:"Private and small-group tours across Cairo, Giza, Alexandria and beyond. Clear plans, honest timing, and a guide who lives here.",
+  lead:"Private and small-group experiences in Cairo, from walking tours to Nile kayaking and horseback rides to the pyramids. Clear plans, honest timing, and a guide who lives here.",
   cta1:"Contact me",cta2:"Build a custom trip",
   must_h:"Must-sees",must_p:"The places most visitors come for. I can combine any of them into one day or one trip.",
   day_h:"Day tours",day_p:"Half-day and full-day tours. Open the details to see the plan, then add the ones you like to your request.",
@@ -404,7 +380,7 @@ var I18N = {
   hello:"Hello, I would like to request a trip in Egypt.",n:"Name",em:"Email",na:"Nationality",tr:"Tours",dt:"Date",gr:"Travelers",ln:"Tour language",bd:"Budget range",ht:"Hotel or area",nt:"Notes",anyd:"Flexible",custom:"Custom trip",thanks:"Please send me availability and a price. Thank you."},
  ar:{u_wa:"واتساب",nav_day:"رحلات اليوم",nav_pk:"البرامج",nav_faq:"أسئلة",nav_req:"رحلة مخصصة",
   eyebrow:"مرشد محلي · القاهرة، مصر",h1:"شوف مصر زي ما أهلها بيشوفوها.",
-  lead:"رحلات خاصة ومجموعات صغيرة في القاهرة والجيزة والإسكندرية وأكتر. خطة واضحة ومواعيد صادقة ومرشد عايش هنا.",
+  lead:"تجارب خاصة ومجموعات صغيرة في القاهرة، من جولات المشي لكاياك النيل وركوب الخيل عند الأهرامات. خطة واضحة ومواعيد صادقة ومرشد عايش هنا.",
   cta1:"تواصل معايا",cta2:"اعمل رحلة مخصصة",
   must_h:"أهم الأماكن",must_p:"الأماكن اللي أغلب الزوار بييجوا عشانها. أقدر أجمع أي منها في يوم أو رحلة واحدة.",
   day_h:"رحلات اليوم",day_p:"رحلات نصف يوم ويوم كامل. افتح التفاصيل تشوف الخطة، وضيف اللي يعجبك لطلبك.",
@@ -440,12 +416,9 @@ function card(t){
     '<div class="foot"><span class="price">'+L("from")+' $'+t.p+' <small>'+L("pp")+'</small>'+(t.pn?'<small class="pn">'+t.pn[lang]+'</small>':'')+'</span><button class="pick" type="button" aria-pressed="'+on+'" data-id="'+t.id+'">'+(on?L("picked"):L("pick"))+'</button></div></div></article>';
 }
 function renderAll(){
-  $("#dayGrid").innerHTML = TOURS.filter(function(t){return t.kind==="day"}).map(card).join("");
-  $("#pkGrid").innerHTML = TOURS.filter(function(t){return t.kind==="pkg"}).map(card).join("");
-  $("#exGrid").innerHTML = SIMSEM.map(function(x){
-    return '<article class="card"><div class="art">'+art(x.hue)+'<img src="'+x.img+'" alt="'+x.t+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div><div class="body"><h3>'+x.t+'</h3><div class="meta"><span class="pill">'+x.dur[lang]+'</span><span class="pill alt">'+L("cairo")+'</span></div><div class="foot"><span class="price">'+L("from")+' $'+x.p+' <small>'+L("pp")+'</small></span><a class="btn solid" style="padding:8px 14px" href="'+x.u+'" target="_blank" rel="noopener">'+L("ex_book")+'</a></div></div></article>';
+  $("#exGrid").innerHTML = SIMSEM.map(function(x,i){
+    return '<article class="card"><div class="art">'+art(x.hue)+'<img src="'+x.img+'" alt="'+x.t+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div><div class="body"><h3>'+x.t+'</h3><div class="meta"><span class="pill">'+x.dur[lang]+'</span><span class="pill alt">'+L("cairo")+'</span></div><div class="foot"><span class="price">'+L("from")+' $'+x.p+' <small>'+L("pp")+'</small></span><button class="pick" type="button" aria-pressed="'+(!!picked["s"+i])+'" data-id="s'+i+'">'+(picked["s"+i]?L("picked"):L("pick"))+'</button><a class="btn solid" style="padding:8px 14px" href="'+x.u+'" target="_blank" rel="noopener">'+L("ex_book")+'</a></div></div></article>';
   }).join("");
-  $("#strip").innerHTML = SEE.map(function(s){return '<div class="see">'+art(s.h)+'<span>'+s.k[lang]+'</span></div>'}).join("");
   $("#faqList").innerHTML = FAQ[lang].map(function(q){return '<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join("");
   var keys = [["adults","adults",1],["children","children",0],["infants","infants",0]];
   $("#counters").innerHTML = keys.map(function(k){
@@ -454,7 +427,7 @@ function renderAll(){
   var cur = $("#budget").value || "b2";
   $("#budget").innerHTML = ["b1","b2","b3"].map(function(b){return '<option value="'+b+'"'+(b===cur?" selected":"")+'>'+L(b)+'</option>'}).join("");
 }
-function names(){return TOURS.filter(function(t){return picked[t.id]}).map(function(t){return t.t[lang]})}
+function names(){return SIMSEM.filter(function(x,i){return picked["s"+i]}).map(function(x){return x.t})}
 function build(){
   var n = names();
   $("#pickedNote").textContent = n.length ? L("sel")+n.join(lang==="ar"?"، ":", ") : L("none");
