@@ -168,6 +168,7 @@ footer a:hover{color:var(--ink)}
     <nav class="nav-links" aria-label="Main">
       <a href="#day" data-i18n="nav_day" class="hide-s">Day tours</a>
       <a href="#packages" data-i18n="nav_pk" class="hide-s">Packages</a>
+      <a href="#experiences" data-i18n="nav_ex" class="hide-s">Experiences</a>
       <a href="#faq" data-i18n="nav_faq" class="hide-s">FAQ</a>
       <a href="#request" data-i18n="nav_req" class="tailor">Tailor-made trip</a>
     </nav>
@@ -211,6 +212,14 @@ footer a:hover{color:var(--ink)}
   <div class="wrap">
     <div class="sec-head"><h2 data-i18n="pk_h">Packages</h2><p data-i18n="pk_p">Longer trips with the route, transport and stops planned together.</p></div>
     <div class="grid" id="pkGrid"></div>
+  </div>
+</section>
+
+<section id="experiences" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-i18n="ex_h">My experiences on Simsem</h2><p data-i18n="ex_p">Local experiences I host in Cairo. Open any one to see the full details and book on Simsem.</p></div>
+    <div class="grid" id="exGrid"></div>
+    <p class="note"><a href="https://mysimsem.com/localguide/egypt/abdulrahman-ahmed/" target="_blank" rel="noopener" data-i18n="ex_badge">Verified local host on Simsem · see my profile and reviews</a></p>
   </div>
 </section>
 
@@ -341,6 +350,24 @@ var TOURS = [
    it:{en:["Cairo: Giza and museum","Fly or train to Luxor","Karnak and the west bank","Aswan: Philae and felucca","Return to Cairo"],ar:["القاهرة: الجيزة والمتحف","طيران أو قطار للأقصر","الكرنك والبر الغربي","أسوان: فيلة وفلوكة","العودة للقاهرة"]}}
 ];
 
+var SIMSEM = [
+  {t:"Hidden Gems of Heliopolis: History, Architecture & Flavors",dur:{en:"5 hours",ar:"٥ ساعات"},p:63,
+   img:"https://simemmedia.b-cdn.net/experiences//tours/3jWY2Cd4JS/cover/cover_1768353517789.jpg",
+   u:"https://mysimsem.com/experiences/heliopolis-egypt-tour-baron-palace-local-life/",hue:["#b9722a","#0f4c52"]},
+  {t:"Journey Through Zamalek: History, Art, and Egyptian Elegance",dur:{en:"5 hours",ar:"٥ ساعات"},p:63,
+   img:"https://mysimsem.com/wp-content/uploads/2025/04/9c3fb3b09737afc089c41711dc97a8f3_1744556234910.jpeg",
+   u:"https://mysimsem.com/experiences/zamalek-tour-cairo-culture-nile-abu-el-sid-via-simsem/",hue:["#1f6aa5","#e2a21f"]},
+  {t:"Islamic Cairo Tour: Khan El Khalili Bazaar and Old Cairo Walk",dur:{en:"8 hours",ar:"٨ ساعات"},p:63,
+   img:"https://mysimsem.com/wp-content/uploads/2025/04/processed-E4A5244D-CB8F-4B37-B117-9EB570000CBB.jpeg",
+   u:"https://mysimsem.com/experiences/islamic-cairo-tour-khan-el-khalili-bazaar-old-cairo-walk/",hue:["#0f4c52","#e2a21f"]},
+  {t:"Nile River Kayaking in Cairo",dur:{en:"3 hours",ar:"٣ ساعات"},p:50,
+   img:"https://simemmedia.b-cdn.net/experiences//tours/L4dLKtDxhJ/cover/cover_1768348589522.jpg",
+   u:"https://mysimsem.com/experiences/nile-river-kayaking-in-cairo-best-things-to-do-in-cairo/",hue:["#1f6aa5","#0f4c52"]},
+  {t:"Horseback Ride to Giza's Pyramids: A Desert Adventure",dur:{en:"2 hours",ar:"ساعتان"},p:44,
+   img:"https://mysimsem.com/wp-content/uploads/2024/09/WhatsApp-Image-2024-07-29-at-100050-PM.jpeg",
+   u:"https://mysimsem.com/experiences/pyramids-in-egypt/",hue:["#e2a21f","#0f4c52"]}
+];
+
 var FAQ = {
  en:[["How do I book?","Choose your tours, fill in the form and send the message on WhatsApp. I reply with availability and a price for your group."],
      ["Is the tour private?","Tours are private for your group by default. Small-group options can be arranged on request."],
@@ -371,7 +398,7 @@ var I18N = {
   plan_h:"Request your trip",plan_p:"Fill in the details and send the message on WhatsApp. I reply with availability and a price for your group.",
   l_name:"Your name",l_email:"Email",l_nat:"Nationality",l_date:"Preferred date",l_trav:"Travelers",l_budget:"Budget range",l_lang:"Tour language",l_hotel:"Hotel or area",l_notes:"Anything else",l_msg:"Your message",
   copy:"Copy message",wa:"Send on WhatsApp",fb:"Local guide and tour coordinator based in Cairo, Egypt.",fl:"Tours",fc:"Contact",foot2:"Prices are quoted per group after you send your plan.",
-  details:"Tour details",pick:"Add to my request",picked:"Added",onreq:"Price on request",from:"From",pp:"per person",price_note:"Prices are in US dollars per person for groups of 3 or more. Entrance fees and lunch are paid separately. Smaller groups pay more per person, so send your group size for an exact quote.",
+  details:"Tour details",pick:"Add to my request",picked:"Added",onreq:"Price on request",from:"From",pp:"per person",nav_ex:"Experiences",ex_h:"My experiences on Simsem",ex_p:"Local experiences I host in Cairo. Open any one to see the full details and book on Simsem.",ex_book:"View and book",ex_badge:"Verified local host on Simsem · see my profile and reviews",cairo:"Cairo",price_note:"Prices are in US dollars per person for groups of 3 or more. Entrance fees and lunch are paid separately. Smaller groups pay more per person, so send your group size for an exact quote.",
   adults:"Adults",children:"Children",infants:"Infants",b1:"Budget",b2:"Comfort",b3:"Premium",
   none:"No tours selected yet. Add some from the lists above, or ask for a custom trip.",sel:"Selected: ",copied:"Copied. Paste it into your chat.",copyfail:"Copy is blocked here. Select the text and copy it manually.",
   hello:"Hello, I would like to request a trip in Egypt.",n:"Name",em:"Email",na:"Nationality",tr:"Tours",dt:"Date",gr:"Travelers",ln:"Tour language",bd:"Budget range",ht:"Hotel or area",nt:"Notes",anyd:"Flexible",custom:"Custom trip",thanks:"Please send me availability and a price. Thank you."},
@@ -391,7 +418,7 @@ var I18N = {
   plan_h:"اطلب رحلتك",plan_p:"املا البيانات وابعت الرسالة على واتساب. برد عليك بالمواعيد المتاحة وسعر مجموعتك.",
   l_name:"اسمك",l_email:"الإيميل",l_nat:"الجنسية",l_date:"التاريخ المفضل",l_trav:"المسافرين",l_budget:"نطاق الميزانية",l_lang:"لغة الجولة",l_hotel:"الفندق أو المنطقة",l_notes:"أي ملاحظات",l_msg:"رسالتك",
   copy:"انسخ الرسالة",wa:"ابعت على واتساب",fb:"مرشد محلي ومنسق رحلات في القاهرة، مصر.",fl:"الرحلات",fc:"تواصل",foot2:"الأسعار بتتحدد للمجموعة بعد ما تبعت خطتك.",
-  details:"تفاصيل الرحلة",pick:"ضيفها لطلبي",picked:"تمت الإضافة",onreq:"السعر عند الطلب",from:"من",pp:"للفرد",price_note:"الأسعار بالدولار للفرد لمجموعات من ٣ أفراد فأكتر. تذاكر الدخول والغدا بتتدفع لوحدها. المجموعات الأصغر بتدفع أكتر للفرد، فابعت عدد مجموعتك وأنا أديك سعر دقيق.",
+  details:"تفاصيل الرحلة",pick:"ضيفها لطلبي",picked:"تمت الإضافة",onreq:"السعر عند الطلب",from:"من",pp:"للفرد",nav_ex:"تجارب",ex_h:"تجاربي على سمسم",ex_p:"تجارب محلية بستضيفها في القاهرة. افتح أي واحدة تشوف التفاصيل كاملة وتحجز على سمسم.",ex_book:"التفاصيل والحجز",ex_badge:"مضيف محلي موثّق على سمسم · شوف بروفايلي والتقييمات",cairo:"القاهرة",price_note:"الأسعار بالدولار للفرد لمجموعات من ٣ أفراد فأكتر. تذاكر الدخول والغدا بتتدفع لوحدها. المجموعات الأصغر بتدفع أكتر للفرد، فابعت عدد مجموعتك وأنا أديك سعر دقيق.",
   adults:"بالغين",children:"أطفال",infants:"رضع",b1:"اقتصادي",b2:"مريح",b3:"مميز",
   none:"لسه مختارتش رحلات. ضيف من القوائم فوق، أو اطلب رحلة مخصصة.",sel:"المختار: ",copied:"تم النسخ. الصقها في المحادثة.",copyfail:"النسخ ممنوع هنا. حدد النص وانسخه يدويًا.",
   hello:"أهلًا، عايز أطلب رحلة في مصر.",n:"الاسم",em:"الإيميل",na:"الجنسية",tr:"الرحلات",dt:"التاريخ",gr:"المسافرين",ln:"لغة الجولة",bd:"نطاق الميزانية",ht:"الفندق أو المنطقة",nt:"ملاحظات",anyd:"مرن",custom:"رحلة مخصصة",thanks:"ياريت تبعتلي المواعيد المتاحة والسعر. شكرًا."}
@@ -415,6 +442,9 @@ function card(t){
 function renderAll(){
   $("#dayGrid").innerHTML = TOURS.filter(function(t){return t.kind==="day"}).map(card).join("");
   $("#pkGrid").innerHTML = TOURS.filter(function(t){return t.kind==="pkg"}).map(card).join("");
+  $("#exGrid").innerHTML = SIMSEM.map(function(x){
+    return '<article class="card"><div class="art">'+art(x.hue)+'<img src="'+x.img+'" alt="'+x.t+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div><div class="body"><h3>'+x.t+'</h3><div class="meta"><span class="pill">'+x.dur[lang]+'</span><span class="pill alt">'+L("cairo")+'</span></div><div class="foot"><span class="price">'+L("from")+' $'+x.p+' <small>'+L("pp")+'</small></span><a class="btn solid" style="padding:8px 14px" href="'+x.u+'" target="_blank" rel="noopener">'+L("ex_book")+'</a></div></div></article>';
+  }).join("");
   $("#strip").innerHTML = SEE.map(function(s){return '<div class="see">'+art(s.h)+'<span>'+s.k[lang]+'</span></div>'}).join("");
   $("#faqList").innerHTML = FAQ[lang].map(function(q){return '<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join("");
   var keys = [["adults","adults",1],["children","children",0],["infants","infants",0]];
