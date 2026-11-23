@@ -199,6 +199,13 @@ footer a:hover{color:var(--ink)}
   </div>
 </section>
 
+<section id="more" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-i18n="more_h">More experiences I can arrange</h2><p data-i18n="more_p">Popular things to do in and around Cairo. Add the ones you like to your request and I send a price for your group.</p></div>
+    <div class="grid" id="moreGrid"></div>
+  </div>
+</section>
+
 <section style="padding-top:10px">
   <div class="wrap">
     <div class="tailor-band">
@@ -292,38 +299,428 @@ var SEE = [
 ];
 
 var TOURS = [
-  {id:"giza",p:45,kind:"day",hue:["#e2a21f","#0f4c52"],dur:{en:"Full day",ar:"يوم كامل"},loc:{en:"Giza, Cairo",ar:"الجيزة، القاهرة"},
-   t:{en:"Giza Pyramids and Grand Egyptian Museum",ar:"أهرامات الجيزة والمتحف المصري الكبير"},
-   d:{en:"The Great Pyramid, the Sphinx and the valley temple, then the museum's Tutankhamun galleries.",ar:"الهرم الأكبر وأبو الهول ومعبد الوادي، ثم قاعات توت عنخ آمون بالمتحف."},
-   it:{en:["Early pickup from your hotel","Pyramids plateau and Sphinx","Lunch break","Grand Egyptian Museum","Drop-off at your hotel"],ar:["استلام بدري من الفندق","هضبة الأهرامات وأبو الهول","استراحة غداء","المتحف المصري الكبير","توصيلة للفندق"]}},
-  {id:"saqqara",p:30,kind:"day",hue:["#1f4f8f","#e2a21f"],dur:{en:"Half day",ar:"نصف يوم"},loc:{en:"Saqqara, Memphis",ar:"سقارة، منف"},
-   t:{en:"Saqqara and Memphis",ar:"سقارة ومنف"},
-   d:{en:"The Step Pyramid of Djoser, decorated tombs and the open-air museum at Memphis.",ar:"هرم زوسر المدرج والمقابر الملونة ومتحف منف المفتوح."},
-   it:{en:["Pickup from your hotel","Step Pyramid complex","Decorated tombs","Memphis open-air museum"],ar:["استلام من الفندق","مجمع الهرم المدرج","المقابر الملونة","متحف منف المفتوح"]}},
-  {id:"islamic",p:20,kind:"day",hue:["#0f4c52","#e2a21f"],dur:{en:"Half day",ar:"نصف يوم"},loc:{en:"Old Cairo",ar:"القاهرة القديمة"},
-   t:{en:"Islamic Cairo and Khan el-Khalili",ar:"القاهرة الإسلامية وخان الخليلي"},
-   d:{en:"Mosques and madrasas along Al-Muizz Street, then the bazaar with time for tea and shopping.",ar:"مساجد ومدارس شارع المعز، ثم الخان مع وقت للشاي والتسوق."},
-   it:{en:["Al-Muizz Street on foot","Mosques and madrasas","Khan el-Khalili bazaar","Tea break at a local café"],ar:["مشي في شارع المعز","المساجد والمدارس","سوق خان الخليلي","استراحة شاي في مقهى محلي"]}},
-  {id:"coptic",p:20,kind:"day",hue:["#7a3b2e","#f0d9a0"],dur:{en:"Half day",ar:"نصف يوم"},loc:{en:"Coptic Cairo, Citadel",ar:"القاهرة القبطية، القلعة"},
-   t:{en:"Coptic Cairo and the Citadel",ar:"القاهرة القبطية والقلعة"},
-   d:{en:"The Hanging Church, Ben Ezra Synagogue and Saladin's Citadel with its view across the city.",ar:"الكنيسة المعلقة ومعبد بن عزرا وقلعة صلاح الدين بإطلالتها على المدينة."},
-   it:{en:["Coptic Cairo churches","Ben Ezra Synagogue","Saladin's Citadel and viewpoint"],ar:["كنائس القاهرة القبطية","معبد بن عزرا","قلعة صلاح الدين والإطلالة"]}},
-  {id:"alex",p:50,kind:"day",hue:["#1f6aa5","#e8f1ee"],dur:{en:"Full day",ar:"يوم كامل"},loc:{en:"Alexandria",ar:"الإسكندرية"},
-   t:{en:"Alexandria day trip",ar:"رحلة يوم إلى الإسكندرية"},
-   d:{en:"Corniche drive, Qaitbay Citadel, the Bibliotheca Alexandrina and a seafood lunch by the water.",ar:"الكورنيش وقلعة قايتباي ومكتبة الإسكندرية وغداء سمك على البحر."},
-   it:{en:["Drive from Cairo","Qaitbay Citadel","Bibliotheca Alexandrina","Seafood lunch","Return to Cairo"],ar:["السفر من القاهرة","قلعة قايتباي","مكتبة الإسكندرية","غداء سمك","العودة للقاهرة"]}},
-  {id:"fayoum",p:60,kind:"day",hue:["#2c8a86","#e2a21f"],dur:{en:"Full day",ar:"يوم كامل"},loc:{en:"Fayoum",ar:"الفيوم"},
-   t:{en:"Fayoum oasis and Wadi El Rayan",ar:"واحة الفيوم ووادي الريان"},
-   d:{en:"Waterfalls, desert dunes and Lake Qarun. An easy escape from Cairo for groups and families.",ar:"الشلالات والكثبان الرملية وبحيرة قارون. هروب سهل من القاهرة للمجموعات والعائلات."},
-   it:{en:["Drive to Fayoum","Wadi El Rayan waterfalls","Dunes and lake views","Lunch and return"],ar:["السفر للفيوم","شلالات وادي الريان","الكثبان وإطلالة البحيرة","غداء والعودة"]}},
-  {id:"weekend",p:95,pn:{en:"hotel not included",ar:"بدون الفندق"},kind:"pkg",hue:["#1f6aa5","#e2a21f"],dur:{en:"2 days",ar:"يومان"},loc:{en:"Cairo, Alexandria",ar:"القاهرة، الإسكندرية"},
-   t:{en:"Cairo and Alexandria weekend",ar:"ويك إند القاهرة والإسكندرية"},
-   d:{en:"Day one in Giza and Islamic Cairo, day two on the Mediterranean coast.",ar:"اليوم الأول في الجيزة والقاهرة الإسلامية، والتاني على ساحل المتوسط."},
-   it:{en:["Day 1: Giza and Islamic Cairo","Overnight in Cairo or Alexandria","Day 2: Alexandria highlights","Return to Cairo"],ar:["اليوم ١: الجيزة والقاهرة الإسلامية","مبيت في القاهرة أو الإسكندرية","اليوم ٢: أهم معالم الإسكندرية","العودة للقاهرة"]}},
-  {id:"classic",p:650,pn:{en:"hotels and domestic flights included, twin share",ar:"شامل الفنادق والطيران الداخلي، غرفة مزدوجة"},kind:"pkg",hue:["#b9722a","#0f4c52"],dur:{en:"5 days",ar:"٥ أيام"},loc:{en:"Cairo, Luxor, Aswan",ar:"القاهرة، الأقصر، أسوان"},
-   t:{en:"Classic Egypt: Cairo, Luxor and Aswan",ar:"مصر الكلاسيكية: القاهرة والأقصر وأسوان"},
-   d:{en:"Giza, Karnak, the Valley of the Kings, Philae and a felucca on the Nile. Transport arranged with you.",ar:"الجيزة والكرنك ووادي الملوك وفيلة وفلوكة على النيل. المواصلات بنرتبها معاك."},
-   it:{en:["Cairo: Giza and museum","Fly or train to Luxor","Karnak and the west bank","Aswan: Philae and felucca","Return to Cairo"],ar:["القاهرة: الجيزة والمتحف","طيران أو قطار للأقصر","الكرنك والبر الغربي","أسوان: فيلة وفلوكة","العودة للقاهرة"]}}
+ {
+  "id": "pyramids",
+  "kind": "more",
+  "hue": [
+   "#e2a21f",
+   "#0f4c52"
+  ],
+  "dur": {
+   "en": "Half day",
+   "ar": "نصف يوم"
+  },
+  "loc": {
+   "en": "Giza",
+   "ar": "الجيزة"
+  },
+  "t": {
+   "en": "Giza Pyramids and the Sphinx",
+   "ar": "أهرامات الجيزة وأبو الهول"
+  },
+  "d": {
+   "en": "The Great Pyramid, the Sphinx and the best panorama viewpoint, with the plan shaped around the heat and the crowds.",
+   "ar": "الهرم الأكبر وأبو الهول وأحسن نقطة بانوراما، والخطة متظبطة على الحر والزحمة."
+  },
+  "it": {
+   "en": [
+    "Early pickup from your hotel",
+    "Pyramids plateau",
+    "Panorama viewpoint",
+    "Sphinx and valley temple",
+    "Drop-off at your hotel"
+   ],
+   "ar": [
+    "استلام بدري من الفندق",
+    "هضبة الأهرامات",
+    "نقطة البانوراما",
+    "أبو الهول ومعبد الوادي",
+    "توصيلة للفندق"
+   ]
+  },
+  "tag": {
+   "en": "Classic",
+   "ar": "كلاسيكية"
+  }
+ },
+ {
+  "id": "gem",
+  "kind": "more",
+  "hue": [
+   "#0f4c52",
+   "#e2a21f"
+  ],
+  "dur": {
+   "en": "Half day",
+   "ar": "نصف يوم"
+  },
+  "loc": {
+   "en": "Giza",
+   "ar": "الجيزة"
+  },
+  "t": {
+   "en": "Grand Egyptian Museum",
+   "ar": "المتحف المصري الكبير"
+  },
+  "d": {
+   "en": "A guided walk through the museum's main galleries, with the Tutankhamun collection and the stories behind the objects.",
+   "ar": "جولة بمرشد في أهم قاعات المتحف، مع مجموعة توت عنخ آمون وحكايات القطع."
+  },
+  "it": {
+   "en": [
+    "Meet at the museum or your hotel",
+    "Grand staircase galleries",
+    "Tutankhamun collection",
+    "Free time and café"
+   ],
+   "ar": [
+    "لقاء عند المتحف أو من الفندق",
+    "قاعات السلم الكبير",
+    "مجموعة توت عنخ آمون",
+    "وقت حر وكافيه"
+   ]
+  },
+  "tag": {
+   "en": "Museum",
+   "ar": "متحف"
+  }
+ },
+ {
+  "id": "food",
+  "kind": "more",
+  "hue": [
+   "#b9722a",
+   "#f0d9a0"
+  ],
+  "dur": {
+   "en": "3 to 4 hours",
+   "ar": "٣ إلى ٤ ساعات"
+  },
+  "loc": {
+   "en": "Downtown Cairo",
+   "ar": "وسط البلد"
+  },
+  "t": {
+   "en": "Egyptian street food walk",
+   "ar": "جولة الأكل الشعبي المصري"
+  },
+  "d": {
+   "en": "Taste the dishes Cairenes eat every day, at the places locals actually go. Come hungry.",
+   "ar": "جرّب الأكلات اللي المصريين بياكلوها كل يوم في الأماكن اللي أهلها بيروحوها. تعالى جعان."
+  },
+  "it": {
+   "en": [
+    "Meet in Downtown",
+    "Koshary and ful with ta'meya",
+    "Local sweets stop",
+    "Fresh juice or tea to finish"
+   ],
+   "ar": [
+    "لقاء في وسط البلد",
+    "كشري وفول وطعمية",
+    "وقفة حلويات شعبية",
+    "عصير أو شاي في الآخر"
+   ]
+  },
+  "tag": {
+   "en": "Food",
+   "ar": "أكل"
+  }
+ },
+ {
+  "id": "felucca",
+  "kind": "more",
+  "hue": [
+   "#1f6aa5",
+   "#e2a21f"
+  ],
+  "dur": {
+   "en": "1 to 2 hours",
+   "ar": "١ إلى ٢ ساعة"
+  },
+  "loc": {
+   "en": "Nile, Cairo",
+   "ar": "النيل، القاهرة"
+  },
+  "t": {
+   "en": "Felucca sunset on the Nile",
+   "ar": "فلوكة على النيل وقت الغروب"
+  },
+  "d": {
+   "en": "A relaxed sail on a traditional felucca as the city lights come on. Good for couples, families and small groups.",
+   "ar": "مشوار هادي بفلوكة على النيل مع إضاءة المدينة. مناسب للأزواج والعائلات والمجموعات الصغيرة."
+  },
+  "it": {
+   "en": [
+    "Meet at the felucca dock",
+    "Sail on the Nile",
+    "Sunset and city views",
+    "Return to the dock"
+   ],
+   "ar": [
+    "لقاء عند مرسى الفلوكة",
+    "مشوار على النيل",
+    "الغروب وإطلالة المدينة",
+    "العودة للمرسى"
+   ]
+  },
+  "tag": {
+   "en": "Sunset",
+   "ar": "غروب"
+  }
+ },
+ {
+  "id": "downtown",
+  "kind": "more",
+  "hue": [
+   "#7a3b2e",
+   "#e8c77a"
+  ],
+  "dur": {
+   "en": "3 hours",
+   "ar": "٣ ساعات"
+  },
+  "loc": {
+   "en": "Downtown Cairo",
+   "ar": "وسط البلد"
+  },
+  "t": {
+   "en": "Downtown Cairo walk: old buildings and cafés",
+   "ar": "مشي وسط البلد: عمارات قديمة وقهاوي"
+  },
+  "d": {
+   "en": "Walk the streets of Khedival Cairo, see its old facades and sit in a traditional café.",
+   "ar": "مشي في شوارع القاهرة الخديوية، تشوف العمارات القديمة وتقعد في قهوة بلدي."
+  },
+  "it": {
+   "en": [
+    "Meet at Tahrir or Talaat Harb",
+    "Historic buildings and passages",
+    "Traditional café break"
+   ],
+   "ar": [
+    "لقاء عند التحرير أو طلعت حرب",
+    "عمارات وممرات تاريخية",
+    "استراحة في قهوة بلدي"
+   ]
+  },
+  "tag": {
+   "en": "Walking",
+   "ar": "مشي"
+  }
+ },
+ {
+  "id": "citadel",
+  "kind": "more",
+  "hue": [
+   "#0f4c52",
+   "#e2a21f"
+  ],
+  "dur": {
+   "en": "Half day",
+   "ar": "نصف يوم"
+  },
+  "loc": {
+   "en": "Old Cairo",
+   "ar": "القاهرة القديمة"
+  },
+  "t": {
+   "en": "Citadel and Muhammad Ali Mosque",
+   "ar": "القلعة ومسجد محمد علي"
+  },
+  "d": {
+   "en": "Saladin's Citadel, the Muhammad Ali Mosque and one of the best views across Cairo.",
+   "ar": "قلعة صلاح الدين ومسجد محمد علي وواحدة من أحسن إطلالات القاهرة."
+  },
+  "it": {
+   "en": [
+    "Pickup or meet at the Citadel",
+    "Muhammad Ali Mosque",
+    "Citadel viewpoints",
+    "Optional nearby mosque"
+   ],
+   "ar": [
+    "استلام أو لقاء عند القلعة",
+    "مسجد محمد علي",
+    "نقاط الإطلالة",
+    "مسجد قريب لو حبيت"
+   ]
+  },
+  "tag": {
+   "en": "Culture",
+   "ar": "ثقافة"
+  }
+ },
+ {
+  "id": "coptic",
+  "kind": "more",
+  "hue": [
+   "#7a3b2e",
+   "#f0d9a0"
+  ],
+  "dur": {
+   "en": "Half day",
+   "ar": "نصف يوم"
+  },
+  "loc": {
+   "en": "Coptic Cairo",
+   "ar": "مصر القديمة"
+  },
+  "t": {
+   "en": "Coptic Cairo",
+   "ar": "القاهرة القبطية"
+  },
+  "d": {
+   "en": "The Hanging Church, Ben Ezra Synagogue and the old churches in one quiet walk.",
+   "ar": "الكنيسة المعلقة ومعبد بن عزرا والكنائس القديمة في مشوار هادي."
+  },
+  "it": {
+   "en": [
+    "Meet at Coptic Cairo",
+    "Hanging Church",
+    "Ben Ezra Synagogue",
+    "Old churches and lanes"
+   ],
+   "ar": [
+    "لقاء في مصر القديمة",
+    "الكنيسة المعلقة",
+    "معبد بن عزرا",
+    "الكنائس والحواري القديمة"
+   ]
+  },
+  "tag": {
+   "en": "Culture",
+   "ar": "ثقافة"
+  }
+ },
+ {
+  "id": "saqqara",
+  "kind": "more",
+  "hue": [
+   "#1f4f8f",
+   "#e2a21f"
+  ],
+  "dur": {
+   "en": "Half day",
+   "ar": "نصف يوم"
+  },
+  "loc": {
+   "en": "Saqqara, Memphis",
+   "ar": "سقارة، منف"
+  },
+  "t": {
+   "en": "Saqqara and Memphis",
+   "ar": "سقارة ومنف"
+  },
+  "d": {
+   "en": "The Step Pyramid of Djoser and the open-air museum at Memphis. Quieter than Giza.",
+   "ar": "هرم زوسر المدرج ومتحف منف المفتوح. أهدى من الجيزة."
+  },
+  "it": {
+   "en": [
+    "Pickup from your hotel",
+    "Step Pyramid complex",
+    "Decorated tombs",
+    "Memphis open-air museum"
+   ],
+   "ar": [
+    "استلام من الفندق",
+    "مجمع الهرم المدرج",
+    "المقابر الملونة",
+    "متحف منف المفتوح"
+   ]
+  },
+  "tag": {
+   "en": "Quiet",
+   "ar": "هادئة"
+  }
+ },
+ {
+  "id": "alex",
+  "kind": "more",
+  "hue": [
+   "#1f6aa5",
+   "#e8f1ee"
+  ],
+  "dur": {
+   "en": "Full day",
+   "ar": "يوم كامل"
+  },
+  "loc": {
+   "en": "Alexandria",
+   "ar": "الإسكندرية"
+  },
+  "t": {
+   "en": "Alexandria day trip",
+   "ar": "رحلة يوم إلى الإسكندرية"
+  },
+  "d": {
+   "en": "The Mediterranean coast in a day: Qaitbay Citadel, the library and a seafood lunch.",
+   "ar": "ساحل المتوسط في يوم: قلعة قايتباي والمكتبة وغداء سمك."
+  },
+  "it": {
+   "en": [
+    "Early drive from Cairo",
+    "Qaitbay Citadel",
+    "Bibliotheca Alexandrina",
+    "Seafood lunch",
+    "Return to Cairo"
+   ],
+   "ar": [
+    "سفر بدري من القاهرة",
+    "قلعة قايتباي",
+    "مكتبة الإسكندرية",
+    "غداء سمك",
+    "العودة للقاهرة"
+   ]
+  },
+  "tag": {
+   "en": "Weekend",
+   "ar": "ويك إند"
+  }
+ },
+ {
+  "id": "fayoum",
+  "kind": "more",
+  "hue": [
+   "#2c8a86",
+   "#e2a21f"
+  ],
+  "dur": {
+   "en": "Full day",
+   "ar": "يوم كامل"
+  },
+  "loc": {
+   "en": "Fayoum",
+   "ar": "الفيوم"
+  },
+  "t": {
+   "en": "Fayoum oasis day trip",
+   "ar": "رحلة يوم إلى واحة الفيوم"
+  },
+  "d": {
+   "en": "Waterfalls, dunes and Lake Qarun. An easy escape from Cairo for groups and families.",
+   "ar": "شلالات وكثبان وبحيرة قارون. هروب سهل من القاهرة للمجموعات والعائلات."
+  },
+  "it": {
+   "en": [
+    "Drive to Fayoum",
+    "Wadi El Rayan waterfalls",
+    "Dunes and lake views",
+    "Lunch and return"
+   ],
+   "ar": [
+    "سفر للفيوم",
+    "شلالات وادي الريان",
+    "الكثبان وإطلالة البحيرة",
+    "غداء والعودة"
+   ]
+  },
+  "tag": {
+   "en": "Weekend",
+   "ar": "ويك إند"
+  }
+ }
 ];
 
 var SIMSEM = [
@@ -374,7 +771,7 @@ var I18N = {
   plan_h:"Request your trip",plan_p:"Fill in the details and send the message on WhatsApp. I reply with availability and a price for your group.",
   l_name:"Your name",l_email:"Email",l_nat:"Nationality",l_date:"Preferred date",l_trav:"Travelers",l_budget:"Budget range",l_lang:"Tour language",l_hotel:"Hotel or area",l_notes:"Anything else",l_msg:"Your message",
   copy:"Copy message",wa:"Send on WhatsApp",fb:"Local guide and tour coordinator based in Cairo, Egypt.",fl:"Tours",fc:"Contact",foot2:"Prices are quoted per group after you send your plan.",
-  details:"Tour details",pick:"Add to my request",picked:"Added",onreq:"Price on request",from:"From",pp:"per person",nav_ex:"Experiences",ex_h:"My experiences on Simsem",ex_p:"Local experiences I host in Cairo. Open any one to see the full details and book on Simsem.",ex_book:"View and book",ex_badge:"Verified local host on Simsem · see my profile and reviews",cairo:"Cairo",price_note:"Prices are in US dollars per person for groups of 3 or more. Entrance fees and lunch are paid separately. Smaller groups pay more per person, so send your group size for an exact quote.",
+  details:"Tour details",pick:"Add to my request",picked:"Added",onreq:"Price on request",from:"From",pp:"per person",nav_ex:"Experiences",more_h:"More experiences I can arrange",more_p:"Popular things to do in and around Cairo. Add the ones you like to your request and I send a price for your group.",ex_h:"My experiences on Simsem",ex_p:"Local experiences I host in Cairo. Open any one to see the full details and book on Simsem.",ex_book:"View and book",ex_badge:"Verified local host on Simsem · see my profile and reviews",cairo:"Cairo",price_note:"Prices are in US dollars per person for groups of 3 or more. Entrance fees and lunch are paid separately. Smaller groups pay more per person, so send your group size for an exact quote.",
   adults:"Adults",children:"Children",infants:"Infants",b1:"Budget",b2:"Comfort",b3:"Premium",
   none:"No tours selected yet. Add some from the lists above, or ask for a custom trip.",sel:"Selected: ",copied:"Copied. Paste it into your chat.",copyfail:"Copy is blocked here. Select the text and copy it manually.",
   hello:"Hello, I would like to request a trip in Egypt.",n:"Name",em:"Email",na:"Nationality",tr:"Tours",dt:"Date",gr:"Travelers",ln:"Tour language",bd:"Budget range",ht:"Hotel or area",nt:"Notes",anyd:"Flexible",custom:"Custom trip",thanks:"Please send me availability and a price. Thank you."},
@@ -394,7 +791,7 @@ var I18N = {
   plan_h:"اطلب رحلتك",plan_p:"املا البيانات وابعت الرسالة على واتساب. برد عليك بالمواعيد المتاحة وسعر مجموعتك.",
   l_name:"اسمك",l_email:"الإيميل",l_nat:"الجنسية",l_date:"التاريخ المفضل",l_trav:"المسافرين",l_budget:"نطاق الميزانية",l_lang:"لغة الجولة",l_hotel:"الفندق أو المنطقة",l_notes:"أي ملاحظات",l_msg:"رسالتك",
   copy:"انسخ الرسالة",wa:"ابعت على واتساب",fb:"مرشد محلي ومنسق رحلات في القاهرة، مصر.",fl:"الرحلات",fc:"تواصل",foot2:"الأسعار بتتحدد للمجموعة بعد ما تبعت خطتك.",
-  details:"تفاصيل الرحلة",pick:"ضيفها لطلبي",picked:"تمت الإضافة",onreq:"السعر عند الطلب",from:"من",pp:"للفرد",nav_ex:"تجارب",ex_h:"تجاربي على سمسم",ex_p:"تجارب محلية بستضيفها في القاهرة. افتح أي واحدة تشوف التفاصيل كاملة وتحجز على سمسم.",ex_book:"التفاصيل والحجز",ex_badge:"مضيف محلي موثّق على سمسم · شوف بروفايلي والتقييمات",cairo:"القاهرة",price_note:"الأسعار بالدولار للفرد لمجموعات من ٣ أفراد فأكتر. تذاكر الدخول والغدا بتتدفع لوحدها. المجموعات الأصغر بتدفع أكتر للفرد، فابعت عدد مجموعتك وأنا أديك سعر دقيق.",
+  details:"تفاصيل الرحلة",pick:"ضيفها لطلبي",picked:"تمت الإضافة",onreq:"السعر عند الطلب",from:"من",pp:"للفرد",nav_ex:"تجارب",more_h:"تجارب تانية أقدر أرتبها",more_p:"حاجات شعبية يتعمل في القاهرة وحواليها. ضيف اللي يعجبك لطلبك وأبعتلك سعر مجموعتك.",ex_h:"تجاربي على سمسم",ex_p:"تجارب محلية بستضيفها في القاهرة. افتح أي واحدة تشوف التفاصيل كاملة وتحجز على سمسم.",ex_book:"التفاصيل والحجز",ex_badge:"مضيف محلي موثّق على سمسم · شوف بروفايلي والتقييمات",cairo:"القاهرة",price_note:"الأسعار بالدولار للفرد لمجموعات من ٣ أفراد فأكتر. تذاكر الدخول والغدا بتتدفع لوحدها. المجموعات الأصغر بتدفع أكتر للفرد، فابعت عدد مجموعتك وأنا أديك سعر دقيق.",
   adults:"بالغين",children:"أطفال",infants:"رضع",b1:"اقتصادي",b2:"مريح",b3:"مميز",
   none:"لسه مختارتش رحلات. ضيف من القوائم فوق، أو اطلب رحلة مخصصة.",sel:"المختار: ",copied:"تم النسخ. الصقها في المحادثة.",copyfail:"النسخ ممنوع هنا. حدد النص وانسخه يدويًا.",
   hello:"أهلًا، عايز أطلب رحلة في مصر.",n:"الاسم",em:"الإيميل",na:"الجنسية",tr:"الرحلات",dt:"التاريخ",gr:"المسافرين",ln:"لغة الجولة",bd:"نطاق الميزانية",ht:"الفندق أو المنطقة",nt:"ملاحظات",anyd:"مرن",custom:"رحلة مخصصة",thanks:"ياريت تبعتلي المواعيد المتاحة والسعر. شكرًا."}
@@ -413,9 +810,10 @@ function card(t){
     '<div class="meta"><span class="pill">'+t.dur[lang]+'</span><span class="pill alt">'+t.loc[lang]+'</span></div>'+
     '<p>'+t.d[lang]+'</p>'+
     '<details class="it"><summary>'+L("details")+'</summary><ul>'+t.it[lang].map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul></details>'+
-    '<div class="foot"><span class="price">'+L("from")+' $'+t.p+' <small>'+L("pp")+'</small>'+(t.pn?'<small class="pn">'+t.pn[lang]+'</small>':'')+'</span><button class="pick" type="button" aria-pressed="'+on+'" data-id="'+t.id+'">'+(on?L("picked"):L("pick"))+'</button></div></div></article>';
+    '<div class="foot"><span class="price">'+(t.p?L("from")+' $'+t.p+' <small>'+L("pp")+'</small>':L("onreq"))+(t.pn?'<small class="pn">'+t.pn[lang]+'</small>':'')+'</span><button class="pick" type="button" aria-pressed="'+on+'" data-id="'+t.id+'">'+(on?L("picked"):L("pick"))+'</button></div></div></article>';
 }
 function renderAll(){
+  $("#moreGrid").innerHTML = TOURS.map(card).join("");
   $("#exGrid").innerHTML = SIMSEM.map(function(x,i){
     return '<article class="card"><div class="art">'+art(x.hue)+'<img src="'+x.img+'" alt="'+x.t+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div><div class="body"><h3>'+x.t+'</h3><div class="meta"><span class="pill">'+x.dur[lang]+'</span><span class="pill alt">'+L("cairo")+'</span></div><div class="foot"><span class="price">'+L("from")+' $'+x.p+' <small>'+L("pp")+'</small></span><button class="pick" type="button" aria-pressed="'+(!!picked["s"+i])+'" data-id="s'+i+'">'+(picked["s"+i]?L("picked"):L("pick"))+'</button><a class="btn solid" style="padding:8px 14px" href="'+x.u+'" target="_blank" rel="noopener">'+L("ex_book")+'</a></div></div></article>';
   }).join("");
@@ -427,7 +825,7 @@ function renderAll(){
   var cur = $("#budget").value || "b2";
   $("#budget").innerHTML = ["b1","b2","b3"].map(function(b){return '<option value="'+b+'"'+(b===cur?" selected":"")+'>'+L(b)+'</option>'}).join("");
 }
-function names(){return SIMSEM.filter(function(x,i){return picked["s"+i]}).map(function(x){return x.t})}
+function names(){return TOURS.filter(function(t){return picked[t.id]}).map(function(t){return t.t[lang]}).concat(SIMSEM.filter(function(x,i){return picked["s"+i]}).map(function(x){return x.t}))}
 function build(){
   var n = names();
   $("#pickedNote").textContent = n.length ? L("sel")+n.join(lang==="ar"?"، ":", ") : L("none");
