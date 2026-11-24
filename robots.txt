@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /trip.html
+
+Sitemap: https://egyptguides.github.io/sitemap.xml
