@@ -164,6 +164,9 @@ details.credits summary{cursor:pointer;font-weight:700}
 details.credits ul{margin:8px 0 0;padding-inline-start:18px}
 @media (prefers-reduced-motion:no-preference){.card,.program{transition:transform .2s,box-shadow .2s}.card:hover,.program:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(15,47,51,.12)}}
 @media(max-width:480px){.counters{grid-template-columns:repeat(3,minmax(0,1fr))}.ctr .ctl{gap:4px}}
+.promo-band{background:var(--sun);color:#0f2f33;}
+.promo-band .wrap{padding-top:12px;padding-bottom:12px;}
+.promo-band p{margin:0;font-weight:700;text-align:center;font-size:15px;line-height:1.5;}
 </style>
 </head>
 <body>
@@ -209,6 +212,10 @@ details.credits ul{margin:8px 0 0;padding-inline-start:18px}
       <a class="btn ghost" href="#programs" data-i18n="cta3">See trips and programmes</a>
     </div>
   </div>
+</div>
+
+<div class="promo-band" id="promoBand" hidden>
+  <div class="wrap"><p data-i18n="promo">Book any tour by 31 December 2026 and get 25% off. You can take your tour after December too.</p></div>
 </div>
 
 <section style="padding-top:34px;padding-bottom:10px" aria-label="Must-sees">
@@ -1455,7 +1462,7 @@ var I18N = {
 Object.assign(I18N.en, {
   nav_prog:"Programmes", cta3:"See trips and programmes",
   kick_book:"Bookable online", kick_day:"In and around Cairo", kick_prog:"One-day programmes",
-  prog_h:"Trips and tour programmes", prog_p:"Ready-made one-day programmes. Every programme is a starting point: I adjust the stops and pace around your group, then send a clear price.",
+  prog_h:"Trips and tour programmes", prog_p:"Ready-made one-day programmes. Every programme is a starting point: I adjust the stops and pace around your group, then send a clear price.", promo:"Book any tour by 31 December 2026 and get 25% off. You can take your tour after December too.",
   tips_h:"Street smarts for visitors to Egypt", tips_p:"Nine habits that make your trip smoother: prices, tips, dress, photos and getting around.", tips_b:"Read the travel tips",
   credits:"Photo credits", days_lbl:"days",
   cat_hist:"History and museums", cat_food:"Food and local life", cat_out:"Nile and outdoors", cat_trip:"Day trips from Cairo"
@@ -1463,7 +1470,7 @@ Object.assign(I18N.en, {
 Object.assign(I18N.de, {
   nav_prog:"Programme", cta3:"Reisen und Programme ansehen",
   kick_book:"Online buchbar", kick_day:"In und um Kairo", kick_prog:"Tagesprogramme",
-  prog_h:"Reisen und Tourprogramme", prog_p:"Fertige Tagesprogramme. Jedes Programm ist ein Ausgangspunkt: Ich passe Stopps und Tempo an eure Gruppe an und schicke dann einen klaren Preis.",
+  prog_h:"Reisen und Tourprogramme", prog_p:"Fertige Tagesprogramme. Jedes Programm ist ein Ausgangspunkt: Ich passe Stopps und Tempo an eure Gruppe an und schicke dann einen klaren Preis.", promo:"Buche eine beliebige Tour bis zum 31. Dezember 2026 und spare 25 %. Deine Tour kann auch nach Dezember stattfinden.",
   tips_h:"Praxistipps für Ägypten-Besucher", tips_p:"Neun Gewohnheiten, die deine Reise entspannter machen: Preise, Trinkgeld, Kleidung, Fotos und Fortbewegung.", tips_b:"Reisetipps lesen",
   credits:"Fotonachweise", days_lbl:"Tage",
   cat_hist:"Geschichte und Museen", cat_food:"Essen und Alltagsleben", cat_out:"Nil und Natur", cat_trip:"Tagesausflüge ab Kairo"
@@ -1471,7 +1478,7 @@ Object.assign(I18N.de, {
 Object.assign(I18N.ar, {
   nav_prog:"البرامج", cta3:"شوف الرحلات والبرامج",
   kick_book:"احجز أونلاين", kick_day:"في القاهرة وحواليها", kick_prog:"برامج يوم واحد",
-  prog_h:"الرحلات والبرامج السياحية", prog_p:"برامج جاهزة ليوم واحد. كل برنامج نقطة بداية: بظبط المحطات والإيقاع على مجموعتك، وبعدها أبعتلك سعر واضح.",
+  prog_h:"الرحلات والبرامج السياحية", prog_p:"برامج جاهزة ليوم واحد. كل برنامج نقطة بداية: بظبط المحطات والإيقاع على مجموعتك، وبعدها أبعتلك سعر واضح.", promo:"احجز أي جولة لحد ٣١ ديسمبر ٢٠٢٦ وخد خصم ٢٥٪. ينفع موعد جولتك يكون بعد ديسمبر كمان.",
   tips_h:"نصايح الشارع لزوار مصر", tips_p:"٩ عادات بتسهّل رحلتك: الأسعار والبقشيش واللبس والصور والتنقل.", tips_b:"اقرأ نصايح السفر",
   credits:"حقوق الصور", days_lbl:"أيام",
   cat_hist:"تاريخ ومتاحف", cat_food:"أكل وحياة محلية", cat_out:"النيل والهواء الطلق", cat_trip:"رحلات يوم من القاهرة"
@@ -1580,6 +1587,7 @@ function applyLang(){
   renderAll(); build();
 }
 document.querySelectorAll(".lang-chip").forEach(function(b){b.addEventListener("click", function(){lang=b.dataset.lang; applyLang();});});
+(function(){var d=new Intl.DateTimeFormat("en-CA",{timeZone:"Africa/Cairo"}).format(new Date()); if(d<="2026-12-31"){var b=document.getElementById("promoBand"); if(b) b.hidden=false;}})();
 $("#themeBtn").addEventListener("click", function(){
   var r = document.documentElement, cur = r.getAttribute("data-theme");
   var dark = cur ? cur==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
