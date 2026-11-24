@@ -379,49 +379,52 @@ var CAT_ORDER = ["hist","food","out","trip"];
 
 var PROGRAMS = [
  {
-  id:"prog-cairo3",
+  id:"prog-pyramids-gem",
   img:"images/11-gem.jpg",
-  days:{en:"3 days",ar:"٣ أيام",de:"3 Tage"},
-  t:{en:"Cairo essentials in 3 days",ar:"أساسيات القاهرة في ٣ أيام",de:"Kairo-Essenz in 3 Tagen"},
-  d:{en:"The classic first visit: pyramids, museums, old Cairo and the Nile, paced so you see a lot without rushing.",ar:"الزيارة الكلاسيكية الأولى: أهرامات ومتاحف والقاهرة القديمة والنيل، بإيقاع يخليك تشوف كتير من غير استعجال.",de:"Der klassische erste Besuch: Pyramiden, Museen, Alt-Kairo und der Nil – so getaktet, dass du viel siehst, ohne zu hetzen."},
-  plan:{
-   en:["Day 1: Giza Pyramids and the Sphinx, then the Grand Egyptian Museum",
-       "Day 2: Citadel and Muhammad Ali Mosque, then Khan el-Khalili and the Old Cairo walk",
-       "Day 3: Coptic Cairo, Downtown walk, and a felucca sunset on the Nile"],
-   ar:["اليوم ١: أهرامات الجيزة وأبو الهول، وبعدها المتحف المصري الكبير",
-       "اليوم ٢: قلعة صلاح الدين ومسجد محمد علي، وبعدها خان الخليلي وجولة القاهرة القديمة",
-       "اليوم ٣: القاهرة القبطية، جولة وسط البلد، وفلوكة وقت الغروب في النيل"],
-   de:["Tag 1: Pyramiden von Gizeh und die Sphinx, danach das Große Ägyptische Museum","Tag 2: Zitadelle und Muhammad-Ali-Moschee, danach Khan el-Khalili und der Alt-Kairo-Rundgang","Tag 3: Koptisches Kairo, Spaziergang durch die Innenstadt und Feluke zum Sonnenuntergang"]}
+  days:{en:"1 day",ar:"يوم واحد",de:"1 Tag"},
+  t:{en:"Giza Pyramids and the Grand Egyptian Museum",ar:"أهرامات الجيزة والمتحف المصري الكبير",de:"Pyramiden von Gizeh und das Große Ägyptische Museum"},
+  d:{en:"Giza Pyramids and the Sphinx, then the Grand Egyptian Museum.",ar:"أهرامات الجيزة وأبو الهول، وبعدها المتحف المصري الكبير.",de:"Pyramiden von Gizeh und die Sphinx, danach das Große Ägyptische Museum."},
+  plan:{en:[],ar:[],de:[]}
  },
  {
-  id:"prog-cairo-alex4",
+  id:"prog-citadel-khan",
+  img:"images/7-citadel.jpg",
+  days:{en:"1 day",ar:"يوم واحد",de:"1 Tag"},
+  t:{en:"Citadel, Khan el-Khalili and Old Cairo",ar:"القلعة وخان الخليلي والقاهرة القديمة",de:"Zitadelle, Khan el-Khalili und Alt-Kairo"},
+  d:{en:"The Citadel and Muhammad Ali Mosque, then Khan el-Khalili and the Old Cairo walk.",ar:"قلعة صلاح الدين ومسجد محمد علي، وبعدها خان الخليلي وجولة القاهرة القديمة.",de:"Zitadelle und Muhammad-Ali-Moschee, danach Khan el-Khalili und der Alt-Kairo-Rundgang."},
+  plan:{en:[],ar:[],de:[]}
+ },
+ {
+  id:"prog-coptic-felucca",
+  img:"images/10-felucca-nile.jpg",
+  days:{en:"1 day",ar:"يوم واحد",de:"1 Tag"},
+  t:{en:"Coptic Cairo, Downtown and a Nile felucca",ar:"القاهرة القبطية ووسط البلد وفلوكة في النيل",de:"Koptisches Kairo, Innenstadt und Nil-Feluke"},
+  d:{en:"Coptic Cairo, a Downtown walk, and a felucca sunset on the Nile.",ar:"القاهرة القبطية، جولة وسط البلد، وفلوكة وقت الغروب في النيل.",de:"Koptisches Kairo, Spaziergang durch die Innenstadt und Feluke zum Sonnenuntergang auf dem Nil."},
+  plan:{en:[],ar:[],de:[]}
+ },
+ {
+  id:"prog-alexandria",
   img:"images/3-alexandria.jpg",
-  days:{en:"4 days",ar:"٤ أيام",de:"4 Tage"},
-  t:{en:"Cairo and Alexandria in 4 days",ar:"القاهرة وإسكندرية في ٤ أيام",de:"Kairo und Alexandrien in 4 Tagen"},
-  d:{en:"Cairo's highlights plus a full day on the Mediterranean in Alexandria.",ar:"أهم معالم القاهرة مع يوم كامل على البحر المتوسط في إسكندرية.",de:"Kairos Highlights plus ein ganzer Tag am Mittelmeer in Alexandrien."},
-  plan:{
-   en:["Day 1: Giza Pyramids and the Sphinx, then the Grand Egyptian Museum",
-       "Day 2: Citadel, Khan el-Khalili and the Old Cairo walk",
-       "Day 3: Alexandria day trip",
-       "Day 4: Saqqara and Memphis, then an Egyptian street food walk"],
-   ar:["اليوم ١: أهرامات الجيزة وأبو الهول، وبعدها المتحف المصري الكبير",
-       "اليوم ٢: القلعة وخان الخليلي وجولة القاهرة القديمة",
-       "اليوم ٣: رحلة يوم لإسكندرية",
-       "اليوم ٤: سقارة وممفيس، وبعدها جولة أكل شارع مصري"],
-   de:["Tag 1: Pyramiden von Gizeh und die Sphinx, danach das Große Ägyptische Museum","Tag 2: Zitadelle, Khan el-Khalili und der Alt-Kairo-Rundgang","Tag 3: Tagesausflug nach Alexandrien","Tag 4: Sakkara und Memphis, danach ein Streetfood-Rundgang"]}
+  days:{en:"1 day",ar:"يوم واحد",de:"1 Tag"},
+  t:{en:"Alexandria day trip",ar:"رحلة يوم لإسكندرية",de:"Tagesausflug nach Alexandrien"},
+  d:{en:"A full day on the Mediterranean in Alexandria.",ar:"يوم كامل على البحر المتوسط في إسكندرية.",de:"Ein ganzer Tag am Mittelmeer in Alexandrien."},
+  plan:{en:[],ar:[],de:[]}
  },
  {
-  id:"prog-fayoum2",
+  id:"prog-saqqara-memphis",
+  img:"images/17-saqqara.jpg",
+  days:{en:"1 day",ar:"يوم واحد",de:"1 Tag"},
+  t:{en:"Saqqara, Memphis and street food",ar:"سقارة وممفيس وأكل الشارع",de:"Sakkara, Memphis und Streetfood"},
+  d:{en:"Saqqara and Memphis, then an Egyptian street food walk.",ar:"سقارة وممفيس، وبعدها جولة أكل شارع مصري.",de:"Sakkara und Memphis, danach ein Streetfood-Rundgang."},
+  plan:{en:[],ar:[],de:[]}
+ },
+ {
+  id:"prog-fayoum",
   img:"images/9-fayoum.jpg",
-  days:{en:"2 days",ar:"يومان",de:"2 Tage"},
-  t:{en:"Cairo and Fayoum oasis weekend",ar:"ويك إند القاهرة وواحة الفيوم",de:"Wochenende Kairo und Fayum-Oase"},
-  d:{en:"A short escape: the pyramids on day one, waterfalls and desert lake views in Fayoum on day two.",ar:"هروب قصير: الأهرامات أول يوم، وشلالات وبحيرة الفيوم تاني يوم.",de:"Ein kurzer Tapetenwechsel: die Pyramiden am ersten Tag, Wasserfälle und Wüstensee in Fayum am zweiten."},
-  plan:{
-   en:["Day 1: Giza Pyramids and the Sphinx",
-       "Day 2: Fayoum oasis day trip: Wadi El Rayan waterfalls, dunes and lake views"],
-   ar:["اليوم ١: أهرامات الجيزة وأبو الهول",
-       "اليوم ٢: رحلة يوم لواحة الفيوم: شلالات وادي الريان والكثبان وإطلالة البحيرة"],
-   de:["Tag 1: Pyramiden von Gizeh und die Sphinx","Tag 2: Tagesausflug zur Fayum-Oase: Wadi-El-Rayan-Wasserfälle, Dünen und Seeblick"]}
+  days:{en:"1 day",ar:"يوم واحد",de:"1 Tag"},
+  t:{en:"Fayoum oasis day trip",ar:"رحلة يوم لواحة الفيوم",de:"Tagesausflug zur Fayum-Oase"},
+  d:{en:"Wadi El Rayan waterfalls, dunes and lake views in the Fayoum oasis.",ar:"شلالات وادي الريان والكثبان وإطلالة البحيرة في واحة الفيوم.",de:"Wadi-El-Rayan-Wasserfälle, Dünen und Seeblick in der Fayum-Oase."},
+  plan:{en:[],ar:[],de:[]}
  }
 ];
 
@@ -1451,24 +1454,24 @@ var I18N = {
 
 Object.assign(I18N.en, {
   nav_prog:"Programmes", cta3:"See trips and programmes",
-  kick_book:"Bookable online", kick_day:"In and around Cairo", kick_prog:"Multi-day",
-  prog_h:"Trips and tour programmes", prog_p:"Ready-made routes that combine the day tours into one trip. Every programme is a starting point: I adjust the days, stops and pace around your group, then send a clear price.",
+  kick_book:"Bookable online", kick_day:"In and around Cairo", kick_prog:"One-day programmes",
+  prog_h:"Trips and tour programmes", prog_p:"Ready-made one-day programmes. Every programme is a starting point: I adjust the stops and pace around your group, then send a clear price.",
   tips_h:"Street smarts for visitors to Egypt", tips_p:"Nine habits that make your trip smoother: prices, tips, dress, photos and getting around.", tips_b:"Read the travel tips",
   credits:"Photo credits", days_lbl:"days",
   cat_hist:"History and museums", cat_food:"Food and local life", cat_out:"Nile and outdoors", cat_trip:"Day trips from Cairo"
 });
 Object.assign(I18N.de, {
   nav_prog:"Programme", cta3:"Reisen und Programme ansehen",
-  kick_book:"Online buchbar", kick_day:"In und um Kairo", kick_prog:"Mehrtägig",
-  prog_h:"Reisen und Tourprogramme", prog_p:"Fertige Routen, die die Tagestouren zu einer Reise verbinden. Jedes Programm ist ein Ausgangspunkt: Ich passe Tage, Stopps und Tempo an eure Gruppe an und schicke dann einen klaren Preis.",
+  kick_book:"Online buchbar", kick_day:"In und um Kairo", kick_prog:"Tagesprogramme",
+  prog_h:"Reisen und Tourprogramme", prog_p:"Fertige Tagesprogramme. Jedes Programm ist ein Ausgangspunkt: Ich passe Stopps und Tempo an eure Gruppe an und schicke dann einen klaren Preis.",
   tips_h:"Praxistipps für Ägypten-Besucher", tips_p:"Neun Gewohnheiten, die deine Reise entspannter machen: Preise, Trinkgeld, Kleidung, Fotos und Fortbewegung.", tips_b:"Reisetipps lesen",
   credits:"Fotonachweise", days_lbl:"Tage",
   cat_hist:"Geschichte und Museen", cat_food:"Essen und Alltagsleben", cat_out:"Nil und Natur", cat_trip:"Tagesausflüge ab Kairo"
 });
 Object.assign(I18N.ar, {
   nav_prog:"البرامج", cta3:"شوف الرحلات والبرامج",
-  kick_book:"احجز أونلاين", kick_day:"في القاهرة وحواليها", kick_prog:"عدة أيام",
-  prog_h:"الرحلات والبرامج السياحية", prog_p:"مسارات جاهزة بتجمع رحلات اليوم في رحلة واحدة. كل برنامج نقطة بداية: بظبط الأيام والمحطات والإيقاع على مجموعتك، وبعدها أبعتلك سعر واضح.",
+  kick_book:"احجز أونلاين", kick_day:"في القاهرة وحواليها", kick_prog:"برامج يوم واحد",
+  prog_h:"الرحلات والبرامج السياحية", prog_p:"برامج جاهزة ليوم واحد. كل برنامج نقطة بداية: بظبط المحطات والإيقاع على مجموعتك، وبعدها أبعتلك سعر واضح.",
   tips_h:"نصايح الشارع لزوار مصر", tips_p:"٩ عادات بتسهّل رحلتك: الأسعار والبقشيش واللبس والصور والتنقل.", tips_b:"اقرأ نصايح السفر",
   credits:"حقوق الصور", days_lbl:"أيام",
   cat_hist:"تاريخ ومتاحف", cat_food:"أكل وحياة محلية", cat_out:"النيل والهواء الطلق", cat_trip:"رحلات يوم من القاهرة"
@@ -1520,7 +1523,7 @@ function programCard(p){
   var on = !!picked[p.id];
   return '<article class="program"><div class="art"><img src="'+p.img+'" alt="'+p.t[lang]+'" loading="lazy"><span class="days">'+p.days[lang]+'</span></div><div class="body"><h3>'+p.t[lang]+'</h3>'+
     '<p>'+p.d[lang]+'</p>'+
-    '<ol class="plan">'+p.plan[lang].map(function(x){return '<li>'+x+'</li>'}).join("")+'</ol>'+
+    (p.plan[lang].length?'<ol class="plan">'+p.plan[lang].map(function(x){return '<li>'+x+'</li>'}).join("")+'</ol>':'')+
     '<div class="foot"><span class="price">'+L("onreq")+'</span><button class="pick" type="button" aria-pressed="'+on+'" data-id="'+p.id+'">'+(on?L("picked"):L("pick"))+'</button></div></div></article>';
 }
 function renderAll(){
