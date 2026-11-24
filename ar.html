@@ -1613,8 +1613,11 @@ $("#copyBtn").addEventListener("click", function(){
 $("#creditsList").innerHTML = CREDITS.map(function(c){
   return '<li><a href="'+c.u+'" target="_blank" rel="noopener">'+c.t+'</a> — '+c.by+', '+c.lic+'</li>';
 }).join("");
-document.getElementById("toTop").addEventListener("click", function(){ window.scrollTo({top:0, behavior:"smooth"}); });
-document.getElementById("toBottom").addEventListener("click", function(){ window.scrollTo({top:document.body.scrollHeight, behavior:"smooth"}); });
+window.addEventListener("DOMContentLoaded", function(){
+  var tt=document.getElementById("toTop"), tb=document.getElementById("toBottom");
+  if(tt){tt.addEventListener("click", function(){ window.scrollTo({top:0, behavior:"smooth"}); });}
+  if(tb){tb.addEventListener("click", function(){ window.scrollTo({top:document.body.scrollHeight, behavior:"smooth"}); });}
+});
 applyLang();
 </script>
 <button id="toTop" class="scrollnav" type="button" aria-label="Back to top">↑</button>
