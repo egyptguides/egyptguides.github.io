@@ -151,6 +151,8 @@ button.pick[aria-pressed="true"]{background:var(--nile);color:var(--bg)}
 .policy{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
 .policy h3{font-size:1.1rem;color:var(--lapis);margin-bottom:8px}
 .policy p{color:var(--muted);font-size:.95rem;margin:0}
+.check{display:flex;gap:10px;align-items:center;margin:4px 0 14px;font-weight:600;font-size:.95rem;cursor:pointer}
+.check input{width:18px;height:18px;accent-color:var(--nile)}
 .faq{max-width:760px}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}
 .faq summary{cursor:pointer;font-weight:700}
@@ -334,6 +336,7 @@ details.credits ul{margin:8px 0 0;padding-inline-start:18px}
       <div class="policy"><h3 data-i18n="tm2t"></h3><p data-i18n="tm2p"></p></div>
       <div class="policy"><h3 data-i18n="tm3t"></h3><p data-i18n="tm3p"></p></div>
       <div class="policy"><h3 data-i18n="tm4t"></h3><p data-i18n="tm4p"></p></div>
+      <div class="policy"><h3 data-i18n="tm5t"></h3><p data-i18n="tm5p"></p></div>
     </div>
   </div>
 </section>
@@ -363,6 +366,7 @@ details.credits ul{margin:8px 0 0;padding-inline-start:18px}
         </div>
         <div class="lbl" data-i18n="l_trav">Travelers</div>
         <div class="counters" id="counters"></div>
+        <label class="check"><input type="checkbox" id="stud"> <span data-i18n="l_stud">I am a student (10% off with a valid ID)</span></label>
         <div class="row">
           <div class="field"><label for="budget" data-i18n="l_budget">Budget range</label>
             <select id="budget"></select></div>
@@ -498,8 +502,7 @@ var PROGRAMS = [
 var TOURS = [
   {
     "id": "pyramids",
-    "p": 150,
-    "g": 1,
+    "p": 40,
     "kind": "more",
     "hue": [
       "#e2a21f",
@@ -603,7 +606,8 @@ var TOURS = [
     "tag": {
       "en": "Museum",
       "ar": "متحف"
-    }
+    },
+    "p": 30
   },
   {
     "id": "food",
@@ -860,7 +864,8 @@ var TOURS = [
     "tag": {
       "en": "Culture",
       "ar": "ثقافة"
-    }
+    },
+    "p": 45
   },
   {
     "id": "coptic",
@@ -912,12 +917,12 @@ var TOURS = [
     "tag": {
       "en": "Culture",
       "ar": "ثقافة"
-    }
+    },
+    "p": 45
   },
   {
     "id": "saqqara",
-    "p": 150,
-    "g": 1,
+    "p": 60,
     "kind": "more",
     "hue": [
       "#1f4f8f",
@@ -970,8 +975,7 @@ var TOURS = [
   },
   {
     "id": "alex",
-    "p": 450,
-    "g": 1,
+    "p": 115,
     "kind": "more",
     "hue": [
       "#1f6aa5",
@@ -1027,8 +1031,7 @@ var TOURS = [
   },
   {
     "id": "fayoum",
-    "p": 290,
-    "g": 1,
+    "p": 75,
     "kind": "more",
     "hue": [
       "#2c8a86",
@@ -1125,7 +1128,8 @@ var TOURS = [
         "Halle der königlichen Mumien",
         "Spaziergang am Ain-el-Sira-See und Rückfahrt"
       ]
-    }
+    },
+    "p": 30
   },
   {
     "id": "muizz",
@@ -1173,7 +1177,8 @@ var TOURS = [
         "Bereich des Qalawun-Komplexes",
         "Bab al-Futuh und zurück"
       ]
-    }
+    },
+    "p": 45
   },
   {
     "id": "manial",
@@ -1273,8 +1278,7 @@ var TOURS = [
   },
   {
     "id": "cairo-tower",
-    "p": 110,
-    "g": 1,
+    "p": 30,
     "kind": "more",
     "hue": [
       "#1f6aa5",
@@ -1416,9 +1420,7 @@ var TOURS = [
         "Pause und Rückweg"
       ]
     }
-  },
-
-
+  }
 ];
 
 
@@ -1475,8 +1477,8 @@ var I18N = {
   faq_h:"Questions I get often",
   plan_h:"Request your trip",plan_p:"Fill in the details and send the message on WhatsApp. I reply with availability and a price for your group.",
   l_name:"Your name",l_email:"Email",l_nat:"Nationality",l_date:"Preferred date",l_trav:"Travelers",l_budget:"Budget range",l_lang:"Tour language",l_hotel:"Hotel or area",l_notes:"Anything else",l_msg:"Your message",
-  copy:"Copy message",wa:"Send on WhatsApp",fb:"Local guide and tour coordinator based in Cairo, Egypt.",fl:"Tours",fc:"Contact",foot2:"Prices are quoted per group after you send your plan.",
-  details:"Tour details",pick:"Add to my request",picked:"Added",onreq:"Price on request", route_b:"Details",from:"From",pp:"per person",pg:"per group up to 4",nav_ex:"Experiences",more_h:"More experiences I can arrange",more_p:"Popular things to do in and around Cairo. Add the ones you like to your request and I send a price for your group.",ex_h:"My experiences",ex_p:"Local experiences I host in Cairo. Add any one to your request and I confirm the details with you.",ex_book:"View and book",cairo:"Cairo",price_note:"Listed prices are in US dollars per private group of up to 4, including a guide (English, German or Arabic) and a car with driver. Entrance tickets, meals and accommodation are not included.",
+  copy:"Copy message",wa:"Send on WhatsApp",fb:"Local guide and tour coordinator based in Cairo, Egypt.",fl:"Tours",fc:"Contact",foot2:"The final price for your group is confirmed after you send your plan.",
+  details:"Tour details",pick:"Add to my request",picked:"Added",onreq:"Price on request", route_b:"Details",from:"From",pp:"per person",pg:"per group up to 4",nav_ex:"Experiences",more_h:"More experiences I can arrange",more_p:"Popular things to do in and around Cairo. Add the ones you like to your request and I send a price for your group.",ex_h:"My experiences",ex_p:"Local experiences I host in Cairo. Add any one to your request and I confirm the details with you.",ex_book:"View and book",cairo:"Cairo",price_note:"Listed prices are in US dollars per person for a private tour and include the guide and a car with driver. Entrance tickets, meals and accommodation are not included. Group discount: 10% for 5 to 8 travelers, 15% for 9 or more. Student discount: 10% with a valid student ID. Discounts cannot be combined with other offers; the better one applies.",
   adults:"Adults",children:"Children",infants:"Infants",b1:"Budget",b2:"Comfort",b3:"Premium",
   none:"No tours selected yet. Add some from the lists above, or ask for a custom trip.",sel:"Selected: ",copied:"Copied. Paste it into your chat.",copyfail:"Copy is blocked here. Select the text and copy it manually.",
   hello:"Hello, I would like to request a trip in Egypt.",n:"Name",em:"Email",na:"Nationality",tr:"Tours",dt:"Date",gr:"Travelers",ln:"Tour language",bd:"Budget range",ht:"Hotel or area",nt:"Notes",anyd:"Flexible",custom:"Custom trip",thanks:"Please send me availability and a price. Thank you."},
@@ -1495,8 +1497,8 @@ var I18N = {
   faq_h:"Häufige Fragen",
   plan_h:"Fordere deine Reise an",plan_p:"Fülle die Details aus und schicke die Nachricht auf WhatsApp. Ich antworte mit Verfügbarkeit und einem Preis für deine Gruppe.",
   l_name:"Dein Name",l_email:"E-Mail",l_nat:"Nationalität",l_date:"Wunschdatum",l_trav:"Reisende",l_budget:"Budgetrahmen",l_lang:"Sprache der Tour",l_hotel:"Hotel oder Gegend",l_notes:"Sonstiges",l_msg:"Deine Nachricht",
-  copy:"Nachricht kopieren",wa:"Auf WhatsApp senden",fb:"Lokaler Guide und Reisekoordinator in Kairo, Ägypten.",fl:"Touren",fc:"Kontakt",foot2:"Preise werden pro Gruppe genannt, nachdem du deinen Plan geschickt hast.",
-  details:"Tourdetails",pick:"Zu meiner Anfrage",picked:"Hinzugefügt",onreq:"Preis auf Anfrage", route_b:"Details",from:"Ab",pp:"pro Person",pg:"pro Gruppe bis 4",nav_ex:"Erlebnisse",more_h:"Weitere Erlebnisse, die ich organisieren kann",more_p:"Beliebte Unternehmungen in und um Kairo. Füge deiner Anfrage hinzu, was dir gefällt, und ich schicke dir einen Preis für deine Gruppe.",ex_h:"Meine Erlebnisse",ex_p:"Lokale Erlebnisse, die ich in Kairo anbiete. Füge eines deiner Anfrage hinzu und ich bestätige dir die Details.",ex_book:"Ansehen und buchen",cairo:"Kairo",price_note:"Angegebene Preise in US-Dollar pro privater Gruppe bis 4 Personen, einschließlich Guide (Deutsch, Englisch oder Arabisch) und Auto mit Fahrer. Eintrittskarten, Mahlzeiten und Unterkunft sind nicht enthalten.",
+  copy:"Nachricht kopieren",wa:"Auf WhatsApp senden",fb:"Lokaler Guide und Reisekoordinator in Kairo, Ägypten.",fl:"Touren",fc:"Kontakt",foot2:"Der Endpreis für deine Gruppe wird bestätigt, nachdem du deinen Plan geschickt hast.",
+  details:"Tourdetails",pick:"Zu meiner Anfrage",picked:"Hinzugefügt",onreq:"Preis auf Anfrage", route_b:"Details",from:"Ab",pp:"pro Person",pg:"pro Gruppe bis 4",nav_ex:"Erlebnisse",more_h:"Weitere Erlebnisse, die ich organisieren kann",more_p:"Beliebte Unternehmungen in und um Kairo. Füge deiner Anfrage hinzu, was dir gefällt, und ich schicke dir einen Preis für deine Gruppe.",ex_h:"Meine Erlebnisse",ex_p:"Lokale Erlebnisse, die ich in Kairo anbiete. Füge eines deiner Anfrage hinzu und ich bestätige dir die Details.",ex_book:"Ansehen und buchen",cairo:"Kairo",price_note:"Angegebene Preise in US-Dollar pro Person für eine private Tour, einschließlich Guide und Auto mit Fahrer. Eintrittskarten, Mahlzeiten und Unterkunft sind nicht enthalten. Gruppenrabatt: 10 % ab 5 bis 8 Reisenden, 15 % ab 9 Reisenden. Studentenrabatt: 10 % mit gültigem Studentenausweis. Rabatte sind nicht mit anderen Angeboten kombinierbar; es gilt das bessere.",
   adults:"Erwachsene",children:"Kinder",infants:"Kleinkinder",b1:"Budget",b2:"Komfort",b3:"Premium",
   none:"Noch keine Touren ausgewählt. Wähle oben aus den Listen oder frage eine individuelle Reise an.",sel:"Ausgewählt: ",copied:"Kopiert. Füge es in deinen Chat ein.",copyfail:"Kopieren ist hier blockiert. Markiere den Text und kopiere ihn manuell.",
   hello:"Hallo, ich möchte eine Reise in Ägypten anfragen.",n:"Name",em:"E-Mail",na:"Nationalität",tr:"Touren",dt:"Datum",gr:"Reisende",ln:"Toursprache",bd:"Budgetrahmen",ht:"Hotel oder Gegend",nt:"Anmerkungen",anyd:"Flexibel",custom:"Individuelle Reise",thanks:"Bitte schicke mir Verfügbarkeit und Preis. Danke."},
@@ -1515,8 +1517,8 @@ var I18N = {
   faq_h:"أسئلة بتتكرر",
   plan_h:"اطلب رحلتك",plan_p:"املا البيانات وابعت الرسالة على واتساب. برد عليك بالمواعيد المتاحة وسعر مجموعتك.",
   l_name:"اسمك",l_email:"الإيميل",l_nat:"الجنسية",l_date:"التاريخ المفضل",l_trav:"المسافرين",l_budget:"نطاق الميزانية",l_lang:"لغة الجولة",l_hotel:"الفندق أو المنطقة",l_notes:"أي ملاحظات",l_msg:"رسالتك",
-  copy:"انسخ الرسالة",wa:"ابعت على واتساب",fb:"مرشد محلي ومنسق رحلات في القاهرة، مصر.",fl:"الرحلات",fc:"تواصل",foot2:"الأسعار بتتحدد للمجموعة بعد ما تبعت خطتك.",
-  details:"تفاصيل الرحلة",pick:"ضيفها لطلبي",picked:"تمت الإضافة",onreq:"السعر عند الطلب", route_b:"تفاصيل",from:"من",pp:"للفرد",pg:"للمجموعة حتى ٤ أفراد",nav_ex:"تجارب",more_h:"تجارب تانية أقدر أرتبها",more_p:"حاجات شعبية يتعمل في القاهرة وحواليها. ضيف اللي يعجبك لطلبك وأبعتلك سعر مجموعتك.",ex_h:"تجاربي",ex_p:"تجارب محلية بستضيفها في القاهرة. ضيف أي واحدة لطلبك وأنا أكّدلك التفاصيل.",ex_book:"التفاصيل والحجز",cairo:"القاهرة",price_note:"الأسعار المعروضة بالدولار للمجموعة الخاصة حتى ٤ أفراد، وتشمل مرشد (بالألماني أو الإنجليزي أو العربي) وسيارة مع سائق. تذاكر الدخول والوجبات والإقامة غير مشمولة.",
+  copy:"انسخ الرسالة",wa:"ابعت على واتساب",fb:"مرشد محلي ومنسق رحلات في القاهرة، مصر.",fl:"الرحلات",fc:"تواصل",foot2:"السعر النهائي لمجموعتك بيتأكد بعد ما تبعت خطتك.",
+  details:"تفاصيل الرحلة",pick:"ضيفها لطلبي",picked:"تمت الإضافة",onreq:"السعر عند الطلب", route_b:"تفاصيل",from:"من",pp:"للفرد",pg:"للمجموعة حتى ٤ أفراد",nav_ex:"تجارب",more_h:"تجارب تانية أقدر أرتبها",more_p:"حاجات شعبية يتعمل في القاهرة وحواليها. ضيف اللي يعجبك لطلبك وأبعتلك سعر مجموعتك.",ex_h:"تجاربي",ex_p:"تجارب محلية بستضيفها في القاهرة. ضيف أي واحدة لطلبك وأنا أكّدلك التفاصيل.",ex_book:"التفاصيل والحجز",cairo:"القاهرة",price_note:"الأسعار المعروضة بالدولار للفرد في الجولة الخاصة، وتشمل المرشد وسيارة مع سائق. تذاكر الدخول والوجبات والإقامة غير مشمولة. خصم المجموعات: ١٠٪ من ٥ لـ ٨ أفراد، و١٥٪ لـ ٩ أفراد أو أكتر. خصم الطلبة: ١٠٪ مع كارنيه طالب ساري. الخصومات مش بتتجمع مع عروض تانية، وبتتطبق الأفضل.",
   adults:"بالغين",children:"أطفال",infants:"رضع",b1:"اقتصادي",b2:"مريح",b3:"مميز",
   none:"لسه مختارتش رحلات. ضيف من القوائم فوق، أو اطلب رحلة مخصصة.",sel:"المختار: ",copied:"تم النسخ. الصقها في المحادثة.",copyfail:"النسخ ممنوع هنا. حدد النص وانسخه يدويًا.",
   hello:"أهلًا، عايز أطلب رحلة في مصر.",n:"الاسم",em:"الإيميل",na:"الجنسية",tr:"الرحلات",dt:"التاريخ",gr:"المسافرين",ln:"لغة الجولة",bd:"نطاق الميزانية",ht:"الفندق أو المنطقة",nt:"ملاحظات",anyd:"مرن",custom:"رحلة مخصصة",thanks:"ياريت تبعتلي المواعيد المتاحة والسعر. شكرًا."}
@@ -1574,13 +1576,13 @@ var CREDITS = [
   {t:"Among the rocks, Wadi Degla Protectorate, Egypt", by:"Basssant Meligy", lic:"CC BY-SA 4.0", u:"https://commons.wikimedia.org/wiki/File:Among_the_rocks,_Wadi_Degla_Protectorate,_Egypt.jpg"}
 ];
 
-Object.assign(I18N.en,{herolangs:"Tours in German · English · Arabic",l_email:"Email (optional)",promo_left:"{n} days left",need_name:"Please add your name first so I know who to reply to.",mail:"Send by email",
+Object.assign(I18N.en,{l_stud:"I am a student (10% off with a valid ID)",st:"Student discount: yes (valid ID)",herolangs:"Tours in German · English · Arabic",l_email:"Email (optional)",promo_left:"{n} days left",need_name:"Please add your name first so I know who to reply to.",mail:"Send by email",
   page_title:"Cairo private tours with a local guide | egyptguide",
   page_desc:"Private and small-group tours in Cairo, Giza, Alexandria and beyond with a local guide. Plan your trip and get a clear price on WhatsApp."});
-Object.assign(I18N.de,{herolangs:"Touren auf Deutsch · Englisch · Arabisch",l_email:"E-Mail (optional)",promo_left:"Noch {n} Tage",need_name:"Bitte gib zuerst deinen Namen an, damit ich weiß, wem ich antworte.",mail:"Per E-Mail senden",
+Object.assign(I18N.de,{l_stud:"Ich bin Student/in (10 % mit gültigem Ausweis)",st:"Studentenrabatt: ja (gültiger Ausweis)",herolangs:"Touren auf Deutsch · Englisch · Arabisch",l_email:"E-Mail (optional)",promo_left:"Noch {n} Tage",need_name:"Bitte gib zuerst deinen Namen an, damit ich weiß, wem ich antworte.",mail:"Per E-Mail senden",
   page_title:"Private Touren in Kairo mit lokalem Guide | egyptguide",
   page_desc:"Private Touren und Kleingruppen in Kairo, Gizeh, Alexandrien und darüber hinaus mit einem lokalen Guide. Stell deine Reise zusammen und erhalte einen klaren Preis per WhatsApp."});
-Object.assign(I18N.ar,{herolangs:"جولات بالألماني · الإنجليزي · العربي",l_email:"الإيميل (اختياري)",promo_left:"فاضل {n} يوم",need_name:"اكتب اسمك الأول عشان أعرف أرد على مين.",mail:"ابعت بالإيميل",
+Object.assign(I18N.ar,{l_stud:"أنا طالب (خصم ١٠٪ مع كارنيه ساري)",st:"خصم الطلبة: أيوه (كارنيه ساري)",herolangs:"جولات بالألماني · الإنجليزي · العربي",l_email:"الإيميل (اختياري)",promo_left:"فاضل {n} يوم",need_name:"اكتب اسمك الأول عشان أعرف أرد على مين.",mail:"ابعت بالإيميل",
   page_title:"رحلات خاصة في القاهرة مع مرشد محلي | egyptguide",
   page_desc:"رحلات خاصة ومجموعات صغيرة في القاهرة والجيزة وإسكندرية وأكتر مع مرشد محلي. خطط رحلتك واستلم سعر واضح على واتساب."});
 Object.assign(I18N.en,{nav_about:"About",ab_k:"About",ab_h:"About egyptguide",
@@ -1591,7 +1593,7 @@ Object.assign(I18N.en,{nav_about:"About",ab_k:"About",ab_h:"About egyptguide",
  tm1t:"Quote and confirmation",tm1p:"You send your plan, I reply with availability and a price for your group. Nothing is booked until you confirm the quote.",
  tm2t:"Changes",tm2p:"Need a different date or stop? Tell me as early as you can. I will adjust the plan whenever availability allows.",
  tm3t:"Cancellation",tm3p:"Cancel at least 48 hours before the start and you pay nothing for the tour itself. For later cancellations or no-shows, costs already paid to third parties, such as tickets or reservations, may be charged.",
- tm4t:"What is included",tm4p:"Prices are in US dollars per private group of up to 4 people and include the guide and a car with driver. Entrance tickets, meals and accommodation are not included."});
+ tm4t:"What is included",tm4p:"Prices are in US dollars per person for a private tour and include the guide and a car with driver. Entrance tickets, meals and accommodation are not included.",tm5t:"Group and student discounts",tm5p:"Group discount: 10% for 5 to 8 travelers, 15% for 9 or more. Student discount: 10% with a valid student ID. Discounts cannot be combined with other offers; the better one applies."});
 Object.assign(I18N.de,{nav_about:"Über mich",ab_k:"Über mich",ab_h:"Über egyptguide",
  ab_p1:"egyptguide ist ein lokaler Guide und Reisekoordinator mit Sitz in Kairo. Ich plane und begleite private Touren und Kleingruppen in Kairo, Gizeh und darüber hinaus, auf Deutsch, Englisch und Arabisch.",
  ab_p2:"Jede Reise beginnt mit einem festen Plan, den du vor dem Tag erhältst: Route, Treffpunkt und Zeiten. Du hast vor, während und nach der Reise einen einzigen Ansprechpartner und bekommst ein klares Angebot, bevor irgendetwas bestätigt wird.",
@@ -1600,7 +1602,7 @@ Object.assign(I18N.de,{nav_about:"Über mich",ab_k:"Über mich",ab_h:"Über egyp
  tm1t:"Angebot und Bestätigung",tm1p:"Du schickst deinen Plan, ich antworte mit Verfügbarkeit und einem Preis für deine Gruppe. Gebucht ist erst, wenn du das Angebot bestätigst.",
  tm2t:"Änderungen",tm2p:"Anderes Datum oder anderer Stopp? Sag mir so früh wie möglich Bescheid. Ich passe den Plan an, sobald es die Verfügbarkeit erlaubt.",
  tm3t:"Stornierung",tm3p:"Bei Stornierung mindestens 48 Stunden vor Beginn zahlst du für die Tour selbst nichts. Bei späteren Absagen oder Nichterscheinen können bereits an Dritte gezahlte Kosten wie Tickets oder Reservierungen berechnet werden.",
- tm4t:"Was ist enthalten",tm4p:"Preise in US-Dollar pro privater Gruppe bis 4 Personen, inklusive Guide und Auto mit Fahrer. Eintrittskarten, Mahlzeiten und Unterkunft sind nicht enthalten."});
+ tm4t:"Was ist enthalten",tm4p:"Preise in US-Dollar pro Person für eine private Tour, inklusive Guide und Auto mit Fahrer. Eintrittskarten, Mahlzeiten und Unterkunft sind nicht enthalten.",tm5t:"Gruppen- und Studentenrabatt",tm5p:"Gruppenrabatt: 10 % ab 5 bis 8 Reisenden, 15 % ab 9 Reisenden. Studentenrabatt: 10 % mit gültigem Studentenausweis. Rabatte sind nicht mit anderen Angeboten kombinierbar; es gilt das bessere."});
 Object.assign(I18N.ar,{nav_about:"من نحن",ab_k:"من نحن",ab_h:"عن egyptguide",
  ab_p1:"egyptguide مرشد محلي ومنسق رحلات مقره القاهرة. برتب وبقود رحلات خاصة ومجموعات صغيرة في القاهرة والجيزة وأكتر، بالألماني والإنجليزي والعربي.",
  ab_p2:"كل رحلة بتبدأ بخطة ثابتة بتوصلك قبل اليوم: المسار ونقطة اللقاء والمواعيد. بتتعامل مع شخص واحد قبل الرحلة وأثناءها وبعدها، وبتاخد عرض سعر واضح قبل أي تأكيد.",
@@ -1609,7 +1611,7 @@ Object.assign(I18N.ar,{nav_about:"من نحن",ab_k:"من نحن",ab_h:"عن egy
  tm1t:"العرض والتأكيد",tm1p:"بتبعت خطتك وبرد عليك بالمواعيد المتاحة وسعر مجموعتك. مفيش حاجة بتتحجز غير لما تأكد العرض.",
  tm2t:"التعديلات",tm2p:"محتاج تغير الموعد أو محطة؟ قولي بدري قدر ما تقدر، وهعدل الخطة كل ما المتاح يسمح.",
  tm3t:"الإلغاء",tm3p:"لو ألغيت قبل البداية بـ ٤٨ ساعة على الأقل مش بتدفع حاجة مقابل الجولة نفسها. الإلغاء المتأخر أو عدم الحضور ممكن يتحاسب فيه المصاريف اللي اتدفعت لأطراف تانية زي التذاكر والحجوزات.",
- tm4t:"الشامل في السعر",tm4p:"الأسعار بالدولار الأمريكي للمجموعة الخاصة حتى ٤ أفراد وتشمل المرشد وعربية بسواق. تذاكر الدخول والأكل والإقامة غير مشمولة."});
+ tm4t:"الشامل في السعر",tm4p:"الأسعار بالدولار الأمريكي للفرد في الجولة الخاصة وتشمل المرشد وعربية بسواق. تذاكر الدخول والأكل والإقامة غير مشمولة.",tm5t:"خصم المجموعات والطلبة",tm5p:"خصم المجموعات: ١٠٪ من ٥ لـ ٨ أفراد، و١٥٪ لـ ٩ أفراد أو أكتر. خصم الطلبة: ١٠٪ مع كارنيه طالب ساري. الخصومات مش بتتجمع مع عروض تانية، وبتتطبق الأفضل."});
 var SIMSEM_DE = ["Versteckte Perlen von Heliopolis: Geschichte, Architektur und Geschmack","Reise durch Zamalek: Geschichte, Kunst und ägyptische Eleganz","Islamisches Kairo: Khan el-Khalili und Rundgang durch Alt-Kairo","Kajakfahren auf dem Nil in Kairo","Ausritt zu den Pyramiden von Gizeh: Wüstenabenteuer"];
 function simTitle(x,i){return lang==="ar"&&x.ta ? x.ta : (lang==="de"&&SIMSEM_DE[i] ? SIMSEM_DE[i] : x.t);}
 
@@ -1683,6 +1685,7 @@ function build(){
   lines.push(L("tr")+": "+(n.length?n.join(" / "):L("custom")));
   lines.push(L("dt")+": "+(v("#date")||L("anyd")));
   lines.push(L("gr")+": "+L("adults")+" "+cnt.adults+", "+L("children")+" "+cnt.children+", "+L("infants")+" "+cnt.infants);
+  if($("#stud").checked) lines.push(L("st"));
   lines.push(L("ln")+": "+$("#tlang").value);
   lines.push(L("bd")+": "+L($("#budget").value));
   if(v("#hotel")) lines.push(L("ht")+": "+v("#hotel"));
