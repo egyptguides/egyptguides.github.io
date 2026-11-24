@@ -424,6 +424,8 @@ var PROGRAMS = [
 var TOURS = [
  {
   "id": "pyramids",
+  "p": 150,
+  "g": 1,
   "kind": "more",
   "hue": [
    "#e2a21f",
@@ -760,6 +762,8 @@ var TOURS = [
  },
  {
   "id": "saqqara",
+  "p": 150,
+  "g": 1,
   "kind": "more",
   "hue": [
    "#1f4f8f",
@@ -802,6 +806,8 @@ var TOURS = [
  },
  {
   "id": "alex",
+  "p": 450,
+  "g": 1,
   "kind": "more",
   "hue": [
    "#1f6aa5",
@@ -846,6 +852,8 @@ var TOURS = [
  },
  {
   "id": "fayoum",
+  "p": 290,
+  "g": 1,
   "kind": "more",
   "hue": [
    "#2c8a86",
@@ -936,6 +944,8 @@ var TOURS = [
  },
  {
   "id": "cairo-tower",
+  "p": 110,
+  "g": 1,
   "kind": "more",
   "hue": ["#1f6aa5", "#0f4c52"],
   "dur": {"en": "2 hours", "ar": "ساعتان"},
@@ -1023,7 +1033,7 @@ var I18N = {
   plan_h:"Request your trip",plan_p:"Fill in the details and send the message on WhatsApp. I reply with availability and a price for your group.",
   l_name:"Your name",l_email:"Email",l_nat:"Nationality",l_date:"Preferred date",l_trav:"Travelers",l_budget:"Budget range",l_lang:"Tour language",l_hotel:"Hotel or area",l_notes:"Anything else",l_msg:"Your message",
   copy:"Copy message",wa:"Send on WhatsApp",fb:"Local guide and tour coordinator based in Cairo, Egypt.",fl:"Tours",fc:"Contact",foot2:"Prices are quoted per group after you send your plan.",
-  details:"Tour details",pick:"Add to my request",picked:"Added",onreq:"Price on request",from:"From",pp:"per person",nav_ex:"Experiences",more_h:"More experiences I can arrange",more_p:"Popular things to do in and around Cairo. Add the ones you like to your request and I send a price for your group.",ex_h:"My experiences on Simsem",ex_p:"Local experiences I host in Cairo. Open any one to see the full details and book on Simsem.",ex_book:"View and book",ex_badge:"Verified local host on Simsem · see my profile and reviews",cairo:"Cairo",price_note:"Prices are in US dollars per person for groups of 3 or more. Entrance fees and lunch are paid separately. Smaller groups pay more per person, so send your group size for an exact quote.",
+  details:"Tour details",pick:"Add to my request",picked:"Added",onreq:"Price on request",from:"From",pp:"per person",pg:"per group up to 4",nav_ex:"Experiences",more_h:"More experiences I can arrange",more_p:"Popular things to do in and around Cairo. Add the ones you like to your request and I send a price for your group.",ex_h:"My experiences on Simsem",ex_p:"Local experiences I host in Cairo. Open any one to see the full details and book on Simsem.",ex_book:"View and book",ex_badge:"Verified local host on Simsem · see my profile and reviews",cairo:"Cairo",price_note:"Prices are in US dollars per person for groups of 3 or more. Entrance fees and lunch are paid separately. Smaller groups pay more per person, so send your group size for an exact quote.",
   adults:"Adults",children:"Children",infants:"Infants",b1:"Budget",b2:"Comfort",b3:"Premium",
   none:"No tours selected yet. Add some from the lists above, or ask for a custom trip.",sel:"Selected: ",copied:"Copied. Paste it into your chat.",copyfail:"Copy is blocked here. Select the text and copy it manually.",
   hello:"Hello, I would like to request a trip in Egypt.",n:"Name",em:"Email",na:"Nationality",tr:"Tours",dt:"Date",gr:"Travelers",ln:"Tour language",bd:"Budget range",ht:"Hotel or area",nt:"Notes",anyd:"Flexible",custom:"Custom trip",thanks:"Please send me availability and a price. Thank you."},
@@ -1043,7 +1053,7 @@ var I18N = {
   plan_h:"اطلب رحلتك",plan_p:"املا البيانات وابعت الرسالة على واتساب. برد عليك بالمواعيد المتاحة وسعر مجموعتك.",
   l_name:"اسمك",l_email:"الإيميل",l_nat:"الجنسية",l_date:"التاريخ المفضل",l_trav:"المسافرين",l_budget:"نطاق الميزانية",l_lang:"لغة الجولة",l_hotel:"الفندق أو المنطقة",l_notes:"أي ملاحظات",l_msg:"رسالتك",
   copy:"انسخ الرسالة",wa:"ابعت على واتساب",fb:"مرشد محلي ومنسق رحلات في القاهرة، مصر.",fl:"الرحلات",fc:"تواصل",foot2:"الأسعار بتتحدد للمجموعة بعد ما تبعت خطتك.",
-  details:"تفاصيل الرحلة",pick:"ضيفها لطلبي",picked:"تمت الإضافة",onreq:"السعر عند الطلب",from:"من",pp:"للفرد",nav_ex:"تجارب",more_h:"تجارب تانية أقدر أرتبها",more_p:"حاجات شعبية يتعمل في القاهرة وحواليها. ضيف اللي يعجبك لطلبك وأبعتلك سعر مجموعتك.",ex_h:"تجاربي على سمسم",ex_p:"تجارب محلية بستضيفها في القاهرة. افتح أي واحدة تشوف التفاصيل كاملة وتحجز على سمسم.",ex_book:"التفاصيل والحجز",ex_badge:"مضيف محلي موثّق على سمسم · شوف بروفايلي والتقييمات",cairo:"القاهرة",price_note:"الأسعار بالدولار للفرد لمجموعات من ٣ أفراد فأكتر. تذاكر الدخول والغدا بتتدفع لوحدها. المجموعات الأصغر بتدفع أكتر للفرد، فابعت عدد مجموعتك وأنا أديك سعر دقيق.",
+  details:"تفاصيل الرحلة",pick:"ضيفها لطلبي",picked:"تمت الإضافة",onreq:"السعر عند الطلب",from:"من",pp:"للفرد",pg:"للمجموعة حتى ٤ أفراد",nav_ex:"تجارب",more_h:"تجارب تانية أقدر أرتبها",more_p:"حاجات شعبية يتعمل في القاهرة وحواليها. ضيف اللي يعجبك لطلبك وأبعتلك سعر مجموعتك.",ex_h:"تجاربي على سمسم",ex_p:"تجارب محلية بستضيفها في القاهرة. افتح أي واحدة تشوف التفاصيل كاملة وتحجز على سمسم.",ex_book:"التفاصيل والحجز",ex_badge:"مضيف محلي موثّق على سمسم · شوف بروفايلي والتقييمات",cairo:"القاهرة",price_note:"الأسعار بالدولار للفرد لمجموعات من ٣ أفراد فأكتر. تذاكر الدخول والغدا بتتدفع لوحدها. المجموعات الأصغر بتدفع أكتر للفرد، فابعت عدد مجموعتك وأنا أديك سعر دقيق.",
   adults:"بالغين",children:"أطفال",infants:"رضع",b1:"اقتصادي",b2:"مريح",b3:"مميز",
   none:"لسه مختارتش رحلات. ضيف من القوائم فوق، أو اطلب رحلة مخصصة.",sel:"المختار: ",copied:"تم النسخ. الصقها في المحادثة.",copyfail:"النسخ ممنوع هنا. حدد النص وانسخه يدويًا.",
   hello:"أهلًا، عايز أطلب رحلة في مصر.",n:"الاسم",em:"الإيميل",na:"الجنسية",tr:"الرحلات",dt:"التاريخ",gr:"المسافرين",ln:"لغة الجولة",bd:"نطاق الميزانية",ht:"الفندق أو المنطقة",nt:"ملاحظات",anyd:"مرن",custom:"رحلة مخصصة",thanks:"ياريت تبعتلي المواعيد المتاحة والسعر. شكرًا."}
@@ -1102,7 +1112,7 @@ function card(t){
     '<div class="meta"><span class="pill">'+t.dur[lang]+'</span><span class="pill alt">'+t.loc[lang]+'</span></div>'+
     '<p>'+t.d[lang]+'</p>'+
     '<details class="it"><summary>'+L("details")+'</summary><ul>'+t.it[lang].map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul></details>'+
-    '<div class="foot"><span class="price">'+(t.p?L("from")+' $'+t.p+' <small>'+L("pp")+'</small>':L("onreq"))+(t.pn?'<small class="pn">'+t.pn[lang]+'</small>':'')+'</span><button class="pick" type="button" aria-pressed="'+on+'" data-id="'+t.id+'">'+(on?L("picked"):L("pick"))+'</button></div></div></article>';
+    '<div class="foot"><span class="price">'+(t.p?L("from")+' $'+t.p+' <small>'+(t.g?L("pg"):L("pp"))+'</small>':L("onreq"))+(t.pn?'<small class="pn">'+t.pn[lang]+'</small>':'')+'</span><button class="pick" type="button" aria-pressed="'+on+'" data-id="'+t.id+'">'+(on?L("picked"):L("pick"))+'</button></div></div></article>';
 }
 function programCard(p){
   var on = !!picked[p.id];
