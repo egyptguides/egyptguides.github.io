@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Private and small-group tours in Cairo, Giza, Alexandria and beyond with a local guide. Day tours, multi-day programmes and tailor-made trips.">
+<title>egyptguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f6f4; --surface:#ffffff; --ink:#0f2f33; --muted:#52696b;
+  --nile:#0f4c52; --sun:#e2a21f; --lapis:#1f4f8f; --line:#d9e2de;
+  --font-display:'Fraunces','Cairo',Georgia,serif; --font-body:'Manrope','Cairo',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1c1f; --surface:#112a2e; --ink:#e8f1ee; --muted:#9db5b2; --nile:#7fd0c9; --sun:#f0b73a; --lapis:#8fb4ee; --line:#23403f; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#0b1c1f; --surface:#112a2e; --ink:#e8f1ee; --muted:#9db5b2; --nile:#7fd0c9; --sun:#f0b73a; --lapis:#8fb4ee; --line:#23403f; color-scheme:dark;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+h1,h2,h3{font-family:var(--font-display);line-height:1.2;margin:0}
+a{color:inherit}
+.util{background:var(--nile);color:#dff1ee;font-size:.85rem}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 0;flex-wrap:wrap}
+.util a{color:#fff;text-decoration:none;font-weight:700}
+.tools{display:flex;gap:8px}
+.chip-btn{border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;border-radius:999px;padding:3px 12px;font:inherit;font-size:.82rem;cursor:pointer}
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0;gap:14px}
+.brand{font-family:var(--font-display);font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:.2px}
+.brand span{color:var(--sun)}
+.nav-links{display:flex;gap:16px;flex-wrap:wrap}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.tailor{color:var(--nile);font-weight:800}
+@media(max-width:760px){.hide-s{display:none}}
+
+/* hero with photo */
+.hero{position:relative;overflow:hidden;color:#fff;background:#0f4c52}
+.hero .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,32,36,.55) 0%,rgba(8,32,36,.35) 45%,rgba(8,32,36,.78) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:88px;padding-bottom:120px;max-width:820px;text-align:start}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:rgba(226,162,31,.92);color:#1b1500;padding:5px 12px;border-radius:999px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;margin-top:16px;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero p.lead{margin-top:18px;max-width:52ch;font-size:1.1rem;color:#f2f7f5;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;font:inherit;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.primary{background:var(--sun);color:#1b1500}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn.ghost{border-color:rgba(255,255,255,.7);color:#fff;background:rgba(0,0,0,.18)}
+.btn.ghost:hover{background:rgba(255,255,255,.14)}
+
+section{padding:60px 0}
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:26px;max-width:62ch}
+.sec-head h2{font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--nile)}
+.sec-head p{color:var(--muted)}
+.kicker{font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sun)}
+
+/* must-see strip with photos */
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.see{border-radius:16px;overflow:hidden;position:relative;height:150px;color:#fff;display:flex;align-items:flex-end;padding:12px;font-weight:700;text-decoration:none}
+.see img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.see:hover img{transform:scale(1.05)}
+.see::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.62))}
+.see span{position:relative;z-index:1;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.card .art{height:180px;position:relative;background:linear-gradient(135deg,var(--nile),var(--lapis))}
+.card .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card .body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:1.2rem}
+.card p{color:var(--muted);font-size:.95rem}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:.78rem;padding:3px 10px;border-radius:999px;background:color-mix(in srgb,var(--nile) 12%,transparent);color:var(--nile);font-weight:700}
+.pill.alt{background:color-mix(in srgb,var(--sun) 24%,transparent);color:var(--ink)}
+details.it{border-top:1px solid var(--line);padding-top:8px;font-size:.92rem}
+details.it summary{cursor:pointer;font-weight:700;color:var(--lapis)}
+details.it ul{margin:8px 0 0;padding-inline-start:18px;color:var(--muted)}
+.card .foot{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.price{font-weight:800;color:var(--nile);font-size:1.15rem;display:flex;flex-direction:column;line-height:1.2}
+.price small{font-weight:500;color:var(--muted);font-size:.75rem}
+button.pick{border:1px solid var(--nile);background:transparent;color:var(--nile);padding:8px 14px;border-radius:10px;font:inherit;font-weight:700;cursor:pointer}
+button.pick[aria-pressed="true"]{background:var(--nile);color:var(--bg)}
+
+.cat-h{margin:28px 0 14px;color:var(--lapis);font-size:1.3rem}
+/* programmes */
+.programs{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.program{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.program .art{height:200px;position:relative}
+.program .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.program .days{position:absolute;top:12px;inset-inline-start:12px;background:var(--sun);color:#1b1500;font-weight:800;font-size:.82rem;padding:4px 12px;border-radius:999px}
+.program .body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.program ol.plan{margin:0;padding-inline-start:20px;color:var(--muted);font-size:.94rem}
+.program ol.plan li{margin-bottom:4px}
+.program .foot{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* tailor banner */
+.tailor-band{background:linear-gradient(120deg,var(--nile),#1c7a7e);color:#fff;border-radius:22px;padding:34px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+:root[data-theme="dark"] .tailor-band{color:#06201f;background:linear-gradient(120deg,#7fd0c9,#4fb1aa)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tailor-band{color:#06201f;background:linear-gradient(120deg,#7fd0c9,#4fb1aa)}}
+.tailor-band h2{font-size:clamp(1.5rem,3vw,2rem)}
+.tailor-band p{max-width:50ch;margin-top:6px;opacity:.92}
+
+/* trust grid */
+.why{background:var(--surface);border-block:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.why-item h3{font-size:1.1rem;margin-bottom:6px;color:var(--lapis)}
+.why-item p{color:var(--muted);font-size:.95rem}
+.num{font-family:var(--font-display);font-size:2rem;color:var(--sun);font-weight:800}
+
+/* tips banner */
+.tips-band{display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.tips-band img{width:100%;height:100%;min-height:150px;object-fit:cover}
+.tips-band .tb-body{padding:20px}
+.tips-band h3{font-size:1.25rem;color:var(--nile)}
+.tips-band p{color:var(--muted);font-size:.95rem;margin:8px 0 14px}
+@media(max-width:640px){.tips-band{grid-template-columns:1fr}.tips-band img{max-height:180px}}
+
+/* faq */
+.faq{max-width:760px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:700}
+.faq details p{color:var(--muted);margin-top:8px}
+
+/* request form */
+.planner{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+@media(max-width:860px){.planner{grid-template-columns:1fr}}
+form.panel,.preview{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+label,.lbl{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
+input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:480px){.row{grid-template-columns:1fr}}
+.field{margin-bottom:14px}
+.row .field{margin-bottom:0}
+.counters{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.ctr{border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--bg);text-align:center}
+.ctr small{display:block;color:var(--muted);font-size:.78rem}
+.ctr .ctl{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px}
+.ctr button{width:30px;height:30px;border-radius:50%;border:1px solid var(--nile);background:transparent;color:var(--nile);font-size:1.1rem;cursor:pointer;line-height:1}
+.ctr output{min-width:22px;font-weight:800;font-size:1.1rem}
+.preview pre{white-space:pre-wrap;word-break:break-word;font:inherit;background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:14px;min-height:190px;margin:0 0 14px}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.actions .btn{padding:10px 18px}
+.btn.solid{background:var(--nile);color:var(--bg)}
+.btn.outline{border-color:var(--nile);color:var(--nile);background:transparent}
+.note{font-size:.85rem;color:var(--muted);margin-top:10px}
+
+footer{padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-bottom:22px}
+footer h3{font-size:1rem;color:var(--ink);margin-bottom:8px}
+footer a{text-decoration:none;display:block;margin-bottom:4px}
+footer a:hover{color:var(--ink)}
+details.credits{margin-top:16px;font-size:.82rem}
+details.credits summary{cursor:pointer;font-weight:700}
+details.credits ul{margin:8px 0 0;padding-inline-start:18px}
+@media (prefers-reduced-motion:no-preference){.card,.program{transition:transform .2s,box-shadow .2s}.card:hover,.program:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(15,47,51,.12)}}
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <span><span data-i18n="u_wa">WhatsApp</span>: <a href="https://wa.me/201068635116" target="_blank" rel="noopener" dir="ltr">+20 106 863 5116</a></span>
+    <div class="tools">
+      <button class="chip-btn" id="langBtn" type="button" aria-label="Switch language">العربية</button>
+      <button class="chip-btn" id="themeBtn" type="button" aria-label="Toggle theme">◐</button>
+    </div>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top">egypt<span>guide</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#experiences" data-i18n="nav_ex" class="hide-s">Experiences</a>
+      <a href="#more" data-i18n="nav_day" class="hide-s">Day tours</a>
+      <a href="#programs" data-i18n="nav_prog" class="hide-s">Programmes</a>
+      <a href="#faq" data-i18n="nav_faq" class="hide-s">FAQ</a>
+      <a href="travel-tips/street-smarts.html" data-i18n="nav_tips" class="hide-s">Travel tips</a>
+      <a href="#request" data-i18n="nav_req" class="tailor">Tailor-made trip</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <img class="bgimg" src="images/12-hero-pyramids.jpg" alt="Camel and the pyramids of Giza" fetchpriority="high">
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="eyebrow">Local guide · Cairo, Egypt</span>
+    <h1 data-i18n="h1">See Egypt the way locals do.</h1>
+    <p class="lead" data-i18n="lead">Private and small-group experiences in Cairo, from walking tours to Nile kayaking and horseback rides to the pyramids. Clear plans, honest timing, and a guide who lives here.</p>
+    <div class="cta">
+      <a class="btn primary" href="#request" data-i18n="cta1">Contact me</a>
+      <a class="btn ghost" href="#programs" data-i18n="cta3">See trips and programmes</a>
+    </div>
+  </div>
+</div>
+
+<section style="padding-top:34px;padding-bottom:10px" aria-label="Must-sees">
+  <div class="wrap">
+    <div class="strip" id="seeStrip"></div>
+  </div>
+</section>
+
+<section id="experiences" style="padding-top:26px">
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker" data-i18n="kick_book">Bookable online</span><h2 data-i18n="ex_h">My experiences on Simsem</h2><p data-i18n="ex_p">Local experiences I host in Cairo. Open any one to see the full details and book on Simsem.</p></div>
+    <div class="grid" id="exGrid"></div>
+    <p class="note"><a href="https://mysimsem.com/localguide/egypt/abdulrahman-ahmed/" target="_blank" rel="noopener" data-i18n="ex_badge">Verified local host on Simsem · see my profile and reviews</a></p>
+  </div>
+</section>
+
+<section id="more" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker" data-i18n="kick_day">In and around Cairo</span><h2 data-i18n="more_h">More experiences I can arrange</h2><p data-i18n="more_p">Popular things to do in and around Cairo. Add the ones you like to your request and I send a price for your group.</p></div>
+    <div id="moreGrid"></div>
+  </div>
+</section>
+
+<section id="programs" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker" data-i18n="kick_prog">Multi-day</span><h2 data-i18n="prog_h">Trips and tour programmes</h2><p data-i18n="prog_p">Ready-made routes that combine the day tours into one trip. Every programme is a starting point: I adjust the days, stops and pace around your group, then send a clear price.</p></div>
+    <div class="programs" id="progGrid"></div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap">
+    <div class="tailor-band">
+      <div><h2 data-i18n="tb_h">Want something different?</h2><p data-i18n="tb_p">Tell me your dates, interests and budget range. I build the route around you.</p></div>
+      <a class="btn primary" href="#request" data-i18n="tb_b">Start a custom trip</a>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-i18n="why_h">What you get</h2></div>
+    <div class="why-grid">
+      <div class="why-item"><div class="num">01</div><h3 data-i18n="w1t">A fixed plan, shared early</h3><p data-i18n="w1p">You receive the route, meeting point and timing before the day, so nothing is a surprise.</p></div>
+      <div class="why-item"><div class="num">02</div><h3 data-i18n="w2t">Beat the crowds</h3><p data-i18n="w2p">Early starts and smart ordering of stops at the busiest sites.</p></div>
+      <div class="why-item"><div class="num">03</div><h3 data-i18n="w3t">Local food and etiquette</h3><p data-i18n="w3p">Where to eat, what to pay, and how to move around without being overcharged.</p></div>
+      <div class="why-item"><div class="num">04</div><h3 data-i18n="w4t">One point of contact</h3><p data-i18n="w4p">I am the person you message before, during and after your trip.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px;padding-bottom:20px">
+  <div class="wrap">
+    <div class="tips-band">
+      <img src="images/18-tips-cover.jpg" alt="Street scene in Cairo" loading="lazy">
+      <div class="tb-body">
+        <h3 data-i18n="tips_h">Street smarts for visitors to Egypt</h3>
+        <p data-i18n="tips_p">Nine habits that make your trip smoother: prices, tips, dress, photos and getting around.</p>
+        <a class="btn outline" style="padding:8px 16px" href="travel-tips/street-smarts.html" data-i18n="tips_b">Read the travel tips</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-i18n="faq_h">Questions I get often</h2></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<section id="request" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-i18n="plan_h">Request your trip</h2>
+      <p data-i18n="plan_p">Fill in the details and send the message on WhatsApp. I reply with availability and a price for your group.</p>
+    </div>
+    <div class="planner">
+      <form class="panel" id="planForm" novalidate>
+        <div class="row">
+          <div class="field"><label for="name" data-i18n="l_name">Your name</label><input id="name" autocomplete="name"></div>
+          <div class="field"><label for="email" data-i18n="l_email">Email</label><input id="email" type="email" autocomplete="email"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="nat" data-i18n="l_nat">Nationality</label><input id="nat"></div>
+          <div class="field"><label for="date" data-i18n="l_date">Preferred date</label><input id="date" type="date"></div>
+        </div>
+        <div class="lbl" data-i18n="l_trav">Travelers</div>
+        <div class="counters" id="counters"></div>
+        <div class="row">
+          <div class="field"><label for="budget" data-i18n="l_budget">Budget range</label>
+            <select id="budget"></select></div>
+          <div class="field"><label for="tlang" data-i18n="l_lang">Tour language</label>
+            <select id="tlang"><option>English</option><option>العربية</option><option>Deutsch</option></select></div>
+        </div>
+        <div class="field"><label for="hotel" data-i18n="l_hotel">Hotel or area</label><input id="hotel"></div>
+        <div class="field"><label for="notes" data-i18n="l_notes">Anything else</label><textarea id="notes" rows="3"></textarea></div>
+        <p class="note" id="pickedNote"></p>
+      </form>
+      <div class="preview">
+        <div class="lbl" data-i18n="l_msg">Your message</div>
+        <pre id="msg" aria-live="polite"></pre>
+        <div class="actions">
+          <a class="btn solid" id="waLink" href="#" target="_blank" rel="noopener" data-i18n="wa">Send on WhatsApp</a>
+          <button class="btn outline" id="copyBtn" type="button" data-i18n="copy">Copy message</button>
+        </div>
+        <p class="note" id="copyNote"></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><h3>egypt<span style="color:var(--sun)">guide</span></h3><p data-i18n="fb">Local guide and tour coordinator based in Cairo, Egypt.</p></div>
+      <div><h3 data-i18n="fl">Tours</h3><a href="#experiences" data-i18n="nav_ex">Experiences</a><a href="#programs" data-i18n="nav_prog">Programmes</a><a href="#request" data-i18n="nav_req">Tailor-made trip</a><a href="travel-tips/street-smarts.html" data-i18n="nav_tips">Travel tips</a></div>
+      <div><h3 data-i18n="fc">Contact</h3><a href="https://wa.me/201068635116" target="_blank" rel="noopener" dir="ltr">WhatsApp +20 106 863 5116</a></div>
+    </div>
+    <span data-i18n="foot2">Prices are quoted per group after you send your plan.</span>
+    <details class="credits">
+      <summary data-i18n="credits">Photo credits</summary>
+      <ul id="creditsList"></ul>
+    </details>
+  </div>
+</footer>
+
+<script>
+var CONTACT = { whatsapp: "201068635116" };
+
+var SEE = [
+  {k:{en:"Giza Pyramids",ar:"أهرامات الجيزة"},img:"images/12-hero-pyramids.jpg"},
+  {k:{en:"Grand Egyptian Museum",ar:"المتحف المصري الكبير"},img:"images/11-gem.jpg"},
+  {k:{en:"Khan el-Khalili",ar:"خان الخليلي"},img:"https://mysimsem.com/wp-content/uploads/2025/04/processed-E4A5244D-CB8F-4B37-B117-9EB570000CBB.jpeg"},
+  {k:{en:"Nile felucca",ar:"فلوكة في النيل"},img:"images/10-felucca-nile.jpg"},
+  {k:{en:"Cairo Citadel",ar:"قلعة القاهرة"},img:"images/7-citadel.jpg"}
+];
+
+var IMG = {
+  pyramids:"images/12-hero-pyramids.jpg",
+  nmec:"images/16-nmec.jpg",
+  muizz:"images/15-muizz.jpg",
+  manial:"images/14-manial-palace.jpg",
+  "azhar-park":"images/4-azhar-park.jpg",
+  "cairo-tower":"images/5-cairo-tower.jpg",
+  "cave-church":"images/6-cave-church.jpg",
+  gem:"images/11-gem.jpg",
+  food:"images/13-koshary.jpg",
+  felucca:"images/10-felucca-nile.jpg",
+  citadel:"images/7-citadel.jpg",
+  coptic:"images/8-coptic-cairo.jpg",
+  saqqara:"images/17-saqqara.jpg",
+  alex:"images/3-alexandria.jpg",
+  fayoum:"images/9-fayoum.jpg"
+};
+
+var CAT = {
+  pyramids:"hist", gem:"hist", saqqara:"hist", nmec:"hist", citadel:"hist",
+  coptic:"hist", muizz:"hist", manial:"hist", "cave-church":"hist",
+  food:"food", matareya:"food", downtown:"food",
+  felucca:"out", "azhar-park":"out", "cairo-tower":"out", "wadi-degla":"out",
+  alex:"trip", fayoum:"trip"
+};
+var CAT_ORDER = ["hist","food","out","trip"];
+
+var PROGRAMS = [
+ {
+  id:"prog-cairo3",
+  img:"images/11-gem.jpg",
+  days:{en:"3 days",ar:"٣ أيام"},
+  t:{en:"Cairo essentials in 3 days",ar:"أساسيات القاهرة في ٣ أيام"},
+  d:{en:"The classic first visit: pyramids, museums, old Cairo and the Nile, paced so you see a lot without rushing.",
+     ar:"الزيارة الكلاسيكية الأولى: أهرامات ومتاحف والقاهرة القديمة والنيل، بإيقاع يخليك تشوف كتير من غير استعجال."},
+  plan:{
+   en:["Day 1: Giza Pyramids and the Sphinx, then the Grand Egyptian Museum",
+       "Day 2: Citadel and Muhammad Ali Mosque, then Khan el-Khalili and the Old Cairo walk",
+       "Day 3: Coptic Cairo, Downtown walk, and a felucca sunset on the Nile"],
+   ar:["اليوم ١: أهرامات الجيزة وأبو الهول، وبعدها المتحف المصري الكبير",
+       "اليوم ٢: قلعة صلاح الدين ومسجد محمد علي، وبعدها خان الخليلي وجولة القاهرة القديمة",
+       "اليوم ٣: القاهرة القبطية، جولة وسط البلد، وفلوكة وقت الغروب في النيل"]}
+ },
+ {
+  id:"prog-cairo-alex4",
+  img:"images/3-alexandria.jpg",
+  days:{en:"4 days",ar:"٤ أيام"},
+  t:{en:"Cairo and Alexandria in 4 days",ar:"القاهرة وإسكندرية في ٤ أيام"},
+  d:{en:"Cairo's highlights plus a full day on the Mediterranean in Alexandria.",
+     ar:"أهم معالم القاهرة مع يوم كامل على البحر المتوسط في إسكندرية."},
+  plan:{
+   en:["Day 1: Giza Pyramids and the Sphinx, then the Grand Egyptian Museum",
+       "Day 2: Citadel, Khan el-Khalili and the Old Cairo walk",
+       "Day 3: Alexandria day trip",
+       "Day 4: Saqqara and Memphis, then an Egyptian street food walk"],
+   ar:["اليوم ١: أهرامات الجيزة وأبو الهول، وبعدها المتحف المصري الكبير",
+       "اليوم ٢: القلعة وخان الخليلي وجولة القاهرة القديمة",
+       "اليوم ٣: رحلة يوم لإسكندرية",
+       "اليوم ٤: سقارة وممفيس، وبعدها جولة أكل شارع مصري"]}
+ },
+ {
+  id:"prog-fayoum2",
+  img:"images/9-fayoum.jpg",
+  days:{en:"2 days",ar:"يومان"},
+  t:{en:"Cairo and Fayoum oasis weekend",ar:"ويك إند القاهرة وواحة الفيوم"},
+  d:{en:"A short escape: the pyramids on day one, waterfalls and desert lake views in Fayoum on day two.",
+     ar:"هروب قصير: الأهرامات أول يوم، وشلالات وبحيرة الفيوم تاني يوم."},
+  plan:{
+   en:["Day 1: Giza Pyramids and the Sphinx",
+       "Day 2: Fayoum oasis day trip: Wadi El Rayan waterfalls, dunes and lake views"],
+   ar:["اليوم ١: أهرامات الجيزة وأبو الهول",
+       "اليوم ٢: رحلة يوم لواحة الفيوم: شلالات وادي الريان والكثبان وإطلالة البحيرة"]}
+ }
+];
+
+var TOURS = [
+ {
+  "id": "pyramids",
+  "kind": "more",
+  "hue": [
+   "#e2a21f",
+   "#0f4c52"
+  ],
+  "dur": {
+   "en": "Half day",
+   "ar": "نصف يوم"
+  },
+  "loc": {
+   "en": "Giza",
+   "ar": "الجيزة"
+  },
+  "t": {
+   "en": "Giza Pyramids and the Sphinx",
+   "ar": "أهرامات الجيزة وأبو الهول"
+  },
+  "d": {
+   "en": "The Great Pyramid, the Sphinx and the best panorama viewpoint, with the plan shaped around the heat and the crowds.",
+   "ar": "الهرم الأكبر وأبو الهول وأحسن نقطة بانوراما، والخطة متظبطة على الحر والزحمة."
+  },
+  "it": {
+   "en": [
+    "Early pickup from your hotel",
+    "Pyramids plateau",
+    "Panorama viewpoint",
+    "Sphinx and valley temple",
+    "Drop-off at your hotel"
+   ],
+   "ar": [
+    "استلام بدري من الفندق",
+    "هضبة الأهرامات",
+    "نقطة البانوراما",
+    "أبو الهول ومعبد الوادي",
+    "توصيلة للفندق"
+   ]
+  },
+  "tag": {
+   "en": "Classic",
+   "ar": "كلاسيكية"
+  }
+ },
+ {
+  "id": "gem",
+  "kind": "more",
+  "hue": [
+   "#0f4c52",
+   "#e2a21f"
+  ],
+  "dur": {
+   "en": "Half day",
+   "ar": "نصف يوم"
+  },
+  "loc": {
+   "en": "Giza",
+   "ar": "الجيزة"
+  },
+  "t": {
+   "en": "Grand Egyptian Museum",
+   "ar": "المتحف المصري الكبير"
+  },
+  "d": {
+   "en": "A guided walk through the museum's main galleries, with the Tutankhamun collection and the stories behind the objects.",
+   "ar": "جولة بمرشد في أهم قاعات المتحف، مع مجموعة توت عنخ آمون وحكايات القطع."
+  },
+  "it": {
+   "en": [
+    "Meet at the museum or your hotel",
+    "Grand staircase galleries",
+    "Tutankhamun collection",
+    "Free time and café"
+   ],
+   "ar": [
+    "لقاء عند المتحف أو من الفندق",
+    "قاعات السلم الكبير",
+    "مجموعة توت عنخ آمون",
+    "وقت حر وكافيه"
+   ]
+  },
+  "tag": {
+   "en": "Museum",
+   "ar": "متحف"
+  }
+ },
+ {
+  "id": "food",
+  "kind": "more",
+  "hue": [
+   "#b9722a",
+   "#f0d9a0"
+  ],
+  "dur": {
+   "en": "3 to 4 hours",
+   "ar": "٣ إلى ٤ ساعات"
+  },
+  "loc": {
+   "en": "Downtown Cairo",
+   "ar": "وسط البلد"
+  },
+  "t": {
+   "en": "Egyptian street food walk",
+   "ar": "جولة الأكل الشعبي المصري"
+  },
+  "d": {
+   "en": "Taste the dishes Cairenes eat every day, at the places locals actually go. Come hungry.",
+   "ar": "جرّب الأكلات اللي المصريين بياكلوها كل يوم في الأماكن اللي أهلها بيروحوها. تعالى جعان."
+  },
+  "it": {
+   "en": [
+    "Meet in Downtown",
+    "Koshary and ful with ta'meya",
+    "Local sweets stop",
+    "Fresh juice or tea to finish"
+   ],
+   "ar": [
+    "لقاء في وسط البلد",
+    "كشري وفول وطعمية",
+    "وقفة حلويات شعبية",
+    "عصير أو شاي في الآخر"
+   ]
+  },
+  "tag": {
+   "en": "Food",
+   "ar": "أكل"
+  }
+ },
+ {
+  "id": "matareya",
+  "kind": "more",
+  "hue": [
+   "#b9722a",
+   "#e2a21f"
+  ],
+  "dur": {
+   "en": "2 to 3 hours",
+   "ar": "٢ إلى ٣ ساعات"
+  },
+  "loc": {
+   "en": "Matareya, Cairo",
+   "ar": "المطرية، القاهرة"
+  },
+  "t": {
+   "en": "Matareya breakfast",
+   "ar": "فطار المطرية"
+  },
+  "d": {
+   "en": "A real Egyptian breakfast the way locals eat it in Matareya, at a neighborhood spot far from the tourist routes.",
+   "ar": "فطار مصري حقيقي زي ما أهل المطرية بياكلوه، في مكان شعبي بعيد عن مسارات السياح."
+  },
+  "it": {
+   "en": [
+    "Early meet-up or hotel pickup",
+    "Ful, ta'meya, eggs and fresh bread",
+    "Tea with the neighborhood",
+    "Short walk around the area"
+   ],
+   "ar": [
+    "لقاء بدري أو استلام من الفندق",
+    "فول وطعمية وبيض وعيش طازة",
+    "شاي مع أهل الحتة",
+    "مشوار قصير حوالين المنطقة"
+   ]
+  },
+  "tag": {
+   "en": "Food",
+   "ar": "أكل"
+  }
+ },
+ {
+  "id": "felucca",
+  "kind": "more",
+  "hue": [
+   "#1f6aa5",
+   "#e2a21f"
+  ],
+  "dur": {
+   "en": "1 to 2 hours",
+   "ar": "١ إلى ٢ ساعة"
+  },
+  "loc": {
+   "en": "Nile, Cairo",
+   "ar": "النيل، القاهرة"
+  },
+  "t": {
+   "en": "Felucca sunset on the Nile",
+   "ar": "فلوكة على النيل وقت الغروب"
+  },
+  "d": {
+   "en": "A relaxed sail on a traditional felucca as the city lights come on. Good for couples, families and small groups.",
+   "ar": "مشوار هادي بفلوكة على النيل مع إضاءة المدينة. مناسب للأزواج والعائلات والمجموعات الصغيرة."
+  },
+  "it": {
+   "en": [
+    "Meet at the felucca dock",
+    "Sail on the Nile",
+    "Sunset and city views",
+    "Return to the dock"
+   ],
+   "ar": [
+    "لقاء عند مرسى الفلوكة",
+    "مشوار على النيل",
+    "الغروب وإطلالة المدينة",
+    "العودة للمرسى"
+   ]
+  },
+  "tag": {
+   "en": "Sunset",
+   "ar": "غروب"
+  }
+ },
+ {
+  "id": "downtown",
+  "kind": "more",
+  "hue": [
+   "#7a3b2e",
+   "#e8c77a"
+  ],
+  "dur": {
+   "en": "3 hours",
+   "ar": "٣ ساعات"
+  },
+  "loc": {
+   "en": "Downtown Cairo",
+   "ar": "وسط البلد"
+  },
+  "t": {
+   "en": "Downtown Cairo walk: old buildings and cafés",
+   "ar": "مشي وسط البلد: عمارات قديمة وقهاوي"
+  },
+  "d": {
+   "en": "Walk the streets of Khedival Cairo, see its old facades and sit in a traditional café.",
+   "ar": "مشي في شوارع القاهرة الخديوية، تشوف العمارات القديمة وتقعد في قهوة بلدي."
+  },
+  "it": {
+   "en": [
+    "Meet at Tahrir or Talaat Harb",
+    "Historic buildings and passages",
+    "Traditional café break"
+   ],
+   "ar": [
+    "لقاء عند التحرير أو طلعت حرب",
+    "عمارات وممرات تاريخية",
+    "استراحة في قهوة بلدي"
+   ]
+  },
+  "tag": {
+   "en": "Walking",
+   "ar": "مشي"
+  }
+ },
+ {
+  "id": "citadel",
+  "kind": "more",
+  "hue": [
+   "#0f4c52",
+   "#e2a21f"
+  ],
+  "dur": {
+   "en": "Half day",
+   "ar": "نصف يوم"
+  },
+  "loc": {
+   "en": "Old Cairo",
+   "ar": "القاهرة القديمة"
+  },
+  "t": {
+   "en": "Citadel and Muhammad Ali Mosque",
+   "ar": "القلعة ومسجد محمد علي"
+  },
+  "d": {
+   "en": "Saladin's Citadel, the Muhammad Ali Mosque and one of the best views across Cairo.",
+   "ar": "قلعة صلاح الدين ومسجد محمد علي وواحدة من أحسن إطلالات القاهرة."
+  },
+  "it": {
+   "en": [
+    "Pickup or meet at the Citadel",
+    "Muhammad Ali Mosque",
+    "Citadel viewpoints",
+    "Optional nearby mosque"
+   ],
+   "ar": [
+    "استلام أو لقاء عند القلعة",
+    "مسجد محمد علي",
+    "نقاط الإطلالة",
+    "مسجد قريب لو حبيت"
+   ]
+  },
+  "tag": {
+   "en": "Culture",
+   "ar": "ثقافة"
+  }
+ },
+ {
+  "id": "coptic",
+  "kind": "more",
+  "hue": [
+   "#7a3b2e",
+   "#f0d9a0"
+  ],
+  "dur": {
+   "en": "Half day",
+   "ar": "نصف يوم"
+  },
+  "loc": {
+   "en": "Coptic Cairo",
+   "ar": "مصر القديمة"
+  },
+  "t": {
+   "en": "Coptic Cairo",
+   "ar": "القاهرة القبطية"
+  },
+  "d": {
+   "en": "The Hanging Church, Ben Ezra Synagogue and the old churches in one quiet walk.",
+   "ar": "الكنيسة المعلقة ومعبد بن عزرا والكنائس القديمة في مشوار هادي."
+  },
+  "it": {
+   "en": [
+    "Meet at Coptic Cairo",
+    "Hanging Church",
+    "Ben Ezra Synagogue",
+    "Old churches and lanes"
+   ],
+   "ar": [
+    "لقاء في مصر القديمة",
+    "الكنيسة المعلقة",
+    "معبد بن عزرا",
+    "الكنائس والحواري القديمة"
+   ]
+  },
+  "tag": {
+   "en": "Culture",
+   "ar": "ثقافة"
+  }
+ },
+ {
+  "id": "saqqara",
+  "kind": "more",
+  "hue": [
+   "#1f4f8f",
+   "#e2a21f"
+  ],
+  "dur": {
+   "en": "Half day",
+   "ar": "نصف يوم"
+  },
+  "loc": {
+   "en": "Saqqara, Memphis",
+   "ar": "سقارة، منف"
+  },
+  "t": {
+   "en": "Saqqara and Memphis",
+   "ar": "سقارة ومنف"
+  },
+  "d": {
+   "en": "The Step Pyramid of Djoser and the open-air museum at Memphis. Quieter than Giza.",
+   "ar": "هرم زوسر المدرج ومتحف منف المفتوح. أهدى من الجيزة."
+  },
+  "it": {
+   "en": [
+    "Pickup from your hotel",
+    "Step Pyramid complex",
+    "Decorated tombs",
+    "Memphis open-air museum"
+   ],
+   "ar": [
+    "استلام من الفندق",
+    "مجمع الهرم المدرج",
+    "المقابر الملونة",
+    "متحف منف المفتوح"
+   ]
+  },
+  "tag": {
+   "en": "Quiet",
+   "ar": "هادئة"
+  }
+ },
+ {
+  "id": "alex",
+  "kind": "more",
+  "hue": [
+   "#1f6aa5",
+   "#e8f1ee"
+  ],
+  "dur": {
+   "en": "Full day",
+   "ar": "يوم كامل"
+  },
+  "loc": {
+   "en": "Alexandria",
+   "ar": "الإسكندرية"
+  },
+  "t": {
+   "en": "Alexandria day trip",
+   "ar": "رحلة يوم إلى الإسكندرية"
+  },
+  "d": {
+   "en": "The Mediterranean coast in a day: Qaitbay Citadel, the library and a seafood lunch.",
+   "ar": "ساحل المتوسط في يوم: قلعة قايتباي والمكتبة وغداء سمك."
+  },
+  "it": {
+   "en": [
+    "Early drive from Cairo",
+    "Qaitbay Citadel",
+    "Bibliotheca Alexandrina",
+    "Seafood lunch",
+    "Return to Cairo"
+   ],
+   "ar": [
+    "سفر بدري من القاهرة",
+    "قلعة قايتباي",
+    "مكتبة الإسكندرية",
+    "غداء سمك",
+    "العودة للقاهرة"
+   ]
+  },
+  "tag": {
+   "en": "Weekend",
+   "ar": "ويك إند"
+  }
+ },
+ {
+  "id": "fayoum",
+  "kind": "more",
+  "hue": [
+   "#2c8a86",
+   "#e2a21f"
+  ],
+  "dur": {
+   "en": "Full day",
+   "ar": "يوم كامل"
+  },
+  "loc": {
+   "en": "Fayoum",
+   "ar": "الفيوم"
+  },
+  "t": {
+   "en": "Fayoum oasis day trip",
+   "ar": "رحلة يوم إلى واحة الفيوم"
+  },
+  "d": {
+   "en": "Waterfalls, dunes and Lake Qarun. An easy escape from Cairo for groups and families.",
+   "ar": "شلالات وكثبان وبحيرة قارون. هروب سهل من القاهرة للمجموعات والعائلات."
+  },
+  "it": {
+   "en": [
+    "Drive to Fayoum",
+    "Wadi El Rayan waterfalls",
+    "Dunes and lake views",
+    "Lunch and return"
+   ],
+   "ar": [
+    "سفر للفيوم",
+    "شلالات وادي الريان",
+    "الكثبان وإطلالة البحيرة",
+    "غداء والعودة"
+   ]
+  },
+  "tag": {
+   "en": "Weekend",
+   "ar": "ويك إند"
+  }
+ },
+ {
+  "id": "nmec",
+  "kind": "more",
+  "hue": ["#1f4f8f", "#0f4c52"],
+  "dur": {"en": "Half day", "ar": "نصف يوم"},
+  "loc": {"en": "Fustat, Cairo", "ar": "الفسطاط، القاهرة"},
+  "t": {"en": "National Museum of Egyptian Civilization", "ar": "المتحف القومي للحضارة المصرية"},
+  "d": {"en": "The Royal Mummies Hall and the story of Egypt from prehistoric times to today, in one modern museum.",
+        "ar": "قاعة المومياوات الملكية وحكاية مصر من ما قبل التاريخ للنهاردة، في متحف واحد حديث."},
+  "it": {"en": ["Drive to Fustat", "Main galleries", "Royal Mummies Hall", "Walk by Ain El-Sira lake and return"],
+         "ar": ["سفر للفسطاط", "القاعات الرئيسية", "قاعة المومياوات الملكية", "مشوار عند بحيرة عين الصيرة والعودة"]}
+ },
+ {
+  "id": "muizz",
+  "kind": "more",
+  "hue": ["#7a3b2e", "#e2a21f"],
+  "dur": {"en": "2 to 3 hours", "ar": "من ساعتين ل٣ ساعات"},
+  "loc": {"en": "Old Cairo", "ar": "القاهرة القديمة"},
+  "t": {"en": "Al-Muizz Street and the medieval gates", "ar": "شارع المعز وبوابات القاهرة القديمة"},
+  "d": {"en": "A whole street that works as an open-air museum: madrasas, mosques and old houses between Bab Zuweila and Bab al-Futuh.",
+        "ar": "شارع كامل شغال كمتحف مفتوح: مدارس ومساجد وبيوت قديمة بين باب زويلة وباب الفتوح."},
+  "it": {"en": ["Meet at Bab Zuweila", "Walk Al-Muizz street", "Qalawun complex area", "Bab al-Futuh and walk back"],
+         "ar": ["نقابل عند باب زويلة", "مشوار شارع المعز", "منطقة مجموعة قلاوون", "باب الفتوح والرجوع"]}
+ },
+ {
+  "id": "manial",
+  "kind": "more",
+  "hue": ["#0f4c52", "#b9722a"],
+  "dur": {"en": "Half day", "ar": "نصف يوم"},
+  "loc": {"en": "Roda Island", "ar": "جزيرة الروضة"},
+  "t": {"en": "Manial Palace and Roda Island", "ar": "قصر المنيل وجزيرة الروضة"},
+  "d": {"en": "Prince Muhammad Ali's palace: gardens, decorated halls and a museum most visitors walk past.",
+        "ar": "قصر الأمير محمد علي: حدائق وقاعات مزخرفة ومتحف أغلب الزوار بيعدّوا عنه."},
+  "it": {"en": ["Drive to Roda Island", "Palace gardens", "Halls and museum", "Corniche walk and return"],
+         "ar": ["سفر لجزيرة الروضة", "حدائق القصر", "القاعات والمتحف", "مشوار على الكورنيش والعودة"]}
+ },
+ {
+  "id": "azhar-park",
+  "kind": "more",
+  "hue": ["#1c7a7e", "#e2a21f"],
+  "dur": {"en": "2 hours", "ar": "ساعتان"},
+  "loc": {"en": "Old Cairo", "ar": "القاهرة القديمة"},
+  "t": {"en": "Al-Azhar Park sunset", "ar": "الغروب في حديقة الأزهر"},
+  "d": {"en": "Cairo's green balcony: gardens, fountains and one of the best sunset views over the old city.",
+        "ar": "بلكونة القاهرة الخضرا: حدائق ونوافير وواحدة من أحلى إطلالات الغروب على المدينة القديمة."},
+  "it": {"en": ["Enter before sunset", "Gardens and fountains", "Panorama terrace", "Tea with the view"],
+         "ar": ["دخول قبل الغروب", "الحدائق والنوافير", "تراس البانوراما", "شاي بالإطلالة"]}
+ },
+ {
+  "id": "cairo-tower",
+  "kind": "more",
+  "hue": ["#1f6aa5", "#0f4c52"],
+  "dur": {"en": "2 hours", "ar": "ساعتان"},
+  "loc": {"en": "Zamalek", "ar": "الزمالك"},
+  "t": {"en": "Cairo Tower and a Zamalek evening", "ar": "برج القاهرة وسهرة في الزمالك"},
+  "d": {"en": "The whole city from the top of the tower, then coffee or dinner in Zamalek's streets.",
+        "ar": "المدينة كلها من فوق البرج، وبعدها قهوة أو عشا في شوارع الزمالك."},
+  "it": {"en": ["Up the tower", "City panorama", "Zamalek walk", "Cafe or dinner stop"],
+         "ar": ["الصعود للبرج", "بانوراما المدينة", "مشوار الزمالك", "وقفة قهوة أو عشا"]}
+ },
+ {
+  "id": "cave-church",
+  "kind": "more",
+  "hue": ["#b9722a", "#7a3b2e"],
+  "dur": {"en": "2 to 3 hours", "ar": "من ساعتين ل٣ ساعات"},
+  "loc": {"en": "Mokattam", "ar": "المقطم"},
+  "t": {"en": "The Cave Church of St. Simon", "ar": "كنيسة القديس سمعان الخراز"},
+  "d": {"en": "A huge church carved into the Mokattam hill, and the story of the Zabbaleen community around it.",
+        "ar": "كنيسة ضخمة منحوتة في جبل المقطم، وحكاية مجتمع الزبالين اللي حواليها."},
+  "it": {"en": ["Drive up Mokattam", "The cave church", "Carvings and halls", "View over Cairo and return"],
+         "ar": ["الصعود للمقطم", "الكنيسة الكهفية", "النقوش والقاعات", "إطلالة على القاهرة والعودة"]}
+ },
+ {
+  "id": "wadi-degla",
+  "kind": "more",
+  "hue": ["#52696b", "#e2a21f"],
+  "dur": {"en": "Half day", "ar": "نصف يوم"},
+  "loc": {"en": "Maadi", "ar": "المعادي"},
+  "t": {"en": "Wadi Degla valley hike", "ar": "مشي في وادي دجلة"},
+  "d": {"en": "A dry canyon inside the city: an easy morning walk between limestone cliffs, good for groups.",
+        "ar": "وادٍ جاف جوه المدينة: مشي صبحي سهل بين حواف جيرية، مناسب للمجموعات."},
+  "it": {"en": ["Early start", "Into the valley", "Cliff viewpoints", "Rest and return"],
+         "ar": ["بداية بدري", "النزول للوادي", "نقاط الإطلالة", "راحة والعودة"]}
+ }
+];
+
+
+var SIMSEM = [
+  {t:"Hidden Gems of Heliopolis: History, Architecture & Flavors",ta:"جواهر مصر الجديدة الخفية: تاريخ وعمارة ونكهات",dur:{en:"5 hours",ar:"٥ ساعات"},p:63,
+   img:"https://simemmedia.b-cdn.net/experiences//tours/3jWY2Cd4JS/cover/cover_1768353517789.jpg",
+   u:"https://mysimsem.com/experiences/heliopolis-egypt-tour-baron-palace-local-life/",hue:["#b9722a","#0f4c52"]},
+  {t:"Journey Through Zamalek: History, Art, and Egyptian Elegance",ta:"رحلة في الزمالك: تاريخ وفن وأناقة مصرية",dur:{en:"5 hours",ar:"٥ ساعات"},p:63,
+   img:"https://mysimsem.com/wp-content/uploads/2025/04/9c3fb3b09737afc089c41711dc97a8f3_1744556234910.jpeg",
+   u:"https://mysimsem.com/experiences/zamalek-tour-cairo-culture-nile-abu-el-sid-via-simsem/",hue:["#1f6aa5","#e2a21f"]},
+  {t:"Islamic Cairo Tour: Khan El Khalili Bazaar and Old Cairo Walk",ta:"جولة القاهرة الإسلامية: خان الخليلي ومشوار القاهرة القديمة",dur:{en:"8 hours",ar:"٨ ساعات"},p:63,
+   img:"https://mysimsem.com/wp-content/uploads/2025/04/processed-E4A5244D-CB8F-4B37-B117-9EB570000CBB.jpeg",
+   u:"https://mysimsem.com/experiences/islamic-cairo-tour-khan-el-khalili-bazaar-old-cairo-walk/",hue:["#0f4c52","#e2a21f"]},
+  {t:"Nile River Kayaking in Cairo",ta:"كاياك في نهر النيل بالقاهرة",dur:{en:"3 hours",ar:"٣ ساعات"},p:50,
+   img:"https://simemmedia.b-cdn.net/experiences//tours/L4dLKtDxhJ/cover/cover_1768348589522.jpg",
+   u:"https://mysimsem.com/experiences/nile-river-kayaking-in-cairo-best-things-to-do-in-cairo/",hue:["#1f6aa5","#0f4c52"]},
+  {t:"Horseback Ride to Giza's Pyramids: A Desert Adventure",ta:"ركوب الخيل عند أهرامات الجيزة: مغامرة صحراوية",dur:{en:"2 hours",ar:"ساعتان"},p:44,
+   img:"https://mysimsem.com/wp-content/uploads/2024/09/WhatsApp-Image-2024-07-29-at-100050-PM.jpeg",
+   u:"https://mysimsem.com/experiences/pyramids-in-egypt/",hue:["#e2a21f","#0f4c52"]}
+];
+
+
+var FAQ = {
+ en:[["How do I book?","Choose your tours, fill in the form and send the message on WhatsApp. I reply with availability and a price for your group."],
+     ["Is the tour private?","Tours are private for your group by default. Small-group options can be arranged on request."],
+     ["Which languages do you guide in?","Arabic and English. German tours are being prepared."],
+     ["Can I change the plan?","Yes. Every itinerary is a starting point and I adjust stops, timing and pace to your group."],
+     ["What about prices and payment?","Prices depend on the group size, season and transport. You get a clear quote before anything is confirmed."]],
+ ar:[["أحجز إزاي؟","اختار رحلاتك، املا الفورم وابعت الرسالة على واتساب. برد عليك بالمواعيد المتاحة وسعر مجموعتك."],
+     ["الرحلة خاصة؟","الرحلات خاصة لمجموعتك افتراضيًا، وممكن نرتب مجموعات صغيرة عند الطلب."],
+     ["بتتكلم بأنهي لغات؟","عربي وإنجليزي، ورحلات الألماني قيد التجهيز."],
+     ["أقدر أغير في الخطة؟","أيوه. كل برنامج نقطة بداية وبظبط المحطات والتوقيت والإيقاع على مجموعتك."],
+     ["الأسعار والدفع؟","السعر بيعتمد على عدد الأفراد والموسم والمواصلات. هتستلم عرض واضح قبل أي تأكيد."]]
+};
+
+
+var I18N = {
+ en:{nav_tips:"Travel tips",u_wa:"WhatsApp",nav_day:"Day tours",nav_pk:"Packages",nav_faq:"FAQ",nav_req:"Tailor-made trip",
+  eyebrow:"Local guide · Cairo, Egypt",h1:"See Egypt the way locals do.",
+  lead:"Private and small-group experiences in Cairo, from walking tours to Nile kayaking and horseback rides to the pyramids. Clear plans, honest timing, and a guide who lives here.",
+  cta1:"Contact me",cta2:"Build a custom trip",
+  must_h:"Must-sees",must_p:"The places most visitors come for. I can combine any of them into one day or one trip.",
+  day_h:"Day tours",day_p:"Half-day and full-day tours. Open the details to see the plan, then add the ones you like to your request.",
+  pk_h:"Packages",pk_p:"Longer trips with the route, transport and stops planned together.",
+  tb_h:"Want something different?",tb_p:"Tell me your dates, interests and budget range. I build the route around you.",tb_b:"Start a custom trip",
+  why_h:"What you get",w1t:"A fixed plan, shared early",w1p:"You receive the route, meeting point and timing before the day, so nothing is a surprise.",
+  w2t:"Beat the crowds",w2p:"Early starts and smart ordering of stops at the busiest sites.",
+  w3t:"Local food and etiquette",w3p:"Where to eat, what to pay, and how to move around without being overcharged.",
+  w4t:"One point of contact",w4p:"I am the person you message before, during and after your trip.",
+  faq_h:"Questions I get often",
+  plan_h:"Request your trip",plan_p:"Fill in the details and send the message on WhatsApp. I reply with availability and a price for your group.",
+  l_name:"Your name",l_email:"Email",l_nat:"Nationality",l_date:"Preferred date",l_trav:"Travelers",l_budget:"Budget range",l_lang:"Tour language",l_hotel:"Hotel or area",l_notes:"Anything else",l_msg:"Your message",
+  copy:"Copy message",wa:"Send on WhatsApp",fb:"Local guide and tour coordinator based in Cairo, Egypt.",fl:"Tours",fc:"Contact",foot2:"Prices are quoted per group after you send your plan.",
+  details:"Tour details",pick:"Add to my request",picked:"Added",onreq:"Price on request",from:"From",pp:"per person",nav_ex:"Experiences",more_h:"More experiences I can arrange",more_p:"Popular things to do in and around Cairo. Add the ones you like to your request and I send a price for your group.",ex_h:"My experiences on Simsem",ex_p:"Local experiences I host in Cairo. Open any one to see the full details and book on Simsem.",ex_book:"View and book",ex_badge:"Verified local host on Simsem · see my profile and reviews",cairo:"Cairo",price_note:"Prices are in US dollars per person for groups of 3 or more. Entrance fees and lunch are paid separately. Smaller groups pay more per person, so send your group size for an exact quote.",
+  adults:"Adults",children:"Children",infants:"Infants",b1:"Budget",b2:"Comfort",b3:"Premium",
+  none:"No tours selected yet. Add some from the lists above, or ask for a custom trip.",sel:"Selected: ",copied:"Copied. Paste it into your chat.",copyfail:"Copy is blocked here. Select the text and copy it manually.",
+  hello:"Hello, I would like to request a trip in Egypt.",n:"Name",em:"Email",na:"Nationality",tr:"Tours",dt:"Date",gr:"Travelers",ln:"Tour language",bd:"Budget range",ht:"Hotel or area",nt:"Notes",anyd:"Flexible",custom:"Custom trip",thanks:"Please send me availability and a price. Thank you."},
+ ar:{nav_tips:"نصايح للسفر",u_wa:"واتساب",nav_day:"رحلات اليوم",nav_pk:"البرامج",nav_faq:"أسئلة",nav_req:"رحلة مخصصة",
+  eyebrow:"مرشد محلي · القاهرة، مصر",h1:"شوف مصر زي ما أهلها بيشوفوها.",
+  lead:"تجارب خاصة ومجموعات صغيرة في القاهرة، من جولات المشي لكاياك النيل وركوب الخيل عند الأهرامات. خطة واضحة ومواعيد صادقة ومرشد عايش هنا.",
+  cta1:"تواصل معايا",cta2:"اعمل رحلة مخصصة",
+  must_h:"أهم الأماكن",must_p:"الأماكن اللي أغلب الزوار بييجوا عشانها. أقدر أجمع أي منها في يوم أو رحلة واحدة.",
+  day_h:"رحلات اليوم",day_p:"رحلات نصف يوم ويوم كامل. افتح التفاصيل تشوف الخطة، وضيف اللي يعجبك لطلبك.",
+  pk_h:"البرامج",pk_p:"رحلات أطول بمسار ومواصلات ومحطات متظبطة مع بعض.",
+  tb_h:"عايز حاجة مختلفة؟",tb_p:"قولي تواريخك واهتماماتك ونطاق ميزانيتك، وأنا أبني المسار حواليك.",tb_b:"ابدأ رحلة مخصصة",
+  why_h:"هتستفيد إيه",w1t:"خطة ثابتة بتوصلك بدري",w1p:"بتستلم المسار ونقطة اللقاء والتوقيت قبل اليوم، فمفيش مفاجآت.",
+  w2t:"تفادي الزحمة",w2p:"بدايات بدري وترتيب ذكي للمحطات في الأماكن الأكثر ازدحامًا.",
+  w3t:"أكل محلي وأصول التعامل",w3p:"تاكل فين وتدفع كام وتتحرك إزاي من غير ما حد يضحك عليك.",
+  w4t:"شخص واحد تتواصل معاه",w4p:"أنا اللي بتكلمه قبل الرحلة وأثناءها وبعدها.",
+  faq_h:"أسئلة بتتكرر",
+  plan_h:"اطلب رحلتك",plan_p:"املا البيانات وابعت الرسالة على واتساب. برد عليك بالمواعيد المتاحة وسعر مجموعتك.",
+  l_name:"اسمك",l_email:"الإيميل",l_nat:"الجنسية",l_date:"التاريخ المفضل",l_trav:"المسافرين",l_budget:"نطاق الميزانية",l_lang:"لغة الجولة",l_hotel:"الفندق أو المنطقة",l_notes:"أي ملاحظات",l_msg:"رسالتك",
+  copy:"انسخ الرسالة",wa:"ابعت على واتساب",fb:"مرشد محلي ومنسق رحلات في القاهرة، مصر.",fl:"الرحلات",fc:"تواصل",foot2:"الأسعار بتتحدد للمجموعة بعد ما تبعت خطتك.",
+  details:"تفاصيل الرحلة",pick:"ضيفها لطلبي",picked:"تمت الإضافة",onreq:"السعر عند الطلب",from:"من",pp:"للفرد",nav_ex:"تجارب",more_h:"تجارب تانية أقدر أرتبها",more_p:"حاجات شعبية يتعمل في القاهرة وحواليها. ضيف اللي يعجبك لطلبك وأبعتلك سعر مجموعتك.",ex_h:"تجاربي على سمسم",ex_p:"تجارب محلية بستضيفها في القاهرة. افتح أي واحدة تشوف التفاصيل كاملة وتحجز على سمسم.",ex_book:"التفاصيل والحجز",ex_badge:"مضيف محلي موثّق على سمسم · شوف بروفايلي والتقييمات",cairo:"القاهرة",price_note:"الأسعار بالدولار للفرد لمجموعات من ٣ أفراد فأكتر. تذاكر الدخول والغدا بتتدفع لوحدها. المجموعات الأصغر بتدفع أكتر للفرد، فابعت عدد مجموعتك وأنا أديك سعر دقيق.",
+  adults:"بالغين",children:"أطفال",infants:"رضع",b1:"اقتصادي",b2:"مريح",b3:"مميز",
+  none:"لسه مختارتش رحلات. ضيف من القوائم فوق، أو اطلب رحلة مخصصة.",sel:"المختار: ",copied:"تم النسخ. الصقها في المحادثة.",copyfail:"النسخ ممنوع هنا. حدد النص وانسخه يدويًا.",
+  hello:"أهلًا، عايز أطلب رحلة في مصر.",n:"الاسم",em:"الإيميل",na:"الجنسية",tr:"الرحلات",dt:"التاريخ",gr:"المسافرين",ln:"لغة الجولة",bd:"نطاق الميزانية",ht:"الفندق أو المنطقة",nt:"ملاحظات",anyd:"مرن",custom:"رحلة مخصصة",thanks:"ياريت تبعتلي المواعيد المتاحة والسعر. شكرًا."}
+};
+
+
+Object.assign(I18N.en, {
+  nav_prog:"Programmes", cta3:"See trips and programmes",
+  kick_book:"Bookable online", kick_day:"In and around Cairo", kick_prog:"Multi-day",
+  prog_h:"Trips and tour programmes", prog_p:"Ready-made routes that combine the day tours into one trip. Every programme is a starting point: I adjust the days, stops and pace around your group, then send a clear price.",
+  tips_h:"Street smarts for visitors to Egypt", tips_p:"Nine habits that make your trip smoother: prices, tips, dress, photos and getting around.", tips_b:"Read the travel tips",
+  credits:"Photo credits", days_lbl:"days",
+  cat_hist:"History and museums", cat_food:"Food and local life", cat_out:"Nile and outdoors", cat_trip:"Day trips from Cairo"
+});
+Object.assign(I18N.ar, {
+  nav_prog:"البرامج", cta3:"شوف الرحلات والبرامج",
+  kick_book:"احجز أونلاين", kick_day:"في القاهرة وحواليها", kick_prog:"عدة أيام",
+  prog_h:"الرحلات والبرامج السياحية", prog_p:"مسارات جاهزة بتجمع رحلات اليوم في رحلة واحدة. كل برنامج نقطة بداية: بظبط الأيام والمحطات والإيقاع على مجموعتك، وبعدها أبعتلك سعر واضح.",
+  tips_h:"نصايح الشارع لزوار مصر", tips_p:"٩ عادات بتسهّل رحلتك: الأسعار والبقشيش واللبس والصور والتنقل.", tips_b:"اقرأ نصايح السفر",
+  credits:"حقوق الصور", days_lbl:"أيام",
+  cat_hist:"تاريخ ومتاحف", cat_food:"أكل وحياة محلية", cat_out:"النيل والهواء الطلق", cat_trip:"رحلات يوم من القاهرة"
+});
+
+var CREDITS = [
+  {t:"Camel and the pyramids", by:"kallerna", lic:"CC BY-SA 3.0", u:"https://commons.wikimedia.org/wiki/File:Camel_and_the_pyramids.jpg"},
+  {t:"Grand Egyptian Museum 2025", by:"Amr F.Nagy", lic:"Public domain", u:"https://commons.wikimedia.org/wiki/File:Grand_Egyptian_Museum_2025.jpg"},
+  {t:"Felucca on the Nile in Cairo 02", by:"Slyronit", lic:"CC BY-SA 4.0", u:"https://commons.wikimedia.org/wiki/File:Felucca_on_the_Nile_in_Cairo_02.jpg"},
+  {t:"Muhammad Ali Mosque, Citadel, Cairo, Egypt3", by:"Diego Delso", lic:"CC BY-SA 3.0", u:"https://commons.wikimedia.org/wiki/File:Muhammad_Ali_Mosque,_Citadel,_Cairo,_Egypt3.jpg"},
+  {t:"Hanging Church, Old Cairo, Egypt3", by:"Diego Delso", lic:"CC BY-SA 3.0", u:"https://commons.wikimedia.org/wiki/File:Hanging_Church,_Old_Cairo,_Egypt3.jpg"},
+  {t:"Pyramid of Djoser 2010", by:"Wknight94 talk", lic:"CC BY-SA 3.0", u:"https://commons.wikimedia.org/wiki/File:Pyramid_of_Djoser_2010.jpg"},
+  {t:"القلعة اسكندرية", by:"Summering2018", lic:"CC BY-SA 4.0", u:"https://commons.wikimedia.org/wiki/File:القلعة_اسكندرية.jpg"},
+  {t:"Wadi El Rayan waterfalls in El fayoum, Egypt", by:"wesam sobhy (Aswan)", lic:"CC BY-SA 4.0", u:"https://commons.wikimedia.org/wiki/File:Wadi_El_Rayan_waterfalls_in_El_fayoum,_Egypt.jpg"},
+  {t:"Egyptian food Koshary", by:"Dina Said", lic:"CC BY-SA 4.0", u:"https://commons.wikimedia.org/wiki/File:Egyptian_food_Koshary.jpg"},
+  {t:"The National Museum of Egyptian Civilization (NMEC) 35", by:"Rowyda elshaer", lic:"CC BY-SA 4.0", u:"https://commons.wikimedia.org/wiki/File:The_National_Museum_of_Egyptian_Civilization_(NMEC)_35.jpg"},
+  {t:"Egypt, Cairo, Muizz Market Street, Islamic Cairo", by:"Vyacheslav Argenberg", lic:"CC BY 4.0", u:"https://commons.wikimedia.org/wiki/File:Egypt,_Cairo,_Muizz_Market_Street,_Islamic_Cairo.jpg"},
+  {t:"Al-Azhar-Park 2016-03-28l", by:"Djehouty", lic:"CC BY-SA 4.0", u:"https://commons.wikimedia.org/wiki/File:Al-Azhar-Park_2016-03-28l.jpg"},
+  {t:"Cairotower", by:"Ahmedsantos", lic:"CC BY-SA 3.0", u:"https://commons.wikimedia.org/wiki/File:Cairotower.jpg"},
+  {t:"DSC01535-1-4 EE 2 -Deer Samaan El kharaz - Mokattam - Sherif Louis", by:"Sherif Louis Kamel", lic:"CC BY-SA 4.0", u:"https://commons.wikimedia.org/wiki/File:DSC01535-1-4_EE_2_-Deer_Samaan_El_kharaz_-_Mokattam_-_Sherif_Louis.jpg"},
+  {t:"Prince Muhammad Ali Palace Manial Cairo 141", by:"Summering2018", lic:"CC BY-SA 4.0", u:"https://commons.wikimedia.org/wiki/File:Prince_Muhammad_Ali_Palace_Manial_Cairo_141.jpg"}
+];
+
+var lang = "ar", picked = {}, cnt = {adults:2, children:0, infants:0};
+var $ = function(s){return document.querySelector(s)};
+var L = function(k){return I18N[lang][k]};
+
+function art(h){
+  return '<svg viewBox="0 0 300 130" preserveAspectRatio="none" aria-hidden="true"><rect width="300" height="130" fill="'+h[1]+'"/><circle cx="235" cy="38" r="22" fill="'+h[0]+'"/><path d="M0 100 C60 60 110 110 170 85 C220 65 260 95 300 80 L300 130 L0 130Z" fill="'+h[0]+'" opacity=".55"/><path d="M0 118 C70 90 140 125 210 105 C250 95 280 110 300 104 L300 130 L0 130Z" fill="#000" opacity=".18"/></svg>';
+}
+function card(t){
+  var on = !!picked[t.id];
+  var media = IMG[t.id] ? '<img src="'+IMG[t.id]+'" alt="'+t.t[lang]+'" loading="lazy">' : art(t.hue);
+  return '<article class="card"><div class="art">'+media+'</div><div class="body"><h3>'+t.t[lang]+'</h3>'+
+    '<div class="meta"><span class="pill">'+t.dur[lang]+'</span><span class="pill alt">'+t.loc[lang]+'</span></div>'+
+    '<p>'+t.d[lang]+'</p>'+
+    '<details class="it"><summary>'+L("details")+'</summary><ul>'+t.it[lang].map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul></details>'+
+    '<div class="foot"><span class="price">'+(t.p?L("from")+' $'+t.p+' <small>'+L("pp")+'</small>':L("onreq"))+(t.pn?'<small class="pn">'+t.pn[lang]+'</small>':'')+'</span><button class="pick" type="button" aria-pressed="'+on+'" data-id="'+t.id+'">'+(on?L("picked"):L("pick"))+'</button></div></div></article>';
+}
+function programCard(p){
+  var on = !!picked[p.id];
+  return '<article class="program"><div class="art"><img src="'+p.img+'" alt="'+p.t[lang]+'" loading="lazy"><span class="days">'+p.days[lang]+'</span></div><div class="body"><h3>'+p.t[lang]+'</h3>'+
+    '<p>'+p.d[lang]+'</p>'+
+    '<ol class="plan">'+p.plan[lang].map(function(x){return '<li>'+x+'</li>'}).join("")+'</ol>'+
+    '<div class="foot"><span class="price">'+L("onreq")+'</span><button class="pick" type="button" aria-pressed="'+on+'" data-id="'+p.id+'">'+(on?L("picked"):L("pick"))+'</button></div></div></article>';
+}
+function renderAll(){
+  $("#seeStrip").innerHTML = SEE.map(function(s){
+    return '<a class="see" href="#more"><img src="'+s.img+'" alt="'+s.k[lang]+'" loading="lazy"><span>'+s.k[lang]+'</span></a>';
+  }).join("");
+  $("#moreGrid").innerHTML = CAT_ORDER.map(function(c){
+    var items = TOURS.filter(function(t){return CAT[t.id]===c});
+    if(!items.length) return "";
+    return '<h3 class="cat-h">'+L("cat_"+c)+'</h3><div class="grid">'+items.map(card).join("")+'</div>';
+  }).join("");
+  $("#progGrid").innerHTML = PROGRAMS.map(programCard).join("");
+  $("#exGrid").innerHTML = SIMSEM.map(function(x,i){
+    return '<article class="card"><div class="art"><img src="'+x.img+'" alt="'+x.t+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div><div class="body"><h3>'+(lang==="ar"&&x.ta?x.ta:x.t)+'</h3><div class="meta"><span class="pill">'+x.dur[lang]+'</span><span class="pill alt">'+L("cairo")+'</span></div><div class="foot"><span class="price">'+L("from")+' $'+x.p+' <small>'+L("pp")+'</small></span><button class="pick" type="button" aria-pressed="'+(!!picked["s"+i])+'" data-id="s'+i+'">'+(picked["s"+i]?L("picked"):L("pick"))+'</button><a class="btn solid" style="padding:8px 14px" href="'+x.u+'" target="_blank" rel="noopener">'+L("ex_book")+'</a></div></div></article>';
+  }).join("");
+  $("#faqList").innerHTML = FAQ[lang].map(function(q){return '<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join("");
+  var keys = [["adults","adults",1],["children","children",0],["infants","infants",0]];
+  $("#counters").innerHTML = keys.map(function(k){
+    return '<div class="ctr"><b>'+L(k[1])+'</b><div class="ctl"><button type="button" data-c="'+k[0]+'" data-d="-1" aria-label="-">−</button><output>'+cnt[k[0]]+'</output><button type="button" data-c="'+k[0]+'" data-d="1" aria-label="+">+</button></div></div>';
+  }).join("");
+  var cur = $("#budget").value || "b2";
+  $("#budget").innerHTML = ["b1","b2","b3"].map(function(b){return '<option value="'+b+'"'+(b===cur?" selected":"")+'>'+L(b)+'</option>'}).join("");
+}
+function names(){
+  return TOURS.filter(function(t){return picked[t.id]}).map(function(t){return t.t[lang]})
+    .concat(PROGRAMS.filter(function(p){return picked[p.id]}).map(function(p){return p.t[lang]}))
+    .concat(SIMSEM.filter(function(x,i){return picked["s"+i]}).map(function(x){return lang==="ar"&&x.ta?x.ta:x.t}));
+}
+function build(){
+  var n = names();
+  $("#pickedNote").textContent = n.length ? L("sel")+n.join(lang==="ar"?"، ":", ") : L("none");
+  var v = function(id){return $(id).value.trim()};
+  var lines = [L("hello")];
+  if(v("#name")) lines.push(L("n")+": "+v("#name"));
+  if(v("#email")) lines.push(L("em")+": "+v("#email"));
+  if(v("#nat")) lines.push(L("na")+": "+v("#nat"));
+  lines.push(L("tr")+": "+(n.length?n.join(" / "):L("custom")));
+  lines.push(L("dt")+": "+(v("#date")||L("anyd")));
+  lines.push(L("gr")+": "+L("adults")+" "+cnt.adults+", "+L("children")+" "+cnt.children+", "+L("infants")+" "+cnt.infants);
+  lines.push(L("ln")+": "+$("#tlang").value);
+  lines.push(L("bd")+": "+L($("#budget").value));
+  if(v("#hotel")) lines.push(L("ht")+": "+v("#hotel"));
+  if(v("#notes")) lines.push(L("nt")+": "+v("#notes"));
+  lines.push(L("thanks"));
+  var text = lines.join("\n");
+  $("#msg").textContent = text;
+  $("#waLink").href = "https://wa.me/"+CONTACT.whatsapp+"?text="+encodeURIComponent(text);
+  return text;
+}
+function applyLang(){
+  document.documentElement.lang = lang; document.documentElement.dir = lang==="ar"?"rtl":"ltr";
+  document.querySelectorAll("[data-i18n]").forEach(function(e){var k=e.getAttribute("data-i18n"); if(I18N[lang][k]) e.textContent = I18N[lang][k];});
+  $("#langBtn").textContent = lang==="ar"?"English":"العربية";
+  renderAll(); build();
+}
+$("#langBtn").addEventListener("click", function(){lang = lang==="en"?"ar":"en"; applyLang();});
+$("#themeBtn").addEventListener("click", function(){
+  var r = document.documentElement, cur = r.getAttribute("data-theme");
+  var dark = cur ? cur==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  r.setAttribute("data-theme", dark?"light":"dark");
+});
+document.addEventListener("click", function(e){
+  var b = e.target.closest("button.pick");
+  if(b){picked[b.dataset.id] = !picked[b.dataset.id]; b.setAttribute("aria-pressed", !!picked[b.dataset.id]); b.textContent = picked[b.dataset.id]?L("picked"):L("pick"); build(); return;}
+  var c = e.target.closest("button[data-c]");
+  if(c){var k=c.dataset.c, min = k==="adults"?1:0; cnt[k] = Math.max(min, Math.min(60, cnt[k]+Number(c.dataset.d))); c.parentNode.querySelector("output").textContent = cnt[k]; build();}
+});
+$("#planForm").addEventListener("input", build);
+$("#planForm").addEventListener("change", build);
+$("#planForm").addEventListener("submit", function(e){e.preventDefault();});
+$("#copyBtn").addEventListener("click", function(){
+  var text = build(), note = $("#copyNote");
+  try{ navigator.clipboard.writeText(text).then(function(){note.textContent=L("copied");}, function(){note.textContent=L("copyfail");}); }
+  catch(err){ note.textContent = L("copyfail"); }
+});
+$("#creditsList").innerHTML = CREDITS.map(function(c){
+  return '<li><a href="'+c.u+'" target="_blank" rel="noopener">'+c.t+'</a> — '+c.by+', '+c.lic+'</li>';
+}).join("");
+applyLang();
+</script>
+</body>
+</html>
