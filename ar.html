@@ -30,6 +30,7 @@ a{color:inherit}
 .util a{color:#fff;text-decoration:none;font-weight:700}
 .tools{display:flex;gap:8px}
 .chip-btn{border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;border-radius:999px;padding:3px 12px;font:inherit;font-size:.82rem;cursor:pointer}
+  .lang-chip.active{background:#fff;color:var(--nile);border-color:#fff}
 header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0;gap:14px}
 .brand{font-family:var(--font-display);font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:.2px}
@@ -171,7 +172,11 @@ details.credits ul{margin:8px 0 0;padding-inline-start:18px}
   <div class="wrap">
     <span><span data-i18n="u_wa">WhatsApp</span>: <a href="https://wa.me/201068635116" target="_blank" rel="noopener" dir="ltr">+20 106 863 5116</a></span>
     <div class="tools">
-      <button class="chip-btn" id="langBtn" type="button" aria-label="Switch language">العربية</button>
+      <span role="group" aria-label="Language" style="display:flex;gap:6px">
+        <button class="chip-btn lang-chip" type="button" data-lang="en">EN</button>
+        <button class="chip-btn lang-chip" type="button" data-lang="ar">العربية</button>
+        <button class="chip-btn lang-chip" type="button" data-lang="de">Deutsch</button>
+      </span>
       <button class="chip-btn" id="themeBtn" type="button" aria-label="Toggle theme">◐</button>
     </div>
   </div>
@@ -1495,7 +1500,7 @@ var CREDITS = [
   {t:"Among the rocks, Wadi Degla Protectorate, Egypt", by:"Basssant Meligy", lic:"CC BY-SA 4.0", u:"https://commons.wikimedia.org/wiki/File:Among_the_rocks,_Wadi_Degla_Protectorate,_Egypt.jpg"}
 ];
 
-var lang = "ar", picked = {}, cnt = {adults:2, children:0, infants:0};
+var lang = "en", picked = {}, cnt = {adults:2, children:0, infants:0};
 var $ = function(s){return document.querySelector(s)};
 var L = function(k){return I18N[lang][k]};
 
@@ -1568,10 +1573,10 @@ function build(){
 function applyLang(){
   document.documentElement.lang = lang; document.documentElement.dir = lang==="ar"?"rtl":"ltr";
   document.querySelectorAll("[data-i18n]").forEach(function(e){var k=e.getAttribute("data-i18n"); if(I18N[lang][k]) e.textContent = I18N[lang][k];});
-  $("#langBtn").textContent = lang==="en"?"العربية":(lang==="ar"?"Deutsch":"English");
+  document.querySelectorAll(".lang-chip").forEach(function(b){b.classList.toggle("active", b.dataset.lang===lang);});
   renderAll(); build();
 }
-$("#langBtn").addEventListener("click", function(){lang = lang==="en"?"ar":(lang==="ar"?"de":"en"); applyLang();});
+document.querySelectorAll(".lang-chip").forEach(function(b){b.addEventListener("click", function(){lang=b.dataset.lang; applyLang();});});
 $("#themeBtn").addEventListener("click", function(){
   var r = document.documentElement, cur = r.getAttribute("data-theme");
   var dark = cur ? cur==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
