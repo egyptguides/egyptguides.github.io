@@ -386,10 +386,9 @@ var CAT = {
   coptic:"hist", muizz:"hist", manial:"hist", "cave-church":"hist",
   food:"food", matareya:"food", downtown:"food",
   felucca:"out", "azhar-park":"out", "cairo-tower":"out", "wadi-degla":"out",
-  alex:"trip", fayoum:"trip",
-  dahab:"beyond", sharm:"beyond", taba:"beyond", nuweiba:"beyond", siwa:"beyond", burullus:"beyond", matrouh:"beyond"
+  alex:"trip", fayoum:"trip"
 };
-var CAT_ORDER = ["hist","food","out","trip","beyond"];
+var CAT_ORDER = ["hist","food","out","trip"];
 
 var PROGRAMS = [
  {
@@ -1364,83 +1363,7 @@ var TOURS = [
       ]
     }
   },
-  {
-    "id": "dahab",
-    "kind": "more",
-    "hue": ["#0f6aa5", "#e2a21f"],
-    "dur": {en:"Multi-day, set around your group",ar:"كذا يوم، والمدة على حسب مجموعتك",de:"Mehrtägig, Dauer nach eurer Gruppe"},
-    "loc": {en:"South Sinai",ar:"جنوب سيناء",de:"Südsinai"},
-    "t": {en:"Dahab: reefs and the Blue Hole",ar:"دهب: الشعاب والبلو هول",de:"Dahab: Riffe und das Blue Hole"},
-    "d": {en:"Sinai's laid-back diving town: coral reefs, bedouin evenings and mountain trips.",ar:"بلدة الغطس الهادية في سيناء: شعاب مرجانية وسهرات بدوية ومشاوير جبل.",de:"Sinais entspannte Tauchstadt: Korallenriffe, Beduinenabende und Bergtouren."},
-    "it": {en:["Travel from Cairo to Dahab","The Lighthouse reef and the Dahab promenade","The Blue Hole and the Blue Lagoon by boat","Snorkel stop at the Three Pools south of town","Bedouin dinner in the mountains at Wadi Gnai","Optional: sunrise hike up Mount Sinai and St. Catherine's Monastery"],ar:["السفر من القاهرة لدهب","شعاب لايت هاوس وكورنيش دهب","البلو هول والبلو لاجون بالمركب","وقفة سنوركلينج في ثري بولز جنوب البلد","عشا بدوي في الجبل في وادي غناي","اختياري: طلعة جبل موسى وقت الشروق ودير سانت كاترين"],de:["Anreise von Kairo nach Dahab","Das Lighthouse-Riff und die Promenade von Dahab","Das Blue Hole und die Blue Lagoon mit dem Boot","Schnorchelstopp an den Three Pools südlich des Orts","Beduinen-Abendessen in den Bergen im Wadi Gnai","Optional: Sonnenaufgangstour auf den Berg Sinai und das Katharinenkloster"]},
-    "tag": {"en": "Multi-day", "ar": "كذا يوم"}
-  },
-  {
-    "id": "sharm",
-    "kind": "more",
-    "hue": ["#1f8ab0", "#e2a21f"],
-    "dur": {en:"Multi-day, set around your group",ar:"كذا يوم، والمدة على حسب مجموعتك",de:"Mehrtägig, Dauer nach eurer Gruppe"},
-    "loc": {en:"South Sinai",ar:"جنوب سيناء",de:"Südsinai"},
-    "t": {en:"Sharm El Sheikh and Ras Mohammed",ar:"شرم الشيخ ورأس محمد",de:"Scharm El-Scheich und Ras Mohammed"},
-    "d": {en:"The Red Sea resort classic: reefs, boat days and national-park snorkeling.",ar:"منتجع البحر الأحمر الكلاسيكي: شعاب وأيام مراكب وسنوركلينج في المحمية.",de:"Der Rotmeer-Klassiker: Riffe, Bootstage und Schnorcheln im Nationalpark."},
-    "it": {en:["Fly or drive from Cairo to Sharm El Sheikh","Naama Bay promenade and beach","Ras Mohammed National Park: snorkeling over the reefs","Boat day to Tiran Island","The Old Market and Soho Square in the evening"],ar:["طيارة أو عربية من القاهرة لشرم الشيخ","كورنيش وشط خليج نعمة","محمية رأس محمد: سنوركلينج فوق الشعاب","يوم مركب لجزيرة تيران","السوق القديم وسوهو سكوير بالليل"],de:["Flug oder Fahrt von Kairo nach Scharm El-Scheich","Promenade und Strand der Naama Bay","Nationalpark Ras Mohammed: Schnorcheln über den Riffen","Bootstag zur Insel Tiran","Der Old Market und der Soho Square am Abend"]},
-    "tag": {"en": "Multi-day", "ar": "كذا يوم"}
-  },
-  {
-    "id": "taba",
-    "kind": "more",
-    "hue": ["#155e75", "#e2a21f"],
-    "dur": {en:"Multi-day, set around your group",ar:"كذا يوم، والمدة على حسب مجموعتك",de:"Mehrtägig, Dauer nach eurer Gruppe"},
-    "loc": {en:"Gulf of Aqaba",ar:"خليج العقبة",de:"Golf von Akaba"},
-    "t": {en:"Taba and Pharaoh's Island",ar:"طابا وجزيرة فرعون",de:"Taba und die Pharaoneninsel"},
-    "d": {en:"The Gulf of Aqaba's quiet corner: an island citadel, fjord bays and canyon walks.",ar:"ركن خليج العقبة الهادي: قلعة على جزيرة وخلجان فيورد ومشاوير كانيون.",de:"Die ruhige Ecke des Golfs von Akaba: eine Inselfestung, Fjordbuchten und Canyonwanderungen."},
-    "it": {en:["Drive from Cairo across Sinai to Taba","Pharaoh's Island and the Salah El Din citadel by boat","Swim stop at the Fjord bay","The Colored Canyon walk near Nuweiba","The Taba Heights viewpoint over the gulf"],ar:["السفر من القاهرة عدي سيناء لطابا","جزيرة فرعون وقلعة صلاح الدين بالمركب","وقفة عوم في خليج الفيورد","مشوار الكانيون الملون جنب نويبع","إطلالة طابا هايتس على الخليج"],de:["Fahrt von Kairo über den Sinai nach Taba","Die Pharaoneninsel und die Salah-El-Din-Festung mit dem Boot","Badestopp in der Fjord-Bucht","Wanderung durch den Colored Canyon bei Nuweiba","Der Aussichtspunkt Taba Heights über dem Golf"]},
-    "tag": {"en": "Multi-day", "ar": "كذا يوم"}
-  },
-  {
-    "id": "nuweiba",
-    "kind": "more",
-    "hue": ["#0e7490", "#d97706"],
-    "dur": {en:"Multi-day, set around your group",ar:"كذا يوم، والمدة على حسب مجموعتك",de:"Mehrtägig, Dauer nach eurer Gruppe"},
-    "loc": {en:"Gulf of Aqaba",ar:"خليج العقبة",de:"Golf von Akaba"},
-    "t": {en:"Nuweiba and the Colored Canyon",ar:"نويبع والكانيون الملون",de:"Nuweiba und der Colored Canyon"},
-    "d": {en:"Beach camps, desert canyons and oases between the mountains and the sea.",ar:"مخيمات على الشط وكانيونات صحراوية وواحات بين الجبل والبحر.",de:"Strandcamps, Wüstencanyons und Oasen zwischen Bergen und Meer."},
-    "it": {en:["Drive from Cairo to Nuweiba on the gulf coast","Beach huts and the quiet Tarabin shore","The Colored Canyon walk through the rock corridors","Ain Khudra oasis in the desert","Bedouin tea and dinner by the sea"],ar:["السفر من القاهرة لنويبع على ساحل الخليج","أكواخ على الشط وساحل الطرابين الهادي","مشوار الكانيون الملون بين ممرات الصخر","واحة عين خضرة في الصحرا","شاي وعشا بدوي على البحر"],de:["Fahrt von Kairo nach Nuweiba an der Golfküste","Strandhütten und das ruhige Tarabin-Ufer","Wanderung durch den Colored Canyon zwischen den Felskorridoren","Die Oase Ain Khudra in der Wüste","Beduinentee und Abendessen am Meer"]},
-    "tag": {"en": "Multi-day", "ar": "كذا يوم"}
-  },
-  {
-    "id": "siwa",
-    "kind": "more",
-    "hue": ["#b9722a", "#0f4c52"],
-    "dur": {en:"Multi-day, set around your group",ar:"كذا يوم، والمدة على حسب مجموعتك",de:"Mehrtägig, Dauer nach eurer Gruppe"},
-    "loc": {en:"Western Desert",ar:"الصحرا الغربية",de:"Westliche Wüste"},
-    "t": {en:"Siwa oasis",ar:"واحة سيوة",de:"Oase Siwa"},
-    "d": {en:"The western desert oasis: salt lakes, ancient temples and the Great Sand Sea.",ar:"واحة الصحرا الغربية: بحيرات ملحية ومعابد قديمة وبحر الرمال العظيم.",de:"Die Westwüsten-Oase: Salzseen, antike Tempel und das Große Sandmeer."},
-    "it": {en:["Drive from Cairo to Siwa oasis","The old fortress town of Shali","The Temple of the Oracle of Amun","Cleopatra's Spring and the palm groves","A swim stop at the salt lakes","The Great Sand Sea: 4x4 dunes and sandboarding","Sunset at Fatnas Island"],ar:["السفر من القاهرة لواحة سيوة","بلدة شالي القديمة والقلعة","معبد الوحي بتاع آمون","عين كليوباترا وحدائق النخيل","وقفة عوم في البحيرات الملحية","بحر الرمال العظيم: دفع رباعي وساند بوردينج","الغروب عند جزيرة فطناس"],de:["Fahrt von Kairo zur Oase Siwa","Die alte Festungsstadt Shali","Der Orakeltempel des Amun","Die Kleopatra-Quelle und die Palmhaine","Badestopp an den Salzseen","Das Große Sandmeer: Dünen im Geländewagen und Sandboarding","Sonnenuntergang auf der Insel Fatnas"]},
-    "tag": {"en": "Multi-day", "ar": "كذا يوم"}
-  },
-  {
-    "id": "burullus",
-    "kind": "more",
-    "hue": ["#3f7d5d", "#e2a21f"],
-    "dur": {en:"Multi-day, set around your group",ar:"كذا يوم، والمدة على حسب مجموعتك",de:"Mehrtägig, Dauer nach eurer Gruppe"},
-    "loc": {en:"Kafr El-Sheikh",ar:"كفر الشيخ",de:"Kafr el-Scheich"},
-    "t": {en:"Lake Burullus and Baltim",ar:"بحيرة البرلس وبلطيم",de:"Burullus-See und Baltim"},
-    "d": {en:"The northern lake country: boats, birdlife and fish straight from the water.",ar:"بلد البحيرة في الشمال: مراكب وطيور مهاجرة وسمك من المية على طول.",de:"Das nördliche Seenland: Boote, Vogelwelt und Fisch direkt vom Wasser."},
-    "it": {en:["Drive from Cairo to Lake Burullus in Kafr El-Sheikh","A boat ride among the lake's reed islands","Birdwatching: flamingos and migratory birds in season","Baltim beach on the Mediterranean side","A local fish meal by the lake"],ar:["السفر من القاهرة لبحيرة البرلس في كفر الشيخ","مشوار مركب بين جزر البوص","مراقبة الطيور: فلامنجو وطيور مهاجرة في الموسم","شط بلطيم على البحر المتوسط","أكلة سمك بلدي على البحيرة"],de:["Fahrt von Kairo zum Burullus-See in Kafr el-Scheich","Bootsfahrt zwischen den Schilfinseln des Sees","Vogelbeobachtung: Flamingos und Zugvögel zur Saison","Der Strand von Baltim auf der Mittelmeerseite","Ein lokales Fischessen am See"]},
-    "tag": {"en": "Multi-day", "ar": "كذا يوم"}
-  },
-  {
-    "id": "matrouh",
-    "kind": "more",
-    "hue": ["#1d9bf0", "#0f4c52"],
-    "dur": {en:"Multi-day, set around your group",ar:"كذا يوم، والمدة على حسب مجموعتك",de:"Mehrtägig, Dauer nach eurer Gruppe"},
-    "loc": {en:"North Coast",ar:"الساحل الشمالي",de:"Nordküste"},
-    "t": {en:"Marsa Matrouh beaches",ar:"شواطئ مرسى مطروح",de:"Die Strände von Marsa Matruh"},
-    "d": {en:"The north coast's white sand and turquoise coves, from Cleopatra's beach to Agiba.",ar:"رمال الساحل الشمالي البيضا وخلجانه الفيروزية، من شط كليوباترا لعجيبة.",de:"Der weiße Sand und die türkisen Buchten der Nordküste, von Kleopatras Strand bis Agiba."},
-    "it": {en:["Drive from Cairo to Marsa Matrouh on the north coast","Cleopatra's Beach and its rock baths","The Agiba beach cove below the cliffs","Rommel Beach and the old museum area","The white-sand beaches west of town"],ar:["السفر من القاهرة لمرسى مطروح على الساحل الشمالي","شط كليوباترا وحماماتها الصخرية","خليج شط عجيبة تحت الجروف","شط رومل ومنطقة المتحف القديم","شواطئ الرمال البيضا غرب البلد"],de:["Fahrt von Kairo nach Marsa Matruh an der Nordküste","Kleopatras Strand und seine Felsenbecken","Die Agiba-Buchts unterhalb der Klippen","Der Rommel-Strand und das alte Museumsviertel","Die weißen Sandstrände westlich der Stadt"]},
-    "tag": {"en": "Multi-day", "ar": "كذا يوم"}
-  }
+
 
 ];
 
@@ -1618,7 +1541,7 @@ function programCard(p){
   return '<article class="program"><div class="art"><img src="'+p.img+'" alt="'+p.t[lang]+'" loading="lazy"><span class="days">'+p.days[lang]+'</span></div><div class="body"><h3>'+p.t[lang]+'</h3>'+
     '<p>'+p.d[lang]+'</p>'+
     (p.plan[lang].length?'<ol class="plan">'+p.plan[lang].map(function(x){return '<li>'+x+'</li>'}).join("")+'</ol>':'')+
-    '<div class="foot"><span class="price">'+L("onreq")+'</span><button class="pick" type="button" aria-pressed="'+on+'" data-id="'+p.id+'">'+(on?L("picked"):L("pick"))+'</button></div></div></article>';
+    '<a class="route-link" href="trip.html?id='+p.id+'">'+L("route_b")+'</a><div class="foot"><span class="price">'+L("onreq")+'</span><button class="pick" type="button" aria-pressed="'+on+'" data-id="'+p.id+'">'+(on?L("picked"):L("pick"))+'</button></div></div></article>';
 }
 function renderAll(){
   $("#seeStrip").innerHTML = SEE.map(function(s){
