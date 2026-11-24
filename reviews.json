@@ -1,0 +1,4 @@
+{
+  "_help": "Add real reviews only. To hide one set show to false. Fields: name, country, date, text_en, text_ar, stars (1-5, optional).",
+  "reviews": []
+}
