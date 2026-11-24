@@ -167,6 +167,9 @@ details.credits ul{margin:8px 0 0;padding-inline-start:18px}
 .promo-band{background:var(--sun);color:#0f2f33;}
 .promo-band .wrap{padding-top:12px;padding-bottom:12px;}
 .promo-band p{margin:0;font-weight:700;text-align:center;font-size:15px;line-height:1.5;}
+.scrollnav{position:fixed;inset-inline-end:14px;width:44px;height:44px;border-radius:50%;background:var(--nile);color:#fff;border:none;font-size:18px;cursor:pointer;z-index:60;box-shadow:0 4px 14px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;}
+#toTop{bottom:72px}
+#toBottom{bottom:18px}
 </style>
 </head>
 <body>
@@ -333,7 +336,7 @@ details.credits ul{margin:8px 0 0;padding-inline-start:18px}
     <div class="cols">
       <div><h3>egypt<span style="color:var(--sun)">guide</span></h3><p data-i18n="fb">Local guide and tour coordinator based in Cairo, Egypt.</p></div>
       <div><h3 data-i18n="fl">Tours</h3><a href="#experiences" data-i18n="nav_ex">Experiences</a><a href="#programs" data-i18n="nav_prog">Programmes</a><a href="#request" data-i18n="nav_req">Tailor-made trip</a><a href="travel-tips/street-smarts.html" data-i18n="nav_tips">Travel tips</a></div>
-      <div><h3 data-i18n="fc">Contact</h3><a href="https://wa.me/201068635116" target="_blank" rel="noopener" dir="ltr">WhatsApp +20 106 863 5116</a><a href="https://www.instagram.com/egypt_weekend/" target="_blank" rel="noopener" dir="ltr">Instagram</a></div>
+      <div><h3 data-i18n="fc">Contact</h3><a href="https://wa.me/201068635116" target="_blank" rel="noopener" dir="ltr">WhatsApp +20 106 863 5116</a><a href="https://www.instagram.com/egypt_guides/" target="_blank" rel="noopener" dir="ltr">Instagram</a></div>
     </div>
     <span data-i18n="foot2">Prices are quoted per group after you send your plan.</span>
     <details class="credits">
@@ -1610,7 +1613,11 @@ $("#copyBtn").addEventListener("click", function(){
 $("#creditsList").innerHTML = CREDITS.map(function(c){
   return '<li><a href="'+c.u+'" target="_blank" rel="noopener">'+c.t+'</a> — '+c.by+', '+c.lic+'</li>';
 }).join("");
+document.getElementById("toTop").addEventListener("click", function(){ window.scrollTo({top:0, behavior:"smooth"}); });
+document.getElementById("toBottom").addEventListener("click", function(){ window.scrollTo({top:document.body.scrollHeight, behavior:"smooth"}); });
 applyLang();
 </script>
+<button id="toTop" class="scrollnav" type="button" aria-label="Back to top">↑</button>
+<button id="toBottom" class="scrollnav" type="button" aria-label="Skip to bottom">↓</button>
 </body>
 </html>
