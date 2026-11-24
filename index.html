@@ -336,11 +336,11 @@ details.credits ul{margin:8px 0 0;padding-inline-start:18px}
 var CONTACT = { whatsapp: "201068635116" };
 
 var SEE = [
-  {k:{en:"Giza Pyramids",ar:"أهرامات الجيزة"},img:"images/12-hero-pyramids.jpg"},
-  {k:{en:"Grand Egyptian Museum",ar:"المتحف المصري الكبير"},img:"images/11-gem.jpg"},
-  {k:{en:"Khan el-Khalili",ar:"خان الخليلي"},img:"https://mysimsem.com/wp-content/uploads/2025/04/processed-E4A5244D-CB8F-4B37-B117-9EB570000CBB.jpeg"},
-  {k:{en:"Nile felucca",ar:"فلوكة في النيل"},img:"images/10-felucca-nile.jpg"},
-  {k:{en:"Cairo Citadel",ar:"قلعة القاهرة"},img:"images/7-citadel.jpg"}
+  {k:{en:"Giza Pyramids",ar:"أهرامات الجيزة",de:"Pyramiden von Gizeh"},img:"images/12-hero-pyramids.jpg"},
+  {k:{en:"Grand Egyptian Museum",ar:"المتحف المصري الكبير",de:"Großes Ägyptisches Museum"},img:"images/11-gem.jpg"},
+  {k:{en:"Khan el-Khalili",ar:"خان الخليلي",de:"Khan el-Khalili"},img:"https://mysimsem.com/wp-content/uploads/2025/04/processed-E4A5244D-CB8F-4B37-B117-9EB570000CBB.jpeg"},
+  {k:{en:"Nile felucca",ar:"فلوكة في النيل",de:"Feluke auf dem Nil"},img:"images/10-felucca-nile.jpg"},
+  {k:{en:"Cairo Citadel",ar:"قلعة القاهرة",de:"Zitadelle von Kairo"},img:"images/7-citadel.jpg"}
 ];
 
 var IMG = {
@@ -377,25 +377,24 @@ var PROGRAMS = [
  {
   id:"prog-cairo3",
   img:"images/11-gem.jpg",
-  days:{en:"3 days",ar:"٣ أيام"},
-  t:{en:"Cairo essentials in 3 days",ar:"أساسيات القاهرة في ٣ أيام"},
-  d:{en:"The classic first visit: pyramids, museums, old Cairo and the Nile, paced so you see a lot without rushing.",
-     ar:"الزيارة الكلاسيكية الأولى: أهرامات ومتاحف والقاهرة القديمة والنيل، بإيقاع يخليك تشوف كتير من غير استعجال."},
+  days:{en:"3 days",ar:"٣ أيام",de:"3 Tage"},
+  t:{en:"Cairo essentials in 3 days",ar:"أساسيات القاهرة في ٣ أيام",de:"Kairo-Essenz in 3 Tagen"},
+  d:{en:"The classic first visit: pyramids, museums, old Cairo and the Nile, paced so you see a lot without rushing.",ar:"الزيارة الكلاسيكية الأولى: أهرامات ومتاحف والقاهرة القديمة والنيل، بإيقاع يخليك تشوف كتير من غير استعجال.",de:"Der klassische erste Besuch: Pyramiden, Museen, Alt-Kairo und der Nil – so getaktet, dass du viel siehst, ohne zu hetzen."},
   plan:{
    en:["Day 1: Giza Pyramids and the Sphinx, then the Grand Egyptian Museum",
        "Day 2: Citadel and Muhammad Ali Mosque, then Khan el-Khalili and the Old Cairo walk",
        "Day 3: Coptic Cairo, Downtown walk, and a felucca sunset on the Nile"],
    ar:["اليوم ١: أهرامات الجيزة وأبو الهول، وبعدها المتحف المصري الكبير",
        "اليوم ٢: قلعة صلاح الدين ومسجد محمد علي، وبعدها خان الخليلي وجولة القاهرة القديمة",
-       "اليوم ٣: القاهرة القبطية، جولة وسط البلد، وفلوكة وقت الغروب في النيل"]}
+       "اليوم ٣: القاهرة القبطية، جولة وسط البلد، وفلوكة وقت الغروب في النيل"],
+   de:["Tag 1: Pyramiden von Gizeh und die Sphinx, danach das Große Ägyptische Museum","Tag 2: Zitadelle und Muhammad-Ali-Moschee, danach Khan el-Khalili und der Alt-Kairo-Rundgang","Tag 3: Koptisches Kairo, Spaziergang durch die Innenstadt und Feluke zum Sonnenuntergang"]}
  },
  {
   id:"prog-cairo-alex4",
   img:"images/3-alexandria.jpg",
-  days:{en:"4 days",ar:"٤ أيام"},
-  t:{en:"Cairo and Alexandria in 4 days",ar:"القاهرة وإسكندرية في ٤ أيام"},
-  d:{en:"Cairo's highlights plus a full day on the Mediterranean in Alexandria.",
-     ar:"أهم معالم القاهرة مع يوم كامل على البحر المتوسط في إسكندرية."},
+  days:{en:"4 days",ar:"٤ أيام",de:"4 Tage"},
+  t:{en:"Cairo and Alexandria in 4 days",ar:"القاهرة وإسكندرية في ٤ أيام",de:"Kairo und Alexandrien in 4 Tagen"},
+  d:{en:"Cairo's highlights plus a full day on the Mediterranean in Alexandria.",ar:"أهم معالم القاهرة مع يوم كامل على البحر المتوسط في إسكندرية.",de:"Kairos Highlights plus ein ganzer Tag am Mittelmeer in Alexandrien."},
   plan:{
    en:["Day 1: Giza Pyramids and the Sphinx, then the Grand Egyptian Museum",
        "Day 2: Citadel, Khan el-Khalili and the Old Cairo walk",
@@ -404,599 +403,963 @@ var PROGRAMS = [
    ar:["اليوم ١: أهرامات الجيزة وأبو الهول، وبعدها المتحف المصري الكبير",
        "اليوم ٢: القلعة وخان الخليلي وجولة القاهرة القديمة",
        "اليوم ٣: رحلة يوم لإسكندرية",
-       "اليوم ٤: سقارة وممفيس، وبعدها جولة أكل شارع مصري"]}
+       "اليوم ٤: سقارة وممفيس، وبعدها جولة أكل شارع مصري"],
+   de:["Tag 1: Pyramiden von Gizeh und die Sphinx, danach das Große Ägyptische Museum","Tag 2: Zitadelle, Khan el-Khalili und der Alt-Kairo-Rundgang","Tag 3: Tagesausflug nach Alexandrien","Tag 4: Sakkara und Memphis, danach ein Streetfood-Rundgang"]}
  },
  {
   id:"prog-fayoum2",
   img:"images/9-fayoum.jpg",
-  days:{en:"2 days",ar:"يومان"},
-  t:{en:"Cairo and Fayoum oasis weekend",ar:"ويك إند القاهرة وواحة الفيوم"},
-  d:{en:"A short escape: the pyramids on day one, waterfalls and desert lake views in Fayoum on day two.",
-     ar:"هروب قصير: الأهرامات أول يوم، وشلالات وبحيرة الفيوم تاني يوم."},
+  days:{en:"2 days",ar:"يومان",de:"2 Tage"},
+  t:{en:"Cairo and Fayoum oasis weekend",ar:"ويك إند القاهرة وواحة الفيوم",de:"Wochenende Kairo und Fayum-Oase"},
+  d:{en:"A short escape: the pyramids on day one, waterfalls and desert lake views in Fayoum on day two.",ar:"هروب قصير: الأهرامات أول يوم، وشلالات وبحيرة الفيوم تاني يوم.",de:"Ein kurzer Tapetenwechsel: die Pyramiden am ersten Tag, Wasserfälle und Wüstensee in Fayum am zweiten."},
   plan:{
    en:["Day 1: Giza Pyramids and the Sphinx",
        "Day 2: Fayoum oasis day trip: Wadi El Rayan waterfalls, dunes and lake views"],
    ar:["اليوم ١: أهرامات الجيزة وأبو الهول",
-       "اليوم ٢: رحلة يوم لواحة الفيوم: شلالات وادي الريان والكثبان وإطلالة البحيرة"]}
+       "اليوم ٢: رحلة يوم لواحة الفيوم: شلالات وادي الريان والكثبان وإطلالة البحيرة"],
+   de:["Tag 1: Pyramiden von Gizeh und die Sphinx","Tag 2: Tagesausflug zur Fayum-Oase: Wadi-El-Rayan-Wasserfälle, Dünen und Seeblick"]}
  }
 ];
 
 var TOURS = [
- {
-  "id": "pyramids",
-  "p": 150,
-  "g": 1,
-  "kind": "more",
-  "hue": [
-   "#e2a21f",
-   "#0f4c52"
-  ],
-  "dur": {
-   "en": "Half day",
-   "ar": "نصف يوم"
+  {
+    "id": "pyramids",
+    "p": 150,
+    "g": 1,
+    "kind": "more",
+    "hue": [
+      "#e2a21f",
+      "#0f4c52"
+    ],
+    "dur": {
+      "en": "Half day",
+      "ar": "نصف يوم",
+      "de": "Halbtags"
+    },
+    "loc": {
+      "en": "Giza",
+      "ar": "الجيزة",
+      "de": "Giza"
+    },
+    "t": {
+      "en": "Giza Pyramids and the Sphinx",
+      "ar": "أهرامات الجيزة وأبو الهول",
+      "de": "Pyramiden von Gizeh und die Sphinx"
+    },
+    "d": {
+      "en": "The Great Pyramid, the Sphinx and the best panorama viewpoint, with the plan shaped around the heat and the crowds.",
+      "ar": "الهرم الأكبر وأبو الهول وأحسن نقطة بانوراما، والخطة متظبطة على الحر والزحمة.",
+      "de": "Die Große Pyramide, die Sphinx und der beste Panoramapunkt – der Plan ist auf Hitze und Menschenmassen abgestimmt."
+    },
+    "it": {
+      "en": [
+        "Early pickup from your hotel",
+        "Pyramids plateau",
+        "Panorama viewpoint",
+        "Sphinx and valley temple",
+        "Drop-off at your hotel"
+      ],
+      "ar": [
+        "استلام بدري من الفندق",
+        "هضبة الأهرامات",
+        "نقطة البانوراما",
+        "أبو الهول ومعبد الوادي",
+        "توصيلة للفندق"
+      ],
+      "de": [
+        "Abholung früh am Hotel",
+        "Pyramidenplateau",
+        "Panoramapunkt",
+        "Sphinx und Taltempel",
+        "Rückfahrt zum Hotel"
+      ]
+    },
+    "tag": {
+      "en": "Classic",
+      "ar": "كلاسيكية"
+    }
   },
-  "loc": {
-   "en": "Giza",
-   "ar": "الجيزة"
+  {
+    "id": "gem",
+    "kind": "more",
+    "hue": [
+      "#0f4c52",
+      "#e2a21f"
+    ],
+    "dur": {
+      "en": "Half day",
+      "ar": "نصف يوم",
+      "de": "Halbtags"
+    },
+    "loc": {
+      "en": "Giza",
+      "ar": "الجيزة",
+      "de": "Giza"
+    },
+    "t": {
+      "en": "Grand Egyptian Museum",
+      "ar": "المتحف المصري الكبير",
+      "de": "Großes Ägyptisches Museum"
+    },
+    "d": {
+      "en": "A guided walk through the museum's main galleries, with the Tutankhamun collection and the stories behind the objects.",
+      "ar": "جولة بمرشد في أهم قاعات المتحف، مع مجموعة توت عنخ آمون وحكايات القطع.",
+      "de": "Geführter Rundgang durch die Hauptgalerien mit der Tutanchamun-Sammlung und den Geschichten hinter den Objekten."
+    },
+    "it": {
+      "en": [
+        "Meet at the museum or your hotel",
+        "Grand staircase galleries",
+        "Tutankhamun collection",
+        "Free time and café"
+      ],
+      "ar": [
+        "لقاء عند المتحف أو من الفندق",
+        "قاعات السلم الكبير",
+        "مجموعة توت عنخ آمون",
+        "وقت حر وكافيه"
+      ],
+      "de": [
+        "Treffen am Museum oder am Hotel",
+        "Galerien an der großen Treppe",
+        "Tutanchamun-Sammlung",
+        "Freie Zeit und Café"
+      ]
+    },
+    "tag": {
+      "en": "Museum",
+      "ar": "متحف"
+    }
   },
-  "t": {
-   "en": "Giza Pyramids and the Sphinx",
-   "ar": "أهرامات الجيزة وأبو الهول"
+  {
+    "id": "food",
+    "kind": "more",
+    "hue": [
+      "#b9722a",
+      "#f0d9a0"
+    ],
+    "dur": {
+      "en": "3 to 4 hours",
+      "ar": "٣ إلى ٤ ساعات",
+      "de": "3 bis 4 Stunden"
+    },
+    "loc": {
+      "en": "Downtown Cairo",
+      "ar": "وسط البلد",
+      "de": "Innenstadt von Kairo"
+    },
+    "t": {
+      "en": "Egyptian street food walk",
+      "ar": "جولة الأكل الشعبي المصري",
+      "de": "Streetfood-Rundgang durch Kairo"
+    },
+    "d": {
+      "en": "Taste the dishes Cairenes eat every day, at the places locals actually go. Come hungry.",
+      "ar": "جرّب الأكلات اللي المصريين بياكلوها كل يوم في الأماكن اللي أهلها بيروحوها. تعالى جعان.",
+      "de": "Probier die Gerichte, die die Kairoer jeden Tag essen – dort, wo die Einheimischen wirklich hingehen. Komm hungrig."
+    },
+    "it": {
+      "en": [
+        "Meet in Downtown",
+        "Koshary and ful with ta'meya",
+        "Local sweets stop",
+        "Fresh juice or tea to finish"
+      ],
+      "ar": [
+        "لقاء في وسط البلد",
+        "كشري وفول وطعمية",
+        "وقفة حلويات شعبية",
+        "عصير أو شاي في الآخر"
+      ],
+      "de": [
+        "Treffen in der Innenstadt",
+        "Koschari, Ful und Ta'meya",
+        "Stopp für lokale Süßigkeiten",
+        "Frischer Saft oder Tee zum Abschluss"
+      ]
+    },
+    "tag": {
+      "en": "Food",
+      "ar": "أكل"
+    }
   },
-  "d": {
-   "en": "The Great Pyramid, the Sphinx and the best panorama viewpoint, with the plan shaped around the heat and the crowds.",
-   "ar": "الهرم الأكبر وأبو الهول وأحسن نقطة بانوراما، والخطة متظبطة على الحر والزحمة."
+  {
+    "id": "matareya",
+    "kind": "more",
+    "hue": [
+      "#b9722a",
+      "#e2a21f"
+    ],
+    "dur": {
+      "en": "2 to 3 hours",
+      "ar": "٢ إلى ٣ ساعات",
+      "de": "2 bis 3 Stunden"
+    },
+    "loc": {
+      "en": "Matareya, Cairo",
+      "ar": "المطرية، القاهرة",
+      "de": "Matareya, Kairo"
+    },
+    "t": {
+      "en": "Matareya breakfast",
+      "ar": "فطار المطرية",
+      "de": "Frühstück in Matareya"
+    },
+    "d": {
+      "en": "A real Egyptian breakfast the way locals eat it in Matareya, at a neighborhood spot far from the tourist routes.",
+      "ar": "فطار مصري حقيقي زي ما أهل المطرية بياكلوه، في مكان شعبي بعيد عن مسارات السياح.",
+      "de": "Ein echtes ägyptisches Frühstück, so wie die Einheimischen es in Matareya essen – an einem Viertelort fernab der Touristenrouten."
+    },
+    "it": {
+      "en": [
+        "Early meet-up or hotel pickup",
+        "Ful, ta'meya, eggs and fresh bread",
+        "Tea with the neighborhood",
+        "Short walk around the area"
+      ],
+      "ar": [
+        "لقاء بدري أو استلام من الفندق",
+        "فول وطعمية وبيض وعيش طازة",
+        "شاي مع أهل الحتة",
+        "مشوار قصير حوالين المنطقة"
+      ],
+      "de": [
+        "Frühes Treffen oder Hotelabholung",
+        "Ful, Ta'meya, Eier und frisches Brot",
+        "Tee mit dem Viertel",
+        "Kurzer Spaziergang durch die Gegend"
+      ]
+    },
+    "tag": {
+      "en": "Food",
+      "ar": "أكل"
+    }
   },
-  "it": {
-   "en": [
-    "Early pickup from your hotel",
-    "Pyramids plateau",
-    "Panorama viewpoint",
-    "Sphinx and valley temple",
-    "Drop-off at your hotel"
-   ],
-   "ar": [
-    "استلام بدري من الفندق",
-    "هضبة الأهرامات",
-    "نقطة البانوراما",
-    "أبو الهول ومعبد الوادي",
-    "توصيلة للفندق"
-   ]
+  {
+    "id": "felucca",
+    "kind": "more",
+    "hue": [
+      "#1f6aa5",
+      "#e2a21f"
+    ],
+    "dur": {
+      "en": "1 to 2 hours",
+      "ar": "١ إلى ٢ ساعة",
+      "de": "1 bis 2 Stunden"
+    },
+    "loc": {
+      "en": "Nile, Cairo",
+      "ar": "النيل، القاهرة",
+      "de": "Nil, Kairo"
+    },
+    "t": {
+      "en": "Felucca sunset on the Nile",
+      "ar": "فلوكة على النيل وقت الغروب",
+      "de": "Feluken-Sonnenuntergang auf dem Nil"
+    },
+    "d": {
+      "en": "A relaxed sail on a traditional felucca as the city lights come on. Good for couples, families and small groups.",
+      "ar": "مشوار هادي بفلوكة على النيل مع إضاءة المدينة. مناسب للأزواج والعائلات والمجموعات الصغيرة.",
+      "de": "Eine entspannte Fahrt auf einer traditionellen Feluke, während die Lichter der Stadt angehen. Gut für Paare, Familien und kleine Gruppen."
+    },
+    "it": {
+      "en": [
+        "Meet at the felucca dock",
+        "Sail on the Nile",
+        "Sunset and city views",
+        "Return to the dock"
+      ],
+      "ar": [
+        "لقاء عند مرسى الفلوكة",
+        "مشوار على النيل",
+        "الغروب وإطلالة المدينة",
+        "العودة للمرسى"
+      ],
+      "de": [
+        "Treffen am Felukenanleger",
+        "Segeln auf dem Nil",
+        "Sonnenuntergang und Stadtpanorama",
+        "Rückkehr zum Anleger"
+      ]
+    },
+    "tag": {
+      "en": "Sunset",
+      "ar": "غروب"
+    }
   },
-  "tag": {
-   "en": "Classic",
-   "ar": "كلاسيكية"
+  {
+    "id": "downtown",
+    "kind": "more",
+    "hue": [
+      "#7a3b2e",
+      "#e8c77a"
+    ],
+    "dur": {
+      "en": "3 hours",
+      "ar": "٣ ساعات",
+      "de": "3 Stunden"
+    },
+    "loc": {
+      "en": "Downtown Cairo",
+      "ar": "وسط البلد",
+      "de": "Innenstadt von Kairo"
+    },
+    "t": {
+      "en": "Downtown Cairo walk: old buildings and cafés",
+      "ar": "مشي وسط البلد: عمارات قديمة وقهاوي",
+      "de": "Spaziergang durch die Innenstadt: alte Bauten und Cafés"
+    },
+    "d": {
+      "en": "Walk the streets of Khedival Cairo, see its old facades and sit in a traditional café.",
+      "ar": "مشي في شوارع القاهرة الخديوية، تشوف العمارات القديمة وتقعد في قهوة بلدي.",
+      "de": "Durch die Straßen des Khediven-Kairo: alte Fassaden sehen und in einem traditionellen Café sitzen."
+    },
+    "it": {
+      "en": [
+        "Meet at Tahrir or Talaat Harb",
+        "Historic buildings and passages",
+        "Traditional café break"
+      ],
+      "ar": [
+        "لقاء عند التحرير أو طلعت حرب",
+        "عمارات وممرات تاريخية",
+        "استراحة في قهوة بلدي"
+      ],
+      "de": [
+        "Treffen am Tahrir-Platz oder Talaat Harb",
+        "Historische Bauten und Passagen",
+        "Pause in einem traditionellen Café"
+      ]
+    },
+    "tag": {
+      "en": "Walking",
+      "ar": "مشي"
+    }
+  },
+  {
+    "id": "citadel",
+    "kind": "more",
+    "hue": [
+      "#0f4c52",
+      "#e2a21f"
+    ],
+    "dur": {
+      "en": "Half day",
+      "ar": "نصف يوم",
+      "de": "Halbtags"
+    },
+    "loc": {
+      "en": "Old Cairo",
+      "ar": "القاهرة القديمة",
+      "de": "Alt-Kairo"
+    },
+    "t": {
+      "en": "Citadel and Muhammad Ali Mosque",
+      "ar": "القلعة ومسجد محمد علي",
+      "de": "Zitadelle und Muhammad-Ali-Moschee"
+    },
+    "d": {
+      "en": "Saladin's Citadel, the Muhammad Ali Mosque and one of the best views across Cairo.",
+      "ar": "قلعة صلاح الدين ومسجد محمد علي وواحدة من أحسن إطلالات القاهرة.",
+      "de": "Die Zitadelle Saladins, die Muhammad-Ali-Moschee und einer der besten Ausblicke über Kairo."
+    },
+    "it": {
+      "en": [
+        "Pickup or meet at the Citadel",
+        "Muhammad Ali Mosque",
+        "Citadel viewpoints",
+        "Optional nearby mosque"
+      ],
+      "ar": [
+        "استلام أو لقاء عند القلعة",
+        "مسجد محمد علي",
+        "نقاط الإطلالة",
+        "مسجد قريب لو حبيت"
+      ],
+      "de": [
+        "Abholung oder Treffen an der Zitadelle",
+        "Muhammad-Ali-Moschee",
+        "Aussichtspunkte der Zitadelle",
+        "Optional eine nahe Moschee"
+      ]
+    },
+    "tag": {
+      "en": "Culture",
+      "ar": "ثقافة"
+    }
+  },
+  {
+    "id": "coptic",
+    "kind": "more",
+    "hue": [
+      "#7a3b2e",
+      "#f0d9a0"
+    ],
+    "dur": {
+      "en": "Half day",
+      "ar": "نصف يوم",
+      "de": "Halbtags"
+    },
+    "loc": {
+      "en": "Coptic Cairo",
+      "ar": "مصر القديمة",
+      "de": "Koptisch-Kairo"
+    },
+    "t": {
+      "en": "Coptic Cairo",
+      "ar": "القاهرة القبطية",
+      "de": "Koptisches Kairo"
+    },
+    "d": {
+      "en": "The Hanging Church, Ben Ezra Synagogue and the old churches in one quiet walk.",
+      "ar": "الكنيسة المعلقة ومعبد بن عزرا والكنائس القديمة في مشوار هادي.",
+      "de": "Die Hängende Kirche, die Ben-Ezra-Synagoge und die alten Kirchen in einem ruhigen Rundgang."
+    },
+    "it": {
+      "en": [
+        "Meet at Coptic Cairo",
+        "Hanging Church",
+        "Ben Ezra Synagogue",
+        "Old churches and lanes"
+      ],
+      "ar": [
+        "لقاء في مصر القديمة",
+        "الكنيسة المعلقة",
+        "معبد بن عزرا",
+        "الكنائس والحواري القديمة"
+      ],
+      "de": [
+        "Treffen in Koptisch-Kairo",
+        "Hängende Kirche",
+        "Ben-Ezra-Synagoge",
+        "Alte Kirchen und Gassen"
+      ]
+    },
+    "tag": {
+      "en": "Culture",
+      "ar": "ثقافة"
+    }
+  },
+  {
+    "id": "saqqara",
+    "p": 150,
+    "g": 1,
+    "kind": "more",
+    "hue": [
+      "#1f4f8f",
+      "#e2a21f"
+    ],
+    "dur": {
+      "en": "Half day",
+      "ar": "نصف يوم",
+      "de": "Halbtags"
+    },
+    "loc": {
+      "en": "Saqqara, Memphis",
+      "ar": "سقارة، منف",
+      "de": "Sakkara, Memphis"
+    },
+    "t": {
+      "en": "Saqqara and Memphis",
+      "ar": "سقارة ومنف",
+      "de": "Sakkara und Memphis"
+    },
+    "d": {
+      "en": "The Step Pyramid of Djoser and the open-air museum at Memphis. Quieter than Giza.",
+      "ar": "هرم زوسر المدرج ومتحف منف المفتوح. أهدى من الجيزة.",
+      "de": "Die Djoser-Stufenpyramide und das Freilichtmuseum von Memphis. Ruhiger als Gizeh."
+    },
+    "it": {
+      "en": [
+        "Pickup from your hotel",
+        "Step Pyramid complex",
+        "Decorated tombs",
+        "Memphis open-air museum"
+      ],
+      "ar": [
+        "استلام من الفندق",
+        "مجمع الهرم المدرج",
+        "المقابر الملونة",
+        "متحف منف المفتوح"
+      ],
+      "de": [
+        "Abholung am Hotel",
+        "Stufenpyramiden-Komplex",
+        "Verzierte Gräber",
+        "Freilichtmuseum Memphis"
+      ]
+    },
+    "tag": {
+      "en": "Quiet",
+      "ar": "هادئة"
+    }
+  },
+  {
+    "id": "alex",
+    "p": 450,
+    "g": 1,
+    "kind": "more",
+    "hue": [
+      "#1f6aa5",
+      "#e8f1ee"
+    ],
+    "dur": {
+      "en": "Full day",
+      "ar": "يوم كامل",
+      "de": "Ganztags"
+    },
+    "loc": {
+      "en": "Alexandria",
+      "ar": "الإسكندرية",
+      "de": "Alexandrien"
+    },
+    "t": {
+      "en": "Alexandria day trip",
+      "ar": "رحلة يوم إلى الإسكندرية",
+      "de": "Tagesausflug nach Alexandrien"
+    },
+    "d": {
+      "en": "The Mediterranean coast in a day: Qaitbay Citadel, the library and a seafood lunch.",
+      "ar": "ساحل المتوسط في يوم: قلعة قايتباي والمكتبة وغداء سمك.",
+      "de": "Die Mittelmeerküste an einem Tag: Qaitbay-Zitadelle, die Bibliothek und ein Fischmittagessen."
+    },
+    "it": {
+      "en": [
+        "Early drive from Cairo",
+        "Qaitbay Citadel",
+        "Bibliotheca Alexandrina",
+        "Seafood lunch",
+        "Return to Cairo"
+      ],
+      "ar": [
+        "سفر بدري من القاهرة",
+        "قلعة قايتباي",
+        "مكتبة الإسكندرية",
+        "غداء سمك",
+        "العودة للقاهرة"
+      ],
+      "de": [
+        "Frühe Abfahrt ab Kairo",
+        "Qaitbay-Zitadelle",
+        "Bibliotheca Alexandrina",
+        "Fischmittagessen",
+        "Rückfahrt nach Kairo"
+      ]
+    },
+    "tag": {
+      "en": "Weekend",
+      "ar": "ويك إند"
+    }
+  },
+  {
+    "id": "fayoum",
+    "p": 290,
+    "g": 1,
+    "kind": "more",
+    "hue": [
+      "#2c8a86",
+      "#e2a21f"
+    ],
+    "dur": {
+      "en": "Full day",
+      "ar": "يوم كامل",
+      "de": "Ganztags"
+    },
+    "loc": {
+      "en": "Fayoum",
+      "ar": "الفيوم",
+      "de": "Fayum"
+    },
+    "t": {
+      "en": "Fayoum oasis day trip",
+      "ar": "رحلة يوم إلى واحة الفيوم",
+      "de": "Tagesausflug zur Fayum-Oase"
+    },
+    "d": {
+      "en": "Waterfalls, dunes and Lake Qarun. An easy escape from Cairo for groups and families.",
+      "ar": "شلالات وكثبان وبحيرة قارون. هروب سهل من القاهرة للمجموعات والعائلات.",
+      "de": "Wasserfälle, Dünen und der Qarun-See. Ein einfacher Tapetenwechsel ab Kairo für Gruppen und Familien."
+    },
+    "it": {
+      "en": [
+        "Drive to Fayoum",
+        "Wadi El Rayan waterfalls",
+        "Dunes and lake views",
+        "Lunch and return"
+      ],
+      "ar": [
+        "سفر للفيوم",
+        "شلالات وادي الريان",
+        "الكثبان وإطلالة البحيرة",
+        "غداء والعودة"
+      ],
+      "de": [
+        "Fahrt nach Fayum",
+        "Wadi-El-Rayan-Wasserfälle",
+        "Dünen und Seeblick",
+        "Mittagessen und Rückfahrt"
+      ]
+    },
+    "tag": {
+      "en": "Weekend",
+      "ar": "ويك إند"
+    }
+  },
+  {
+    "id": "nmec",
+    "kind": "more",
+    "hue": [
+      "#1f4f8f",
+      "#0f4c52"
+    ],
+    "dur": {
+      "en": "Half day",
+      "ar": "نصف يوم",
+      "de": "Halbtags"
+    },
+    "loc": {
+      "en": "Fustat, Cairo",
+      "ar": "الفسطاط، القاهرة",
+      "de": "Fustat, Kairo"
+    },
+    "t": {
+      "en": "National Museum of Egyptian Civilization",
+      "ar": "المتحف القومي للحضارة المصرية",
+      "de": "Nationalmuseum der Ägyptischen Zivilisation"
+    },
+    "d": {
+      "en": "The Royal Mummies Hall and the story of Egypt from prehistoric times to today, in one modern museum.",
+      "ar": "قاعة المومياوات الملكية وحكاية مصر من ما قبل التاريخ للنهاردة، في متحف واحد حديث.",
+      "de": "Die Halle der königlichen Mumien und die Geschichte Ägyptens von der Urzeit bis heute – in einem modernen Museum."
+    },
+    "it": {
+      "en": [
+        "Drive to Fustat",
+        "Main galleries",
+        "Royal Mummies Hall",
+        "Walk by Ain El-Sira lake and return"
+      ],
+      "ar": [
+        "سفر للفسطاط",
+        "القاعات الرئيسية",
+        "قاعة المومياوات الملكية",
+        "مشوار عند بحيرة عين الصيرة والعودة"
+      ],
+      "de": [
+        "Fahrt nach Fustat",
+        "Hauptgalerien",
+        "Halle der königlichen Mumien",
+        "Spaziergang am Ain-el-Sira-See und Rückfahrt"
+      ]
+    }
+  },
+  {
+    "id": "muizz",
+    "kind": "more",
+    "hue": [
+      "#7a3b2e",
+      "#e2a21f"
+    ],
+    "dur": {
+      "en": "2 to 3 hours",
+      "ar": "من ساعتين ل٣ ساعات",
+      "de": "2 bis 3 Stunden"
+    },
+    "loc": {
+      "en": "Old Cairo",
+      "ar": "القاهرة القديمة",
+      "de": "Alt-Kairo"
+    },
+    "t": {
+      "en": "Al-Muizz Street and the medieval gates",
+      "ar": "شارع المعز وبوابات القاهرة القديمة",
+      "de": "Al-Muizz-Straße und die mittelalterlichen Tore"
+    },
+    "d": {
+      "en": "A whole street that works as an open-air museum: madrasas, mosques and old houses between Bab Zuweila and Bab al-Futuh.",
+      "ar": "شارع كامل شغال كمتحف مفتوح: مدارس ومساجد وبيوت قديمة بين باب زويلة وباب الفتوح.",
+      "de": "Eine ganze Straße als Freilichtmuseum: Medresen, Moscheen und alte Häuser zwischen Bab Zuweila und Bab al-Futuh."
+    },
+    "it": {
+      "en": [
+        "Meet at Bab Zuweila",
+        "Walk Al-Muizz street",
+        "Qalawun complex area",
+        "Bab al-Futuh and walk back"
+      ],
+      "ar": [
+        "نقابل عند باب زويلة",
+        "مشوار شارع المعز",
+        "منطقة مجموعة قلاوون",
+        "باب الفتوح والرجوع"
+      ],
+      "de": [
+        "Treffen am Bab Zuweila",
+        "Die Al-Muizz-Straße entlang",
+        "Bereich des Qalawun-Komplexes",
+        "Bab al-Futuh und zurück"
+      ]
+    }
+  },
+  {
+    "id": "manial",
+    "kind": "more",
+    "hue": [
+      "#0f4c52",
+      "#b9722a"
+    ],
+    "dur": {
+      "en": "Half day",
+      "ar": "نصف يوم",
+      "de": "Halbtags"
+    },
+    "loc": {
+      "en": "Roda Island",
+      "ar": "جزيرة الروضة",
+      "de": "Insel Roda"
+    },
+    "t": {
+      "en": "Manial Palace and Roda Island",
+      "ar": "قصر المنيل وجزيرة الروضة",
+      "de": "Manial-Palast und die Insel Roda"
+    },
+    "d": {
+      "en": "Prince Muhammad Ali's palace: gardens, decorated halls and a museum most visitors walk past.",
+      "ar": "قصر الأمير محمد علي: حدائق وقاعات مزخرفة ومتحف أغلب الزوار بيعدّوا عنه.",
+      "de": "Der Palast von Prinz Muhammad Ali: Gärten, prächtige Säle und ein Museum, an dem die meisten vorbeigehen."
+    },
+    "it": {
+      "en": [
+        "Drive to Roda Island",
+        "Palace gardens",
+        "Halls and museum",
+        "Corniche walk and return"
+      ],
+      "ar": [
+        "سفر لجزيرة الروضة",
+        "حدائق القصر",
+        "القاعات والمتحف",
+        "مشوار على الكورنيش والعودة"
+      ],
+      "de": [
+        "Fahrt zur Insel Roda",
+        "Palastgärten",
+        "Säle und Museum",
+        "Corniche-Spaziergang und Rückfahrt"
+      ]
+    }
+  },
+  {
+    "id": "azhar-park",
+    "kind": "more",
+    "hue": [
+      "#1c7a7e",
+      "#e2a21f"
+    ],
+    "dur": {
+      "en": "2 hours",
+      "ar": "ساعتان",
+      "de": "2 Stunden"
+    },
+    "loc": {
+      "en": "Old Cairo",
+      "ar": "القاهرة القديمة",
+      "de": "Alt-Kairo"
+    },
+    "t": {
+      "en": "Al-Azhar Park sunset",
+      "ar": "الغروب في حديقة الأزهر",
+      "de": "Sonnenuntergang im Al-Azhar-Park"
+    },
+    "d": {
+      "en": "Cairo's green balcony: gardens, fountains and one of the best sunset views over the old city.",
+      "ar": "بلكونة القاهرة الخضرا: حدائق ونوافير وواحدة من أحلى إطلالات الغروب على المدينة القديمة.",
+      "de": "Kairos grüner Balkon: Gärten, Brunnen und eine der besten Sonnenuntergänge über der Altstadt."
+    },
+    "it": {
+      "en": [
+        "Enter before sunset",
+        "Gardens and fountains",
+        "Panorama terrace",
+        "Tea with the view"
+      ],
+      "ar": [
+        "دخول قبل الغروب",
+        "الحدائق والنوافير",
+        "تراس البانوراما",
+        "شاي بالإطلالة"
+      ],
+      "de": [
+        "Eintritt vor Sonnenuntergang",
+        "Gärten und Brunnen",
+        "Panoramaterrasse",
+        "Tee mit Aussicht"
+      ]
+    }
+  },
+  {
+    "id": "cairo-tower",
+    "p": 110,
+    "g": 1,
+    "kind": "more",
+    "hue": [
+      "#1f6aa5",
+      "#0f4c52"
+    ],
+    "dur": {
+      "en": "2 hours",
+      "ar": "ساعتان",
+      "de": "2 Stunden"
+    },
+    "loc": {
+      "en": "Zamalek",
+      "ar": "الزمالك",
+      "de": "Zamalek"
+    },
+    "t": {
+      "en": "Cairo Tower and a Zamalek evening",
+      "ar": "برج القاهرة وسهرة في الزمالك",
+      "de": "Cairo Tower und ein Abend in Zamalek"
+    },
+    "d": {
+      "en": "The whole city from the top of the tower, then coffee or dinner in Zamalek's streets.",
+      "ar": "المدينة كلها من فوق البرج، وبعدها قهوة أو عشا في شوارع الزمالك.",
+      "de": "Die ganze Stadt vom Turm aus, danach Kaffee oder Abendessen in den Straßen von Zamalek."
+    },
+    "it": {
+      "en": [
+        "Up the tower",
+        "City panorama",
+        "Zamalek walk",
+        "Cafe or dinner stop"
+      ],
+      "ar": [
+        "الصعود للبرج",
+        "بانوراما المدينة",
+        "مشوار الزمالك",
+        "وقفة قهوة أو عشا"
+      ],
+      "de": [
+        "Hinauf auf den Turm",
+        "Stadtpanorama",
+        "Spaziergang durch Zamalek",
+        "Stopp in einem Café oder Restaurant"
+      ]
+    }
+  },
+  {
+    "id": "cave-church",
+    "kind": "more",
+    "hue": [
+      "#b9722a",
+      "#7a3b2e"
+    ],
+    "dur": {
+      "en": "2 to 3 hours",
+      "ar": "من ساعتين ل٣ ساعات",
+      "de": "2 bis 3 Stunden"
+    },
+    "loc": {
+      "en": "Mokattam",
+      "ar": "المقطم",
+      "de": "Mokattam"
+    },
+    "t": {
+      "en": "The Cave Church of St. Simon",
+      "ar": "كنيسة القديس سمعان الخراز",
+      "de": "Die Höhlenkirche des Heiligen Simon"
+    },
+    "d": {
+      "en": "A huge church carved into the Mokattam hill, and the story of the Zabbaleen community around it.",
+      "ar": "كنيسة ضخمة منحوتة في جبل المقطم، وحكاية مجتمع الزبالين اللي حواليها.",
+      "de": "Eine riesige, in den Mokattam-Fels gehauene Kirche – und die Geschichte der Zabbaleen-Gemeinde ringsum."
+    },
+    "it": {
+      "en": [
+        "Drive up Mokattam",
+        "The cave church",
+        "Carvings and halls",
+        "View over Cairo and return"
+      ],
+      "ar": [
+        "الصعود للمقطم",
+        "الكنيسة الكهفية",
+        "النقوش والقاعات",
+        "إطلالة على القاهرة والعودة"
+      ],
+      "de": [
+        "Fahrt auf den Mokattam",
+        "Die Höhlenkirche",
+        "Reliefs und Säle",
+        "Blick über Kairo und Rückfahrt"
+      ]
+    }
+  },
+  {
+    "id": "wadi-degla",
+    "kind": "more",
+    "hue": [
+      "#52696b",
+      "#e2a21f"
+    ],
+    "dur": {
+      "en": "Half day",
+      "ar": "نصف يوم",
+      "de": "Halbtags"
+    },
+    "loc": {
+      "en": "Maadi",
+      "ar": "المعادي",
+      "de": "Maadi"
+    },
+    "t": {
+      "en": "Wadi Degla valley hike",
+      "ar": "مشي في وادي دجلة",
+      "de": "Wanderung im Wadi Degla"
+    },
+    "d": {
+      "en": "A dry canyon inside the city: an easy morning walk between limestone cliffs, good for groups.",
+      "ar": "وادٍ جاف جوه المدينة: مشي صبحي سهل بين حواف جيرية، مناسب للمجموعات.",
+      "de": "Eine trockene Schlucht mitten in der Stadt: leichte Morgenwanderung zwischen Kalksteinfelsen, gut für Gruppen."
+    },
+    "it": {
+      "en": [
+        "Early start",
+        "Into the valley",
+        "Cliff viewpoints",
+        "Rest and return"
+      ],
+      "ar": [
+        "بداية بدري",
+        "النزول للوادي",
+        "نقاط الإطلالة",
+        "راحة والعودة"
+      ],
+      "de": [
+        "Früher Start",
+        "Hinein ins Tal",
+        "Aussichtspunkte an den Felsen",
+        "Pause und Rückweg"
+      ]
+    }
   }
- },
- {
-  "id": "gem",
-  "kind": "more",
-  "hue": [
-   "#0f4c52",
-   "#e2a21f"
-  ],
-  "dur": {
-   "en": "Half day",
-   "ar": "نصف يوم"
-  },
-  "loc": {
-   "en": "Giza",
-   "ar": "الجيزة"
-  },
-  "t": {
-   "en": "Grand Egyptian Museum",
-   "ar": "المتحف المصري الكبير"
-  },
-  "d": {
-   "en": "A guided walk through the museum's main galleries, with the Tutankhamun collection and the stories behind the objects.",
-   "ar": "جولة بمرشد في أهم قاعات المتحف، مع مجموعة توت عنخ آمون وحكايات القطع."
-  },
-  "it": {
-   "en": [
-    "Meet at the museum or your hotel",
-    "Grand staircase galleries",
-    "Tutankhamun collection",
-    "Free time and café"
-   ],
-   "ar": [
-    "لقاء عند المتحف أو من الفندق",
-    "قاعات السلم الكبير",
-    "مجموعة توت عنخ آمون",
-    "وقت حر وكافيه"
-   ]
-  },
-  "tag": {
-   "en": "Museum",
-   "ar": "متحف"
-  }
- },
- {
-  "id": "food",
-  "kind": "more",
-  "hue": [
-   "#b9722a",
-   "#f0d9a0"
-  ],
-  "dur": {
-   "en": "3 to 4 hours",
-   "ar": "٣ إلى ٤ ساعات"
-  },
-  "loc": {
-   "en": "Downtown Cairo",
-   "ar": "وسط البلد"
-  },
-  "t": {
-   "en": "Egyptian street food walk",
-   "ar": "جولة الأكل الشعبي المصري"
-  },
-  "d": {
-   "en": "Taste the dishes Cairenes eat every day, at the places locals actually go. Come hungry.",
-   "ar": "جرّب الأكلات اللي المصريين بياكلوها كل يوم في الأماكن اللي أهلها بيروحوها. تعالى جعان."
-  },
-  "it": {
-   "en": [
-    "Meet in Downtown",
-    "Koshary and ful with ta'meya",
-    "Local sweets stop",
-    "Fresh juice or tea to finish"
-   ],
-   "ar": [
-    "لقاء في وسط البلد",
-    "كشري وفول وطعمية",
-    "وقفة حلويات شعبية",
-    "عصير أو شاي في الآخر"
-   ]
-  },
-  "tag": {
-   "en": "Food",
-   "ar": "أكل"
-  }
- },
- {
-  "id": "matareya",
-  "kind": "more",
-  "hue": [
-   "#b9722a",
-   "#e2a21f"
-  ],
-  "dur": {
-   "en": "2 to 3 hours",
-   "ar": "٢ إلى ٣ ساعات"
-  },
-  "loc": {
-   "en": "Matareya, Cairo",
-   "ar": "المطرية، القاهرة"
-  },
-  "t": {
-   "en": "Matareya breakfast",
-   "ar": "فطار المطرية"
-  },
-  "d": {
-   "en": "A real Egyptian breakfast the way locals eat it in Matareya, at a neighborhood spot far from the tourist routes.",
-   "ar": "فطار مصري حقيقي زي ما أهل المطرية بياكلوه، في مكان شعبي بعيد عن مسارات السياح."
-  },
-  "it": {
-   "en": [
-    "Early meet-up or hotel pickup",
-    "Ful, ta'meya, eggs and fresh bread",
-    "Tea with the neighborhood",
-    "Short walk around the area"
-   ],
-   "ar": [
-    "لقاء بدري أو استلام من الفندق",
-    "فول وطعمية وبيض وعيش طازة",
-    "شاي مع أهل الحتة",
-    "مشوار قصير حوالين المنطقة"
-   ]
-  },
-  "tag": {
-   "en": "Food",
-   "ar": "أكل"
-  }
- },
- {
-  "id": "felucca",
-  "kind": "more",
-  "hue": [
-   "#1f6aa5",
-   "#e2a21f"
-  ],
-  "dur": {
-   "en": "1 to 2 hours",
-   "ar": "١ إلى ٢ ساعة"
-  },
-  "loc": {
-   "en": "Nile, Cairo",
-   "ar": "النيل، القاهرة"
-  },
-  "t": {
-   "en": "Felucca sunset on the Nile",
-   "ar": "فلوكة على النيل وقت الغروب"
-  },
-  "d": {
-   "en": "A relaxed sail on a traditional felucca as the city lights come on. Good for couples, families and small groups.",
-   "ar": "مشوار هادي بفلوكة على النيل مع إضاءة المدينة. مناسب للأزواج والعائلات والمجموعات الصغيرة."
-  },
-  "it": {
-   "en": [
-    "Meet at the felucca dock",
-    "Sail on the Nile",
-    "Sunset and city views",
-    "Return to the dock"
-   ],
-   "ar": [
-    "لقاء عند مرسى الفلوكة",
-    "مشوار على النيل",
-    "الغروب وإطلالة المدينة",
-    "العودة للمرسى"
-   ]
-  },
-  "tag": {
-   "en": "Sunset",
-   "ar": "غروب"
-  }
- },
- {
-  "id": "downtown",
-  "kind": "more",
-  "hue": [
-   "#7a3b2e",
-   "#e8c77a"
-  ],
-  "dur": {
-   "en": "3 hours",
-   "ar": "٣ ساعات"
-  },
-  "loc": {
-   "en": "Downtown Cairo",
-   "ar": "وسط البلد"
-  },
-  "t": {
-   "en": "Downtown Cairo walk: old buildings and cafés",
-   "ar": "مشي وسط البلد: عمارات قديمة وقهاوي"
-  },
-  "d": {
-   "en": "Walk the streets of Khedival Cairo, see its old facades and sit in a traditional café.",
-   "ar": "مشي في شوارع القاهرة الخديوية، تشوف العمارات القديمة وتقعد في قهوة بلدي."
-  },
-  "it": {
-   "en": [
-    "Meet at Tahrir or Talaat Harb",
-    "Historic buildings and passages",
-    "Traditional café break"
-   ],
-   "ar": [
-    "لقاء عند التحرير أو طلعت حرب",
-    "عمارات وممرات تاريخية",
-    "استراحة في قهوة بلدي"
-   ]
-  },
-  "tag": {
-   "en": "Walking",
-   "ar": "مشي"
-  }
- },
- {
-  "id": "citadel",
-  "kind": "more",
-  "hue": [
-   "#0f4c52",
-   "#e2a21f"
-  ],
-  "dur": {
-   "en": "Half day",
-   "ar": "نصف يوم"
-  },
-  "loc": {
-   "en": "Old Cairo",
-   "ar": "القاهرة القديمة"
-  },
-  "t": {
-   "en": "Citadel and Muhammad Ali Mosque",
-   "ar": "القلعة ومسجد محمد علي"
-  },
-  "d": {
-   "en": "Saladin's Citadel, the Muhammad Ali Mosque and one of the best views across Cairo.",
-   "ar": "قلعة صلاح الدين ومسجد محمد علي وواحدة من أحسن إطلالات القاهرة."
-  },
-  "it": {
-   "en": [
-    "Pickup or meet at the Citadel",
-    "Muhammad Ali Mosque",
-    "Citadel viewpoints",
-    "Optional nearby mosque"
-   ],
-   "ar": [
-    "استلام أو لقاء عند القلعة",
-    "مسجد محمد علي",
-    "نقاط الإطلالة",
-    "مسجد قريب لو حبيت"
-   ]
-  },
-  "tag": {
-   "en": "Culture",
-   "ar": "ثقافة"
-  }
- },
- {
-  "id": "coptic",
-  "kind": "more",
-  "hue": [
-   "#7a3b2e",
-   "#f0d9a0"
-  ],
-  "dur": {
-   "en": "Half day",
-   "ar": "نصف يوم"
-  },
-  "loc": {
-   "en": "Coptic Cairo",
-   "ar": "مصر القديمة"
-  },
-  "t": {
-   "en": "Coptic Cairo",
-   "ar": "القاهرة القبطية"
-  },
-  "d": {
-   "en": "The Hanging Church, Ben Ezra Synagogue and the old churches in one quiet walk.",
-   "ar": "الكنيسة المعلقة ومعبد بن عزرا والكنائس القديمة في مشوار هادي."
-  },
-  "it": {
-   "en": [
-    "Meet at Coptic Cairo",
-    "Hanging Church",
-    "Ben Ezra Synagogue",
-    "Old churches and lanes"
-   ],
-   "ar": [
-    "لقاء في مصر القديمة",
-    "الكنيسة المعلقة",
-    "معبد بن عزرا",
-    "الكنائس والحواري القديمة"
-   ]
-  },
-  "tag": {
-   "en": "Culture",
-   "ar": "ثقافة"
-  }
- },
- {
-  "id": "saqqara",
-  "p": 150,
-  "g": 1,
-  "kind": "more",
-  "hue": [
-   "#1f4f8f",
-   "#e2a21f"
-  ],
-  "dur": {
-   "en": "Half day",
-   "ar": "نصف يوم"
-  },
-  "loc": {
-   "en": "Saqqara, Memphis",
-   "ar": "سقارة، منف"
-  },
-  "t": {
-   "en": "Saqqara and Memphis",
-   "ar": "سقارة ومنف"
-  },
-  "d": {
-   "en": "The Step Pyramid of Djoser and the open-air museum at Memphis. Quieter than Giza.",
-   "ar": "هرم زوسر المدرج ومتحف منف المفتوح. أهدى من الجيزة."
-  },
-  "it": {
-   "en": [
-    "Pickup from your hotel",
-    "Step Pyramid complex",
-    "Decorated tombs",
-    "Memphis open-air museum"
-   ],
-   "ar": [
-    "استلام من الفندق",
-    "مجمع الهرم المدرج",
-    "المقابر الملونة",
-    "متحف منف المفتوح"
-   ]
-  },
-  "tag": {
-   "en": "Quiet",
-   "ar": "هادئة"
-  }
- },
- {
-  "id": "alex",
-  "p": 450,
-  "g": 1,
-  "kind": "more",
-  "hue": [
-   "#1f6aa5",
-   "#e8f1ee"
-  ],
-  "dur": {
-   "en": "Full day",
-   "ar": "يوم كامل"
-  },
-  "loc": {
-   "en": "Alexandria",
-   "ar": "الإسكندرية"
-  },
-  "t": {
-   "en": "Alexandria day trip",
-   "ar": "رحلة يوم إلى الإسكندرية"
-  },
-  "d": {
-   "en": "The Mediterranean coast in a day: Qaitbay Citadel, the library and a seafood lunch.",
-   "ar": "ساحل المتوسط في يوم: قلعة قايتباي والمكتبة وغداء سمك."
-  },
-  "it": {
-   "en": [
-    "Early drive from Cairo",
-    "Qaitbay Citadel",
-    "Bibliotheca Alexandrina",
-    "Seafood lunch",
-    "Return to Cairo"
-   ],
-   "ar": [
-    "سفر بدري من القاهرة",
-    "قلعة قايتباي",
-    "مكتبة الإسكندرية",
-    "غداء سمك",
-    "العودة للقاهرة"
-   ]
-  },
-  "tag": {
-   "en": "Weekend",
-   "ar": "ويك إند"
-  }
- },
- {
-  "id": "fayoum",
-  "p": 290,
-  "g": 1,
-  "kind": "more",
-  "hue": [
-   "#2c8a86",
-   "#e2a21f"
-  ],
-  "dur": {
-   "en": "Full day",
-   "ar": "يوم كامل"
-  },
-  "loc": {
-   "en": "Fayoum",
-   "ar": "الفيوم"
-  },
-  "t": {
-   "en": "Fayoum oasis day trip",
-   "ar": "رحلة يوم إلى واحة الفيوم"
-  },
-  "d": {
-   "en": "Waterfalls, dunes and Lake Qarun. An easy escape from Cairo for groups and families.",
-   "ar": "شلالات وكثبان وبحيرة قارون. هروب سهل من القاهرة للمجموعات والعائلات."
-  },
-  "it": {
-   "en": [
-    "Drive to Fayoum",
-    "Wadi El Rayan waterfalls",
-    "Dunes and lake views",
-    "Lunch and return"
-   ],
-   "ar": [
-    "سفر للفيوم",
-    "شلالات وادي الريان",
-    "الكثبان وإطلالة البحيرة",
-    "غداء والعودة"
-   ]
-  },
-  "tag": {
-   "en": "Weekend",
-   "ar": "ويك إند"
-  }
- },
- {
-  "id": "nmec",
-  "kind": "more",
-  "hue": ["#1f4f8f", "#0f4c52"],
-  "dur": {"en": "Half day", "ar": "نصف يوم"},
-  "loc": {"en": "Fustat, Cairo", "ar": "الفسطاط، القاهرة"},
-  "t": {"en": "National Museum of Egyptian Civilization", "ar": "المتحف القومي للحضارة المصرية"},
-  "d": {"en": "The Royal Mummies Hall and the story of Egypt from prehistoric times to today, in one modern museum.",
-        "ar": "قاعة المومياوات الملكية وحكاية مصر من ما قبل التاريخ للنهاردة، في متحف واحد حديث."},
-  "it": {"en": ["Drive to Fustat", "Main galleries", "Royal Mummies Hall", "Walk by Ain El-Sira lake and return"],
-         "ar": ["سفر للفسطاط", "القاعات الرئيسية", "قاعة المومياوات الملكية", "مشوار عند بحيرة عين الصيرة والعودة"]}
- },
- {
-  "id": "muizz",
-  "kind": "more",
-  "hue": ["#7a3b2e", "#e2a21f"],
-  "dur": {"en": "2 to 3 hours", "ar": "من ساعتين ل٣ ساعات"},
-  "loc": {"en": "Old Cairo", "ar": "القاهرة القديمة"},
-  "t": {"en": "Al-Muizz Street and the medieval gates", "ar": "شارع المعز وبوابات القاهرة القديمة"},
-  "d": {"en": "A whole street that works as an open-air museum: madrasas, mosques and old houses between Bab Zuweila and Bab al-Futuh.",
-        "ar": "شارع كامل شغال كمتحف مفتوح: مدارس ومساجد وبيوت قديمة بين باب زويلة وباب الفتوح."},
-  "it": {"en": ["Meet at Bab Zuweila", "Walk Al-Muizz street", "Qalawun complex area", "Bab al-Futuh and walk back"],
-         "ar": ["نقابل عند باب زويلة", "مشوار شارع المعز", "منطقة مجموعة قلاوون", "باب الفتوح والرجوع"]}
- },
- {
-  "id": "manial",
-  "kind": "more",
-  "hue": ["#0f4c52", "#b9722a"],
-  "dur": {"en": "Half day", "ar": "نصف يوم"},
-  "loc": {"en": "Roda Island", "ar": "جزيرة الروضة"},
-  "t": {"en": "Manial Palace and Roda Island", "ar": "قصر المنيل وجزيرة الروضة"},
-  "d": {"en": "Prince Muhammad Ali's palace: gardens, decorated halls and a museum most visitors walk past.",
-        "ar": "قصر الأمير محمد علي: حدائق وقاعات مزخرفة ومتحف أغلب الزوار بيعدّوا عنه."},
-  "it": {"en": ["Drive to Roda Island", "Palace gardens", "Halls and museum", "Corniche walk and return"],
-         "ar": ["سفر لجزيرة الروضة", "حدائق القصر", "القاعات والمتحف", "مشوار على الكورنيش والعودة"]}
- },
- {
-  "id": "azhar-park",
-  "kind": "more",
-  "hue": ["#1c7a7e", "#e2a21f"],
-  "dur": {"en": "2 hours", "ar": "ساعتان"},
-  "loc": {"en": "Old Cairo", "ar": "القاهرة القديمة"},
-  "t": {"en": "Al-Azhar Park sunset", "ar": "الغروب في حديقة الأزهر"},
-  "d": {"en": "Cairo's green balcony: gardens, fountains and one of the best sunset views over the old city.",
-        "ar": "بلكونة القاهرة الخضرا: حدائق ونوافير وواحدة من أحلى إطلالات الغروب على المدينة القديمة."},
-  "it": {"en": ["Enter before sunset", "Gardens and fountains", "Panorama terrace", "Tea with the view"],
-         "ar": ["دخول قبل الغروب", "الحدائق والنوافير", "تراس البانوراما", "شاي بالإطلالة"]}
- },
- {
-  "id": "cairo-tower",
-  "p": 110,
-  "g": 1,
-  "kind": "more",
-  "hue": ["#1f6aa5", "#0f4c52"],
-  "dur": {"en": "2 hours", "ar": "ساعتان"},
-  "loc": {"en": "Zamalek", "ar": "الزمالك"},
-  "t": {"en": "Cairo Tower and a Zamalek evening", "ar": "برج القاهرة وسهرة في الزمالك"},
-  "d": {"en": "The whole city from the top of the tower, then coffee or dinner in Zamalek's streets.",
-        "ar": "المدينة كلها من فوق البرج، وبعدها قهوة أو عشا في شوارع الزمالك."},
-  "it": {"en": ["Up the tower", "City panorama", "Zamalek walk", "Cafe or dinner stop"],
-         "ar": ["الصعود للبرج", "بانوراما المدينة", "مشوار الزمالك", "وقفة قهوة أو عشا"]}
- },
- {
-  "id": "cave-church",
-  "kind": "more",
-  "hue": ["#b9722a", "#7a3b2e"],
-  "dur": {"en": "2 to 3 hours", "ar": "من ساعتين ل٣ ساعات"},
-  "loc": {"en": "Mokattam", "ar": "المقطم"},
-  "t": {"en": "The Cave Church of St. Simon", "ar": "كنيسة القديس سمعان الخراز"},
-  "d": {"en": "A huge church carved into the Mokattam hill, and the story of the Zabbaleen community around it.",
-        "ar": "كنيسة ضخمة منحوتة في جبل المقطم، وحكاية مجتمع الزبالين اللي حواليها."},
-  "it": {"en": ["Drive up Mokattam", "The cave church", "Carvings and halls", "View over Cairo and return"],
-         "ar": ["الصعود للمقطم", "الكنيسة الكهفية", "النقوش والقاعات", "إطلالة على القاهرة والعودة"]}
- },
- {
-  "id": "wadi-degla",
-  "kind": "more",
-  "hue": ["#52696b", "#e2a21f"],
-  "dur": {"en": "Half day", "ar": "نصف يوم"},
-  "loc": {"en": "Maadi", "ar": "المعادي"},
-  "t": {"en": "Wadi Degla valley hike", "ar": "مشي في وادي دجلة"},
-  "d": {"en": "A dry canyon inside the city: an easy morning walk between limestone cliffs, good for groups.",
-        "ar": "وادٍ جاف جوه المدينة: مشي صبحي سهل بين حواف جيرية، مناسب للمجموعات."},
-  "it": {"en": ["Early start", "Into the valley", "Cliff viewpoints", "Rest and return"],
-         "ar": ["بداية بدري", "النزول للوادي", "نقاط الإطلالة", "راحة والعودة"]}
- }
 ];
 
 
 var SIMSEM = [
-  {t:"Hidden Gems of Heliopolis: History, Architecture & Flavors",ta:"جواهر مصر الجديدة الخفية: تاريخ وعمارة ونكهات",dur:{en:"5 hours",ar:"٥ ساعات"},p:63,
+  {t:"Hidden Gems of Heliopolis: History, Architecture & Flavors",ta:"جواهر مصر الجديدة الخفية: تاريخ وعمارة ونكهات",dur:{en:"5 hours",ar:"٥ ساعات",de:"5 Stunden"},p:63,
    img:"https://simemmedia.b-cdn.net/experiences//tours/3jWY2Cd4JS/cover/cover_1768353517789.jpg",
    u:"https://mysimsem.com/experiences/heliopolis-egypt-tour-baron-palace-local-life/",hue:["#b9722a","#0f4c52"]},
-  {t:"Journey Through Zamalek: History, Art, and Egyptian Elegance",ta:"رحلة في الزمالك: تاريخ وفن وأناقة مصرية",dur:{en:"5 hours",ar:"٥ ساعات"},p:63,
+  {t:"Journey Through Zamalek: History, Art, and Egyptian Elegance",ta:"رحلة في الزمالك: تاريخ وفن وأناقة مصرية",dur:{en:"5 hours",ar:"٥ ساعات",de:"5 Stunden"},p:63,
    img:"https://mysimsem.com/wp-content/uploads/2025/04/9c3fb3b09737afc089c41711dc97a8f3_1744556234910.jpeg",
    u:"https://mysimsem.com/experiences/zamalek-tour-cairo-culture-nile-abu-el-sid-via-simsem/",hue:["#1f6aa5","#e2a21f"]},
-  {t:"Islamic Cairo Tour: Khan El Khalili Bazaar and Old Cairo Walk",ta:"جولة القاهرة الإسلامية: خان الخليلي ومشوار القاهرة القديمة",dur:{en:"8 hours",ar:"٨ ساعات"},p:63,
+  {t:"Islamic Cairo Tour: Khan El Khalili Bazaar and Old Cairo Walk",ta:"جولة القاهرة الإسلامية: خان الخليلي ومشوار القاهرة القديمة",dur:{en:"8 hours",ar:"٨ ساعات",de:"8 Stunden"},p:63,
    img:"https://mysimsem.com/wp-content/uploads/2025/04/processed-E4A5244D-CB8F-4B37-B117-9EB570000CBB.jpeg",
    u:"https://mysimsem.com/experiences/islamic-cairo-tour-khan-el-khalili-bazaar-old-cairo-walk/",hue:["#0f4c52","#e2a21f"]},
-  {t:"Nile River Kayaking in Cairo",ta:"كاياك في نهر النيل بالقاهرة",dur:{en:"3 hours",ar:"٣ ساعات"},p:50,
+  {t:"Nile River Kayaking in Cairo",ta:"كاياك في نهر النيل بالقاهرة",dur:{en:"3 hours",ar:"٣ ساعات",de:"3 Stunden"},p:50,
    img:"https://simemmedia.b-cdn.net/experiences//tours/L4dLKtDxhJ/cover/cover_1768348589522.jpg",
    u:"https://mysimsem.com/experiences/nile-river-kayaking-in-cairo-best-things-to-do-in-cairo/",hue:["#1f6aa5","#0f4c52"]},
-  {t:"Horseback Ride to Giza's Pyramids: A Desert Adventure",ta:"ركوب الخيل عند أهرامات الجيزة: مغامرة صحراوية",dur:{en:"2 hours",ar:"ساعتان"},p:44,
+  {t:"Horseback Ride to Giza's Pyramids: A Desert Adventure",ta:"ركوب الخيل عند أهرامات الجيزة: مغامرة صحراوية",dur:{en:"2 hours",ar:"ساعتان",de:"2 Stunden"},p:44,
    img:"https://mysimsem.com/wp-content/uploads/2024/09/WhatsApp-Image-2024-07-29-at-100050-PM.jpeg",
    u:"https://mysimsem.com/experiences/pyramids-in-egypt/",hue:["#e2a21f","#0f4c52"]}
 ];
@@ -1014,6 +1377,13 @@ var FAQ = {
      ["أقدر أغير في الخطة؟","أيوه. كل برنامج نقطة بداية وبظبط المحطات والتوقيت والإيقاع على مجموعتك."],
      ["الأسعار والدفع؟","السعر بيعتمد على عدد الأفراد والموسم والمواصلات. هتستلم عرض واضح قبل أي تأكيد."]]
 };
+FAQ.de = [
+ ["Wie buche ich?","Wähle deine Touren, fülle das Formular aus und schicke die Nachricht auf WhatsApp. Ich antworte mit Verfügbarkeit und einem Preis für deine Gruppe."],
+ ["Ist die Tour privat?","Touren sind standardmäßig privat für eure Gruppe. Kleingruppen-Optionen sind auf Anfrage möglich."],
+ ["In welchen Sprachen guidest du?","Arabisch und Englisch. Touren auf Deutsch werden vorbereitet."],
+ ["Kann ich den Plan ändern?","Ja. Jede Route ist ein Ausgangspunkt – ich passe Stopps, Zeiten und Tempo an eure Gruppe an."],
+ ["Wie läuft es mit Preisen und Zahlung?","Preise hängen von Gruppengröße, Saison und Transport ab. Du bekommst ein klares Angebot, bevor irgendetwas bestätigt wird."]
+];
 
 
 var I18N = {
@@ -1037,6 +1407,26 @@ var I18N = {
   adults:"Adults",children:"Children",infants:"Infants",b1:"Budget",b2:"Comfort",b3:"Premium",
   none:"No tours selected yet. Add some from the lists above, or ask for a custom trip.",sel:"Selected: ",copied:"Copied. Paste it into your chat.",copyfail:"Copy is blocked here. Select the text and copy it manually.",
   hello:"Hello, I would like to request a trip in Egypt.",n:"Name",em:"Email",na:"Nationality",tr:"Tours",dt:"Date",gr:"Travelers",ln:"Tour language",bd:"Budget range",ht:"Hotel or area",nt:"Notes",anyd:"Flexible",custom:"Custom trip",thanks:"Please send me availability and a price. Thank you."},
+ de:{nav_tips:"Reisetipps",u_wa:"WhatsApp",nav_day:"Tagestouren",nav_pk:"Pakete",nav_faq:"FAQ",nav_req:"Maßgeschneiderte Reise",
+  eyebrow:"Lokaler Guide · Kairo, Ägypten",h1:"Erlebe Ägypten so, wie die Einheimischen es tun.",
+  lead:"Private Erlebnisse und kleine Gruppen in Kairo – von Stadtrundgängen über Kajakfahren auf dem Nil bis zu Ausritten zu den Pyramiden. Klare Pläne, ehrliche Zeiten und ein Guide, der hier lebt.",
+  cta1:"Schreib mir",cta2:"Reise individuell planen",
+  must_h:"Highlights",must_p:"Die Orte, für die die meisten Besucher kommen. Ich kann sie beliebig zu einem Tag oder einer Reise kombinieren.",
+  day_h:"Tagestouren",day_p:"Halbtages- und Ganztagestouren. Öffne die Details, sieh dir den Plan an und füge deiner Anfrage hinzu, was dir gefällt.",
+  pk_h:"Pakete",pk_p:"Längere Reisen mit Route, Transport und Stopps gemeinsam geplant.",
+  tb_h:"Etwas anderes im Sinn?",tb_p:"Sag mir deine Daten, Interessen und dein Budget. Du möchtest einen individuellen Preis? Schick mir die Details deiner Wunschreise und ich mache deiner Gruppe direkt ein Angebot.",tb_b:"Individuelle Reise starten",
+  why_h:"Was du bekommst",w1t:"Ein fester Plan, früh geteilt",w1p:"Du erhältst Route, Treffpunkt und Zeiten vor dem Tag – keine Überraschungen.",
+  w2t:"Den Menschenmassen voraus",w2p:"Frühe Starts und kluge Reihenfolge der Stopps an den meistbesuchten Orten.",
+  w3t:"Essen und Umgangsformen",w3p:"Wo man isst, was man zahlt und wie man sich fortbewegt, ohne zu viel zu bezahlen.",
+  w4t:"Ein Ansprechpartner",w4p:"Ich bin die Person, der du vor, während und nach deiner Reise schreibst.",
+  faq_h:"Häufige Fragen",
+  plan_h:"Fordere deine Reise an",plan_p:"Fülle die Details aus und schicke die Nachricht auf WhatsApp. Ich antworte mit Verfügbarkeit und einem Preis für deine Gruppe.",
+  l_name:"Dein Name",l_email:"E-Mail",l_nat:"Nationalität",l_date:"Wunschdatum",l_trav:"Reisende",l_budget:"Budgetrahmen",l_lang:"Sprache der Tour",l_hotel:"Hotel oder Gegend",l_notes:"Sonstiges",l_msg:"Deine Nachricht",
+  copy:"Nachricht kopieren",wa:"Auf WhatsApp senden",fb:"Lokaler Guide und Reisekoordinator in Kairo, Ägypten.",fl:"Touren",fc:"Kontakt",foot2:"Preise werden pro Gruppe genannt, nachdem du deinen Plan geschickt hast.",
+  details:"Tourdetails",pick:"Zu meiner Anfrage",picked:"Hinzugefügt",onreq:"Preis auf Anfrage",from:"Ab",pp:"pro Person",pg:"pro Gruppe bis 4",nav_ex:"Erlebnisse",more_h:"Weitere Erlebnisse, die ich organisieren kann",more_p:"Beliebte Unternehmungen in und um Kairo. Füge deiner Anfrage hinzu, was dir gefällt, und ich schicke dir einen Preis für deine Gruppe.",ex_h:"Meine Erlebnisse auf Simsem",ex_p:"Lokale Erlebnisse, die ich in Kairo anbiete. Öffne eines für alle Details und buche auf Simsem.",ex_book:"Ansehen und buchen",ex_badge:"Verifizierter lokaler Gastgeber auf Simsem · Profil und Bewertungen ansehen",cairo:"Kairo",price_note:"Preise in US-Dollar pro Person für Gruppen ab 3 Personen. Eintrittskarten und Mittagessen werden separat bezahlt. Kleinere Gruppen zahlen mehr pro Person – schick mir eure Gruppengröße für einen genauen Preis.",
+  adults:"Erwachsene",children:"Kinder",infants:"Kleinkinder",b1:"Budget",b2:"Komfort",b3:"Premium",
+  none:"Noch keine Touren ausgewählt. Wähle oben aus den Listen oder frage eine individuelle Reise an.",sel:"Ausgewählt: ",copied:"Kopiert. Füge es in deinen Chat ein.",copyfail:"Kopieren ist hier blockiert. Markiere den Text und kopiere ihn manuell.",
+  hello:"Hallo, ich möchte eine Reise in Ägypten anfragen.",n:"Name",em:"E-Mail",na:"Nationalität",tr:"Touren",dt:"Datum",gr:"Reisende",ln:"Toursprache",bd:"Budgetrahmen",ht:"Hotel oder Gegend",nt:"Anmerkungen",anyd:"Flexibel",custom:"Individuelle Reise",thanks:"Bitte schicke mir Verfügbarkeit und Preis. Danke."},
  ar:{nav_tips:"نصايح للسفر",u_wa:"واتساب",nav_day:"رحلات اليوم",nav_pk:"البرامج",nav_faq:"أسئلة",nav_req:"رحلة مخصصة",
   eyebrow:"مرشد محلي · القاهرة، مصر",h1:"شوف مصر زي ما أهلها بيشوفوها.",
   lead:"تجارب خاصة ومجموعات صغيرة في القاهرة، من جولات المشي لكاياك النيل وركوب الخيل عند الأهرامات. خطة واضحة ومواعيد صادقة ومرشد عايش هنا.",
@@ -1067,6 +1457,14 @@ Object.assign(I18N.en, {
   tips_h:"Street smarts for visitors to Egypt", tips_p:"Nine habits that make your trip smoother: prices, tips, dress, photos and getting around.", tips_b:"Read the travel tips",
   credits:"Photo credits", days_lbl:"days",
   cat_hist:"History and museums", cat_food:"Food and local life", cat_out:"Nile and outdoors", cat_trip:"Day trips from Cairo"
+});
+Object.assign(I18N.de, {
+  nav_prog:"Programme", cta3:"Reisen und Programme ansehen",
+  kick_book:"Online buchbar", kick_day:"In und um Kairo", kick_prog:"Mehrtägig",
+  prog_h:"Reisen und Tourprogramme", prog_p:"Fertige Routen, die die Tagestouren zu einer Reise verbinden. Jedes Programm ist ein Ausgangspunkt: Ich passe Tage, Stopps und Tempo an eure Gruppe an und schicke dann einen klaren Preis.",
+  tips_h:"Praxistipps für Ägypten-Besucher", tips_p:"Neun Gewohnheiten, die deine Reise entspannter machen: Preise, Trinkgeld, Kleidung, Fotos und Fortbewegung.", tips_b:"Reisetipps lesen",
+  credits:"Fotonachweise", days_lbl:"Tage",
+  cat_hist:"Geschichte und Museen", cat_food:"Essen und Alltagsleben", cat_out:"Nil und Natur", cat_trip:"Tagesausflüge ab Kairo"
 });
 Object.assign(I18N.ar, {
   nav_prog:"البرامج", cta3:"شوف الرحلات والبرامج",
@@ -1171,10 +1569,10 @@ function build(){
 function applyLang(){
   document.documentElement.lang = lang; document.documentElement.dir = lang==="ar"?"rtl":"ltr";
   document.querySelectorAll("[data-i18n]").forEach(function(e){var k=e.getAttribute("data-i18n"); if(I18N[lang][k]) e.textContent = I18N[lang][k];});
-  $("#langBtn").textContent = lang==="ar"?"English":"العربية";
+  $("#langBtn").textContent = lang==="en"?"العربية":(lang==="ar"?"Deutsch":"English");
   renderAll(); build();
 }
-$("#langBtn").addEventListener("click", function(){lang = lang==="en"?"ar":"en"; applyLang();});
+$("#langBtn").addEventListener("click", function(){lang = lang==="en"?"ar":(lang==="ar"?"de":"en"); applyLang();});
 $("#themeBtn").addEventListener("click", function(){
   var r = document.documentElement, cur = r.getAttribute("data-theme");
   var dark = cur ? cur==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
