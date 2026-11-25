@@ -8,16 +8,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('eg-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <style>
 :root{
   --bg:#f3f6f4; --surface:#ffffff; --ink:#0f2f33; --muted:#52696b;
   --nile:#0f4c52; --sun:#e2a21f; --lapis:#1f4f8f; --line:#d9e2de;
+  --util-bg:#0f4c52; --util-ink:#dff1ee; --chip-line:rgba(255,255,255,.4); --chip-on-bg:#fff; --chip-on-ink:#0f4c52;
   --font-display:'Fraunces','Cairo',Georgia,serif; --font-body:'Manrope','Cairo',system-ui,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0b1c1f; --surface:#112a2e; --ink:#e8f1ee; --muted:#9db5b2; --nile:#7fd0c9; --sun:#f0b73a; --lapis:#8fb4ee; --line:#23403f; color-scheme:dark;}}
+  --bg:#0d1b1e; --surface:#122a2d; --ink:#e6eeeb; --muted:#9fb4b1; --nile:#7fd0c9; --sun:#e9b64a; --lapis:#8fb4ee; --line:#24403f; --util-bg:#14292b; --util-ink:#b9d0cc; --chip-line:rgba(223,241,238,.28); --chip-on-bg:#7fd0c9; --chip-on-ink:#08211f; color-scheme:dark;}}
 :root[data-theme="dark"]{
-  --bg:#0b1c1f; --surface:#112a2e; --ink:#e8f1ee; --muted:#9db5b2; --nile:#7fd0c9; --sun:#f0b73a; --lapis:#8fb4ee; --line:#23403f; color-scheme:dark;}
+  --bg:#0d1b1e; --surface:#122a2d; --ink:#e6eeeb; --muted:#9fb4b1; --nile:#7fd0c9; --sun:#e9b64a; --lapis:#8fb4ee; --line:#24403f; --util-bg:#14292b; --util-ink:#b9d0cc; --chip-line:rgba(223,241,238,.28); --chip-on-bg:#7fd0c9; --chip-on-ink:#08211f; color-scheme:dark;}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -25,12 +27,15 @@ img{display:block}
 .wrap{width:min(1120px,92%);margin-inline:auto}
 h1,h2,h3{font-family:var(--font-display);line-height:1.2;margin:0}
 a{color:inherit}
-.util{background:var(--nile);color:#dff1ee;font-size:.85rem}
+.util{background:var(--util-bg);color:var(--util-ink);font-size:.85rem;border-bottom:1px solid var(--line)}
 .util .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 0;flex-wrap:wrap}
-.util a{color:#fff;text-decoration:none;font-weight:700}
+.util a{color:inherit;text-decoration:none;font-weight:700}
+.util a:hover{color:#fff}
 .tools{display:flex;gap:8px}
-.chip-btn{border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;border-radius:999px;padding:3px 12px;font:inherit;font-size:.82rem;cursor:pointer}
-  .lang-chip.active{background:#fff;color:var(--nile);border-color:#fff}
+.chip-btn{border:1px solid var(--chip-line);background:transparent;color:inherit;transition:background .2s,color .2s;border-radius:999px;padding:3px 12px;font:inherit;font-size:.82rem;cursor:pointer}
+  .chip-btn:hover{background:rgba(255,255,255,.12)}
+  .lang-chip.active{background:var(--chip-on-bg);color:var(--chip-on-ink);border-color:var(--chip-on-bg)}
+body,header.top,.util{transition:background-color .25s,color .25s}
 header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0;gap:14px}
 .brand{font-family:var(--font-display);font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:.2px}
@@ -1779,11 +1784,18 @@ function applyLang(){ if(typeof renderReviews==="function")try{renderReviews()}c
 }
 document.querySelectorAll(".lang-chip").forEach(function(b){b.addEventListener("click", function(){lang=b.dataset.lang; applyLang();});});
 (function(){var d=new Intl.DateTimeFormat("en-CA",{timeZone:"Africa/Cairo"}).format(new Date()); if(d<="2026-12-31"){var b=document.getElementById("promoBand"); if(b) b.hidden=false;}})();
-$("#themeBtn").addEventListener("click", function(){
-  var r = document.documentElement, cur = r.getAttribute("data-theme");
-  var dark = cur ? cur==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-  r.setAttribute("data-theme", dark?"light":"dark");
-});
+(function(){
+  var btn=$("#themeBtn"), r=document.documentElement;
+  function isDark(){var c=r.getAttribute("data-theme");return c?c==="dark":matchMedia("(prefers-color-scheme: dark)").matches;}
+  function paint(){btn.textContent=isDark()?"\u2600":"\u263E";btn.setAttribute("aria-pressed",isDark());}
+  btn.addEventListener("click", function(){
+    var next=isDark()?"light":"dark";
+    r.setAttribute("data-theme", next);
+    try{localStorage.setItem("eg-theme",next);}catch(e){}
+    paint();
+  });
+  paint();
+})();
 document.addEventListener("click", function(e){
   var b = e.target.closest("button.pick");
   if(b){picked[b.dataset.id] = !picked[b.dataset.id]; b.setAttribute("aria-pressed", !!picked[b.dataset.id]); b.textContent = picked[b.dataset.id]?L("picked"):L("pick"); build(); return;}
