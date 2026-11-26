@@ -180,6 +180,7 @@ details.credits ul{margin:8px 0 0;padding-inline-start:18px}
 .route-link{display:inline-block;margin:2px 0 10px;padding:9px 16px;border:2px solid var(--nile);border-radius:12px;font-weight:700;color:var(--nile);text-decoration:none;background:var(--surface);font-size:14px;}
 .route-link:hover{background:var(--nile);color:var(--bg);}
 </style>
+<link rel="stylesheet" href="account.css">
 </head>
 <body>
 
@@ -362,6 +363,7 @@ details.credits ul{margin:8px 0 0;padding-inline-start:18px}
       <div><h3 data-i18n="fl">Tours</h3><a href="#experiences" data-i18n="nav_ex">Experiences</a><a href="#programs" data-i18n="nav_prog">Programmes</a><a href="#request" data-i18n="nav_req">Tailor-made trip</a><a href="travel-tips/street-smarts.html" data-i18n="nav_tips">Travel tips</a></div>
       <div><h3 data-i18n="fc">Contact</h3><a href="https://wa.me/201068635116" target="_blank" rel="noopener" dir="ltr">WhatsApp +20 106 863 5116</a><a href="https://www.instagram.com/egypt_guides/" target="_blank" rel="noopener" dir="ltr">Instagram</a><a href="mailto:egyptguide21@gmail.com" dir="ltr">egyptguide21@gmail.com</a></div>
     </div>
+    <a href="privacy.html" data-i18n="priv">Privacy notice</a>
     <span data-i18n="foot2">Prices are quoted per group after you send your plan.</span>
     <details class="credits">
       <summary data-i18n="credits">Photo credits</summary>
@@ -1718,6 +1720,7 @@ var CREDITS = [
 
 var lang = "en", picked = {}, cnt = {adults:2, children:0, infants:0};
 var $ = function(s){return document.querySelector(s)};
+Object.assign(I18N.en,{priv:"Privacy notice"});Object.assign(I18N.de,{priv:"Datenschutz"});Object.assign(I18N.ar,{priv:"سياسة الخصوصية"});
 Object.assign(I18N.en,{rev_h:"Guest reviews",rev_empty:"Real guest reviews will appear here."});
 Object.assign(I18N.de,{rev_h:"Gästebewertungen",rev_empty:"Echte Gästebewertungen erscheinen hier."});
 Object.assign(I18N.ar,{rev_h:"آراء الضيوف",rev_empty:"آراء الضيوف الحقيقية هتظهر هنا."});
@@ -1852,6 +1855,7 @@ window.addEventListener("DOMContentLoaded", function(){
 });
 applyLang();
 </script>
+<script type="module" src="account.js"></script>
 <button id="toTop" class="scrollnav" type="button" aria-label="Back to top">↑</button>
 <button id="toBottom" class="scrollnav" type="button" aria-label="Skip to bottom">↓</button>
 </body>
