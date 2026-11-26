@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin · egyptguide</title>
+<script>try{var t=localStorage.getItem('eg-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<style>
+:root{--bg:#f3f6f4;--surface:#fff;--ink:#0f2f33;--muted:#52696b;--nile:#0f4c52;--sun:#e2a21f;--line:#d9e2de}
+:root[data-theme="dark"]{--bg:#0d1b1e;--surface:#122a2d;--ink:#e6eeeb;--muted:#9fb4b1;--nile:#7fd0c9;--line:#24403f}
+[hidden]{display:none!important}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+.wrap{width:min(1000px,94%);margin:0 auto;padding:20px 0 60px}
+h1{font-size:1.5rem;margin:0 0 6px}.muted{color:var(--muted)}
+button{font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--line);padding:8px 14px;background:var(--surface);color:var(--ink)}
+button.p{background:var(--sun);color:#1b1500;border-color:var(--sun);font-weight:700}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.st{padding:2px 10px;border-radius:999px;font-size:.8rem;font-weight:700;background:var(--line)}
+.st.confirmed{background:#cdeedd;color:#0b5b2e}.st.cancelled{background:#f5d3d0;color:#8a1f15}
+dl{display:grid;grid-template-columns:130px 1fr;gap:2px 10px;margin:8px 0}dt{color:var(--muted)}dd{margin:0;word-break:break-word}
+input{padding:9px;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--bg);color:var(--ink)}
+</style>
+</head>
+<body><div class="wrap">
+<h1>Bookings admin</h1>
+<p class="muted" id="who">Not signed in.</p>
+<div id="auth" class="row">
+  <button class="p" id="g" type="button">Sign in with Google</button>
+</div>
+<div class="row" id="filters" hidden>
+  <button data-f="all" type="button">All</button><button data-f="new" type="button">New</button><button data-f="confirmed" type="button">Confirmed</button><button data-f="cancelled" type="button">Cancelled</button>
+  <button id="out" type="button">Sign out</button>
+</div>
+<p id="msg" class="muted"></p>
+<div id="list"></div>
+<p><a href="index.html">← Site</a></p>
+</div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getFirestore, collection, getDocs, doc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+const app=initializeApp({apiKey:"AIzaSyDRlkK67bw_Hm9U2x7BRyWp3giyrUcF-zs",authDomain:"egyptguides-site.firebaseapp.com",projectId:"egyptguides-site",storageBucket:"egyptguides-site.firebasestorage.app",messagingSenderId:"1092733638464",appId:"1:1092733638464:web:d773f27f91d05218d08ca5"});
+const auth=getAuth(app),db=getFirestore(app),$=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let rows=[],filter="all";
+$("#g").onclick=()=>signInWithPopup(auth,new GoogleAuthProvider()).catch(()=>{$("#msg").textContent="Sign-in failed."});
+$("#out").onclick=()=>signOut(auth);
+document.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{filter=b.dataset.f;draw()});
+onAuthStateChanged(auth,async u=>{
+  $("#who").textContent=u?"Signed in as "+u.email:"Not signed in.";
+  $("#auth").hidden=!!u;$("#filters").hidden=!u;
+  if(!u){$("#list").innerHTML="";return}
+  try{
+    const s=await getDocs(query(collection(db,"bookings"),orderBy("createdAt","desc")));
+    rows=s.docs.map(d=>({id:d.id,...d.data()}));$("#msg").textContent=rows.length+" bookings";draw();
+  }catch(e){$("#msg").textContent="No access. This page is for the site admins only.";$("#list").innerHTML=""}
+});
+function draw(){
+  $("#list").innerHTML=rows.filter(r=>filter==="all"||r.status===filter).map(r=>{
+    const when=r.createdAt?new Date(r.createdAt.seconds*1000).toLocaleString():"";
+    return '<div class="card"><span class="st '+esc(r.status)+'">'+esc(r.status)+'</span> <b>'+esc(r.name)+'</b> <span class="muted">'+esc(when)+'</span><dl>'+
+    [["Trip",r.trip],["Date",r.date],["Travelers",r.adults+" adults, "+r.children+" children, "+r.infants+" infants"],["Email",r.email],["Nationality",r.nationality],["Tour language",r.language],["Budget",r.budget],["Hotel",r.hotel],["Notes",r.notes]].filter(x=>x[1]).map(x=>"<dt>"+x[0]+"</dt><dd>"+esc(x[1])+"</dd>").join("")+
+    '</dl><div class="row"><button data-id="'+r.id+'" data-s="confirmed">Confirm</button><button data-id="'+r.id+'" data-s="cancelled">Cancel</button><button data-id="'+r.id+'" data-s="new">Mark new</button></div></div>'}).join("")||'<p class="muted">Nothing here.</p>';
+  document.querySelectorAll("#list [data-s]").forEach(b=>b.onclick=async()=>{
+    try{await updateDoc(doc(db,"bookings",b.dataset.id),{status:b.dataset.s});rows.find(r=>r.id===b.dataset.id).status=b.dataset.s;draw()}catch(e){$("#msg").textContent="Update failed."}
+  });
+}
+</script>
+</body></html>

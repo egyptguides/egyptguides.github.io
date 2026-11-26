@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · egyptguide</title>
+<script>try{var t=localStorage.getItem('eg-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<style>
+:root{--bg:#f3f6f4;--surface:#fff;--ink:#0f2f33;--muted:#52696b;--nile:#0f4c52;--line:#d9e2de}
+:root[data-theme="dark"]{--bg:#0d1b1e;--surface:#122a2d;--ink:#e6eeeb;--muted:#9fb4b1;--nile:#7fd0c9;--line:#24403f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1b1e;--surface:#122a2d;--ink:#e6eeeb;--muted:#9fb4b1;--nile:#7fd0c9;--line:#24403f}}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 system-ui,"Segoe UI",Tahoma,sans-serif}
+.wrap{width:min(720px,92%);margin:0 auto;padding:28px 0 60px}
+h1{font-size:1.7rem}ul{padding-inline-start:20px}a{color:var(--nile)}
+.chips{display:flex;gap:8px;margin-bottom:18px}.chips button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:4px 14px;font:inherit;cursor:pointer}
+.chips button.on{background:var(--nile);color:var(--bg)}
+</style></head>
+<body><div class="wrap">
+<div class="chips"><button data-l="en">EN</button><button data-l="ar">العربية</button><button data-l="de">Deutsch</button></div>
+<div id="c"></div>
+<p><a href="index.html" id="back"></a></p>
+</div>
+<script>
+var C={
+en:{h:"Privacy notice",back:"← Back to the site",b:"<p>You can ask for a tour on WhatsApp without an account. An account is optional.</p><h3>What we store</h3><ul><li>If you create an account: your email address and name (or the Google account name you choose to share).</li><li>If you save a booking request: the details you type in the form (name, email, nationality, trip, date, group size, language, budget, hotel, notes).</li></ul><h3>Why</h3><p>Only to answer your request, organise your tour and show you its status in your account.</p><h3>Who sees it</h3><p>Only the guide (site admins). We do not sell or share your data. Sign-in and storage run on Google Firebase, with the database in Europe.</p><h3>Your rights</h3><p>You can ask us to see, correct or delete your data at any time: <a href=\"mailto:egyptguide21@gmail.com\">egyptguide21@gmail.com</a>.</p>"},
+de:{h:"Datenschutz",back:"← Zurück zur Seite",b:"<p>Sie können eine Tour auch ohne Konto per WhatsApp anfragen. Ein Konto ist freiwillig.</p><h3>Was wir speichern</h3><ul><li>Bei Kontoerstellung: Ihre E-Mail-Adresse und Ihr Name (oder der Name Ihres Google-Kontos, den Sie freigeben).</li><li>Beim Speichern einer Anfrage: die Angaben aus dem Formular (Name, E-Mail, Nationalität, Tour, Datum, Gruppengröße, Sprache, Budget, Hotel, Hinweise).</li></ul><h3>Wozu</h3><p>Nur um Ihre Anfrage zu beantworten, Ihre Tour zu organisieren und den Status in Ihrem Konto anzuzeigen.</p><h3>Wer hat Zugriff</h3><p>Nur der Guide (Seiten-Admins). Wir verkaufen oder teilen Ihre Daten nicht. Anmeldung und Speicherung laufen über Google Firebase, die Datenbank steht in Europa.</p><h3>Ihre Rechte</h3><p>Sie können jederzeit Auskunft, Berichtigung oder Löschung verlangen: <a href=\"mailto:egyptguide21@gmail.com\">egyptguide21@gmail.com</a>.</p>"},
+ar:{h:"سياسة الخصوصية",back:"← الرجوع للموقع",b:"<p>تقدر تطلب رحلة على واتساب من غير حساب. الحساب اختياري.</p><h3>إيه اللي بنحفظه</h3><ul><li>لو عملت حساب: بريدك الإلكتروني واسمك (أو اسم حساب Google اللي توافق تشاركه).</li><li>لو حفظت طلب حجز: البيانات اللي كتبتها في النموذج (الاسم، البريد، الجنسية، الرحلة، التاريخ، عدد الأفراد، اللغة، الميزانية، الفندق، الملاحظات).</li></ul><h3>ليه</h3><p>بس عشان نرد على طلبك وننظم رحلتك ونوريك حالتها في حسابك.</p><h3>مين يشوفها</h3><p>المرشد فقط (مديرو الموقع). مش بنبيع بياناتك ولا بنشاركها. تسجيل الدخول والتخزين على Google Firebase وقاعدة البيانات في أوروبا.</p><h3>حقوقك</h3><p>تقدر تطلب تشوف بياناتك أو تعدلها أو تمسحها في أي وقت: <a href=\"mailto:egyptguide21@gmail.com\">egyptguide21@gmail.com</a>.</p>"}};
+function show(l){var d=document.documentElement;d.lang=l;d.dir=l==="ar"?"rtl":"ltr";try{localStorage.setItem("eg-lang",l)}catch(e){}
+document.getElementById("c").innerHTML="<h1>"+C[l].h+"</h1>"+C[l].b;document.getElementById("back").textContent=C[l].back;document.title=C[l].h+" · egyptguide";
+document.querySelectorAll(".chips button").forEach(function(b){b.classList.toggle("on",b.dataset.l===l)})}
+document.querySelectorAll(".chips button").forEach(function(b){b.onclick=function(){show(b.dataset.l)}});
+var q=new URLSearchParams(location.search).get("lang");show(C[q]?q:"en");
+</script></body></html>
