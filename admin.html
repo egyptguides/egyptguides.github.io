@@ -32,29 +32,41 @@ input{padding:9px;border:1px solid var(--line);border-radius:8px;font:inherit;ba
   <button id="out" type="button">Sign out</button>
 </div>
 <p id="msg" class="muted"></p>
+<h2 id="rvh" hidden>Reviews</h2><div id="rvl"></div>
+<h2 id="bkh" hidden>Bookings</h2>
 <div id="list"></div>
 <p><a href="index.html">← Site</a></p>
 </div>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import { getFirestore, collection, getDocs, doc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 const app=initializeApp({apiKey:"AIzaSyDRlkK67bw_Hm9U2x7BRyWp3giyrUcF-zs",authDomain:"egyptguides-site.firebaseapp.com",projectId:"egyptguides-site",storageBucket:"egyptguides-site.firebasestorage.app",messagingSenderId:"1092733638464",appId:"1:1092733638464:web:d773f27f91d05218d08ca5"});
 const auth=getAuth(app),db=getFirestore(app),$=s=>document.querySelector(s);
 const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-let rows=[],filter="all";
+let rows=[],revs=[],filter="all";
 $("#g").onclick=()=>signInWithPopup(auth,new GoogleAuthProvider()).catch(()=>{$("#msg").textContent="Sign-in failed."});
 $("#out").onclick=()=>signOut(auth);
 document.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{filter=b.dataset.f;draw()});
 onAuthStateChanged(auth,async u=>{
   $("#who").textContent=u?"Signed in as "+u.email:"Not signed in.";
   $("#auth").hidden=!!u;$("#filters").hidden=!u;
-  if(!u){$("#list").innerHTML="";return}
+  if(!u){$("#list").innerHTML="";$("#rvl").innerHTML="";$("#msg").textContent="";$("#rvh").hidden=true;$("#bkh").hidden=true;return}
   try{
     const s=await getDocs(query(collection(db,"bookings"),orderBy("createdAt","desc")));
     rows=s.docs.map(d=>({id:d.id,...d.data()}));$("#msg").textContent=rows.length+" bookings";draw();
+    const rs=await getDocs(collection(db,"reviews"));revs=rs.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.approved===b.approved?0:a.approved?1:-1));$("#rvh").hidden=false;$("#bkh").hidden=false;drawRev();
   }catch(e){$("#msg").textContent="No access. This page is for the site admins only.";$("#list").innerHTML=""}
 });
+function drawRev(){
+  $("#rvl").innerHTML=revs.map(r=>'<div class="card"><span class="st '+(r.approved?'confirmed':'')+'">'+(r.approved?'published':'pending')+'</span> <b>'+esc(r.name)+'</b> '+esc(r.country||"")+' <span>'+"\u2605".repeat(r.stars|0)+'</span><p>'+esc(r.text)+'</p><div class="row"><button data-r="'+r.id+'" data-a="1">Publish</button><button data-r="'+r.id+'" data-a="0">Hide</button><button data-r="'+r.id+'" data-a="x">Delete</button></div></div>').join("")||'<p class="muted">No reviews yet.</p>';
+  document.querySelectorAll("#rvl [data-a]").forEach(b=>b.onclick=async()=>{
+    try{const ref=doc(db,"reviews",b.dataset.r);
+      if(b.dataset.a==="x"){await deleteDoc(ref);revs=revs.filter(r=>r.id!==b.dataset.r)}
+      else{const v=b.dataset.a==="1";await updateDoc(ref,{approved:v});revs.find(r=>r.id===b.dataset.r).approved=v}
+      drawRev()}catch(e){$("#msg").textContent="Review update failed."}
+  });
+}
 function draw(){
   $("#list").innerHTML=rows.filter(r=>filter==="all"||r.status===filter).map(r=>{
     const when=r.createdAt?new Date(r.createdAt.seconds*1000).toLocaleString():"";
