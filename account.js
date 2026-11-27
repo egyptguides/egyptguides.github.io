@@ -59,7 +59,7 @@ async function render() {
     body.querySelector("#aFg").onclick = async () => { const e = body.querySelector("#aEm").value.trim(); if (!e) return; try { await sendPasswordResetEmail(auth, e); msg(t("sent")); } catch (x) { msg(t("err"), true); } };
     body.querySelector("#aGo").onclick = () => {
       const e = body.querySelector("#aEm").value.trim(), p = body.querySelector("#aPw").value;
-      if (mode === "up") run(async () => { const c = await createUserWithEmailAndPassword(auth, e, p); const n = body.querySelector("#aName") && body.querySelector("#aName").value.trim(); if (n) { await updateProfile(c.user, { displayName: n }); render(); } });
+      if (mode === "up") run(async () => { const n = body.querySelector("#aName") && body.querySelector("#aName").value.trim(); const c = await createUserWithEmailAndPassword(auth, e, p); if (n) { await updateProfile(c.user, { displayName: n }); render(); } });
       else run(() => signInWithEmailAndPassword(auth, e, p));
     };
   } else {
