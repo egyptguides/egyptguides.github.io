@@ -1731,7 +1731,7 @@ var REVIEWS=[];
 function renderReviews(){
   var box=document.getElementById("revList"),em=document.getElementById("revEmpty"); if(!box)return;
   box.innerHTML="";
-  var shown=REVIEWS.filter(function(r){return r&&r.show===true});
+  var shown=REVIEWS.concat(window.FBREV||[]).filter(function(r){return r&&r.show===true});
   em.style.display=shown.length?"none":"";
   shown.forEach(function(r){
     var t=(lang==="ar"?r.text_ar:r.text_en)||r.text_en||r.text_ar||"";
