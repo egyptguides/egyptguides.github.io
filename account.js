@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, updateProfile, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import { getFirestore, collection, addDoc, query, where, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, query, where, getDocs, getDoc, setDoc, doc, deleteDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const app = initializeApp({
   apiKey: "AIzaSyDRlkK67bw_Hm9U2x7BRyWp3giyrUcF-zs",
@@ -13,9 +13,9 @@ const app = initializeApp({
 const auth = getAuth(app), db = getFirestore(app);
 const $ = s => document.querySelector(s);
 const T = {
- en:{si:"Sign in",so:"Sign out",mb:"My bookings",t_in:"Sign in or create an account",t_p:"An account lets you save your booking requests and follow their status.",g:"Continue with Google",or:"or",em:"Email",pw:"Password (6+ characters)",nm:"Your name",login:"Sign in",create:"Create account",forgot:"Forgot password?",sent:"Password reset email sent.",save:"Save request to my account",saved:"Saved to your account. Now send it on WhatsApp to confirm.",needin:"Sign in to save this request to your account.",none:"No bookings yet.",st_new:"New",st_confirmed:"Confirmed",st_cancelled:"Cancelled",hi:"Signed in as",priv:"Privacy notice",wait:"Please wait...",err:"Something went wrong. Check your details and try again.",nonm:"Please enter your name in the form first.",note:"Optional. The WhatsApp button works without an account."},
- de:{si:"Anmelden",so:"Abmelden",mb:"Meine Buchungen",t_in:"Anmelden oder Konto erstellen",t_p:"Mit einem Konto können Sie Ihre Anfragen speichern und den Status verfolgen.",g:"Weiter mit Google",or:"oder",em:"E-Mail",pw:"Passwort (mind. 6 Zeichen)",nm:"Ihr Name",login:"Anmelden",create:"Konto erstellen",forgot:"Passwort vergessen?",sent:"E-Mail zum Zurücksetzen gesendet.",save:"Anfrage in meinem Konto speichern",saved:"In Ihrem Konto gespeichert. Senden Sie sie jetzt per WhatsApp zur Bestätigung.",needin:"Melden Sie sich an, um diese Anfrage zu speichern.",none:"Noch keine Buchungen.",st_new:"Neu",st_confirmed:"Bestätigt",st_cancelled:"Storniert",hi:"Angemeldet als",priv:"Datenschutz",wait:"Bitte warten...",err:"Etwas ist schiefgelaufen. Bitte prüfen Sie Ihre Angaben.",nonm:"Bitte geben Sie zuerst Ihren Namen im Formular ein.",note:"Optional. Der WhatsApp-Button funktioniert auch ohne Konto."},
- ar:{si:"تسجيل الدخول",so:"تسجيل الخروج",mb:"حجوزاتي",t_in:"سجّل الدخول أو أنشئ حساب",t_p:"الحساب بيخليك تحفظ طلبات الحجز وتتابع حالتها.",g:"المتابعة بحساب Google",or:"أو",em:"البريد الإلكتروني",pw:"كلمة المرور (6 أحرف على الأقل)",nm:"اسمك",login:"دخول",create:"إنشاء حساب",forgot:"نسيت كلمة المرور؟",sent:"تم إرسال رابط إعادة تعيين كلمة المرور.",save:"احفظ الطلب في حسابي",saved:"تم الحفظ في حسابك. ابعته دلوقتي على واتساب للتأكيد.",needin:"سجّل الدخول عشان تحفظ الطلب في حسابك.",none:"لا توجد حجوزات بعد.",st_new:"جديد",st_confirmed:"مؤكد",st_cancelled:"ملغي",hi:"مسجّل باسم",priv:"سياسة الخصوصية",wait:"من فضلك انتظر...",err:"حصلت مشكلة. راجع بياناتك وحاول تاني.",nonm:"اكتب اسمك في النموذج الأول.",note:"اختياري. زر واتساب شغال من غير حساب."}
+ en:{prof:"My profile",rv_h:"Your review",rv_p:"Tell other travelers about your trip. Reviews are checked before they appear on the site.",rv_s:"Rating",rv_c:"Country (optional)",rv_t:"Your review",rv_send:"Send review",rv_del:"Delete my review",rv_ok:"Thank you! Your review was sent and will appear after approval.",rv_pend:"Status: waiting for approval",rv_pub:"Status: published on the site",rv_short:"Please write at least a few words.",bk_h:"My bookings",si:"Sign in",so:"Sign out",mb:"My bookings",t_in:"Sign in or create an account",t_p:"An account lets you save your booking requests and follow their status.",g:"Continue with Google",or:"or",em:"Email",pw:"Password (6+ characters)",nm:"Your name",login:"Sign in",create:"Create account",forgot:"Forgot password?",sent:"Password reset email sent.",save:"Save request to my account",saved:"Saved to your account. Now send it on WhatsApp to confirm.",needin:"Sign in to save this request to your account.",none:"No bookings yet.",st_new:"New",st_confirmed:"Confirmed",st_cancelled:"Cancelled",hi:"Signed in as",priv:"Privacy notice",wait:"Please wait...",err:"Something went wrong. Check your details and try again.",nonm:"Please enter your name in the form first.",note:"Optional. The WhatsApp button works without an account."},
+ de:{prof:"Mein Profil",rv_h:"Ihre Bewertung",rv_p:"Erzählen Sie anderen Reisenden von Ihrer Reise. Bewertungen werden geprüft, bevor sie auf der Seite erscheinen.",rv_s:"Bewertung",rv_c:"Land (optional)",rv_t:"Ihre Bewertung",rv_send:"Bewertung senden",rv_del:"Meine Bewertung löschen",rv_ok:"Danke! Ihre Bewertung wurde gesendet und erscheint nach Freigabe.",rv_pend:"Status: wartet auf Freigabe",rv_pub:"Status: auf der Seite veröffentlicht",rv_short:"Bitte schreiben Sie ein paar Worte.",bk_h:"Meine Buchungen",si:"Anmelden",so:"Abmelden",mb:"Meine Buchungen",t_in:"Anmelden oder Konto erstellen",t_p:"Mit einem Konto können Sie Ihre Anfragen speichern und den Status verfolgen.",g:"Weiter mit Google",or:"oder",em:"E-Mail",pw:"Passwort (mind. 6 Zeichen)",nm:"Ihr Name",login:"Anmelden",create:"Konto erstellen",forgot:"Passwort vergessen?",sent:"E-Mail zum Zurücksetzen gesendet.",save:"Anfrage in meinem Konto speichern",saved:"In Ihrem Konto gespeichert. Senden Sie sie jetzt per WhatsApp zur Bestätigung.",needin:"Melden Sie sich an, um diese Anfrage zu speichern.",none:"Noch keine Buchungen.",st_new:"Neu",st_confirmed:"Bestätigt",st_cancelled:"Storniert",hi:"Angemeldet als",priv:"Datenschutz",wait:"Bitte warten...",err:"Etwas ist schiefgelaufen. Bitte prüfen Sie Ihre Angaben.",nonm:"Bitte geben Sie zuerst Ihren Namen im Formular ein.",note:"Optional. Der WhatsApp-Button funktioniert auch ohne Konto."},
+ ar:{prof:"ملفي الشخصي",rv_h:"تقييمك",rv_p:"احكي للمسافرين التانيين عن رحلتك. التقييمات بتتراجع قبل ما تظهر على الموقع.",rv_s:"التقييم",rv_c:"الدولة (اختياري)",rv_t:"تقييمك",rv_send:"ابعت التقييم",rv_del:"امسح تقييمي",rv_ok:"شكراً! التقييم اتبعت وهيظهر بعد الموافقة.",rv_pend:"الحالة: في انتظار الموافقة",rv_pub:"الحالة: منشور على الموقع",rv_short:"اكتب كام كلمة على الأقل.",bk_h:"حجوزاتي",si:"تسجيل الدخول",so:"تسجيل الخروج",mb:"حجوزاتي",t_in:"سجّل الدخول أو أنشئ حساب",t_p:"الحساب بيخليك تحفظ طلبات الحجز وتتابع حالتها.",g:"المتابعة بحساب Google",or:"أو",em:"البريد الإلكتروني",pw:"كلمة المرور (6 أحرف على الأقل)",nm:"اسمك",login:"دخول",create:"إنشاء حساب",forgot:"نسيت كلمة المرور؟",sent:"تم إرسال رابط إعادة تعيين كلمة المرور.",save:"احفظ الطلب في حسابي",saved:"تم الحفظ في حسابك. ابعته دلوقتي على واتساب للتأكيد.",needin:"سجّل الدخول عشان تحفظ الطلب في حسابك.",none:"لا توجد حجوزات بعد.",st_new:"جديد",st_confirmed:"مؤكد",st_cancelled:"ملغي",hi:"مسجّل باسم",priv:"سياسة الخصوصية",wait:"من فضلك انتظر...",err:"حصلت مشكلة. راجع بياناتك وحاول تاني.",nonm:"اكتب اسمك في النموذج الأول.",note:"اختياري. زر واتساب شغال من غير حساب."}
 };
 const lg = () => (document.documentElement.lang in T ? document.documentElement.lang : "en");
 const t = k => T[lg()][k];
@@ -59,13 +59,31 @@ async function render() {
     body.querySelector("#aFg").onclick = async () => { const e = body.querySelector("#aEm").value.trim(); if (!e) return; try { await sendPasswordResetEmail(auth, e); msg(t("sent")); } catch (x) { msg(t("err"), true); } };
     body.querySelector("#aGo").onclick = () => {
       const e = body.querySelector("#aEm").value.trim(), p = body.querySelector("#aPw").value;
-      if (mode === "up") run(async () => { const c = await createUserWithEmailAndPassword(auth, e, p); const n = body.querySelector("#aName") && body.querySelector("#aName").value.trim(); if (n) await updateProfile(c.user, { displayName: n }); });
+      if (mode === "up") run(async () => { const c = await createUserWithEmailAndPassword(auth, e, p); const n = body.querySelector("#aName") && body.querySelector("#aName").value.trim(); if (n) { await updateProfile(c.user, { displayName: n }); render(); } });
       else run(() => signInWithEmailAndPassword(auth, e, p));
     };
   } else {
-    body.innerHTML = '<h2>' + t("mb") + '</h2><p>' + t("hi") + ' <b dir="ltr">' + esc(user.email) + '</b></p><div class="acct-list" id="bl">' + t("wait") + '</div>' +
+    body.innerHTML = '<h2>' + t("prof") + '</h2><p>' + (user.displayName ? '<b>' + esc(user.displayName) + '</b> · ' : '') + t("hi") + ' <b dir="ltr">' + esc(user.email) + '</b></p><h3 class="acct-h3">' + t("bk_h") + '</h3><div class="acct-list" id="bl">' + t("wait") + '</div>' +
+      '<h3 class="acct-h3">' + t("rv_h") + '</h3><p>' + t("rv_p") + '</p><select id="rvS" aria-label="' + t("rv_s") + '"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option><option value="2">★★☆☆☆</option><option value="1">★☆☆☆☆</option></select>' +
+      '<input id="rvC" maxlength="60" placeholder="' + t("rv_c") + '"><textarea id="rvT" maxlength="1500" rows="4" placeholder="' + t("rv_t") + '"></textarea>' +
+      '<button class="btn primary" id="rvGo" type="button">' + t("rv_send") + '</button><button class="acct-link" id="rvDel" type="button" hidden>' + t("rv_del") + '</button><div class="acct-msg" id="rvM" aria-live="polite"></div>' +
       '<button class="btn outline" id="aOut" type="button" style="margin-top:14px">' + t("so") + '</button>' + privLink();
     body.querySelector("#aOut").onclick = async () => { await signOut(auth); close(); };
+    const rm = x => { const m = body.querySelector("#rvM"); if (m) m.textContent = x || ""; };
+    const rref = doc(db, "reviews", user.uid);
+    try {
+      const rs = await getDoc(rref);
+      if (rs.exists()) { const r = rs.data(); body.querySelector("#rvS").value = String(r.stars); body.querySelector("#rvC").value = r.country || ""; body.querySelector("#rvT").value = r.text || ""; body.querySelector("#rvDel").hidden = false; rm(t(r.approved ? "rv_pub" : "rv_pend")); }
+    } catch (x) {}
+    body.querySelector("#rvGo").onclick = async () => {
+      const text = body.querySelector("#rvT").value.trim();
+      if (text.length < 5) { rm(t("rv_short")); return; }
+      try {
+        await setDoc(rref, { uid: user.uid, name: (user.displayName || "Guest").slice(0, 80), country: body.querySelector("#rvC").value.trim().slice(0, 60), stars: parseInt(body.querySelector("#rvS").value, 10), text: text, lang: lg(), approved: false, createdAt: serverTimestamp() });
+        body.querySelector("#rvDel").hidden = false; rm(t("rv_ok"));
+      } catch (x) { rm(t("err")); }
+    };
+    body.querySelector("#rvDel").onclick = async () => { try { await deleteDoc(rref); body.querySelector("#rvT").value = ""; body.querySelector("#rvDel").hidden = true; rm(""); } catch (x) { rm(t("err")); } };
     try {
       const snap = await getDocs(query(collection(db, "bookings"), where("uid", "==", user.uid)));
       const rows = snap.docs.map(d => d.data()).sort((a, b) => (b.createdAt ? b.createdAt.seconds : 0) - (a.createdAt ? a.createdAt.seconds : 0));
@@ -76,7 +94,7 @@ async function render() {
 }
 async function run(fn) { msg(t("wait")); try { await fn(); } catch (x) { msg(t("err"), true); } }
 
-function label() { btn.textContent = user ? t("mb") : t("si"); }
+function label() { btn.textContent = user ? t("prof") : t("si"); }
 onAuthStateChanged(auth, u => { user = u; label(); render(); saveUI(); });
 new MutationObserver(() => { label(); render(); saveUI(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
 
@@ -109,3 +127,12 @@ function saveUI() {
   };
 }
 label(); saveUI();
+
+// published reviews (approved by admin only)
+(async () => {
+  try {
+    const snap = await getDocs(query(collection(db, "reviews"), where("approved", "==", true)));
+    window.FBREV = snap.docs.map(d => d.data()).sort((a, b) => (b.createdAt ? b.createdAt.seconds : 0) - (a.createdAt ? a.createdAt.seconds : 0)).map(r => ({ show: true, name: r.name, country: r.country, stars: r.stars, text_en: r.text, text_ar: r.text }));
+    if (typeof window.renderReviews === "function") window.renderReviews();
+  } catch (x) {}
+})();
