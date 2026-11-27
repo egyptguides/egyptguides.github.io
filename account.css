@@ -5,7 +5,7 @@
 .acct-box h2{font-size:1.4rem;margin-bottom:6px}
 .acct-box p{color:var(--muted);margin:4px 0 12px;font-size:.92rem}
 .acct-x{position:absolute;top:10px;inset-inline-end:12px;background:none;border:0;font-size:1.6rem;color:var(--muted);cursor:pointer}
-.acct-box input{width:100%;padding:11px 12px;margin:6px 0;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--bg);color:var(--ink)}
+.acct-box input,.acct-box textarea,.acct-box select{width:100%;padding:11px 12px;margin:6px 0;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--bg);color:var(--ink)}
 .acct-box .btn{width:100%;text-align:center;margin-top:8px}
 .acct-box .gbtn{background:#fff;color:#222;border-color:#d0d7d4}
 .acct-sep{text-align:center;color:var(--muted);margin:10px 0;font-size:.85rem}
@@ -20,3 +20,4 @@
 .acct-save{margin-top:10px}
 .acct-save .note{font-size:.85rem}
 .acct-priv{font-size:.8rem;color:var(--muted);margin-top:10px}
+.acct-h3{font-size:1.05rem;margin:16px 0 4px}.acct-box textarea{resize:vertical}
